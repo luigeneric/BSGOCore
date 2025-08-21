@@ -86,3 +86,10 @@ sqlite
 
 sqlite/bgo_server.db
 sqlite/counters_queries/bgo_server.db
+
+
+# ignore everything in certs
+/certs/*
+# but keep the SAN config and the generation script
+!/certs/san.cnf
+!/certs/generate-certs.sh
