@@ -4,6 +4,12 @@
 - The owner of this repository is not responsible for any damages caused by this software
 - The owner of this repository is not responsible for other people's actions (such as forks)
 - The server was created for educational purposes only
+
+### Contributing
+Contributions are welcome!  
+Please feel free to open issues for bugs and feature requests, or submit pull requests with improvements.
+
+
 ---
 ## Introduction
 BSGOCore is an open-source game server emulator designed for hosting massively multiplayer online games (MMOPGs).

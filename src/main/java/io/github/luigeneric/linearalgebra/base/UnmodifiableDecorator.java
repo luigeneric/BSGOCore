@@ -1,5 +1,13 @@
 package io.github.luigeneric.linearalgebra.base;
 
+/**
+ * Provides read-only wrappers
+ * to prevent accidental modifications of shared math objects.
+ *
+ * These decorators ensure that reference calls cannot alter the
+ * underlying data, avoiding hidden side effects and subtle bugs.
+ */
+
 public final class UnmodifiableDecorator
 {
     private static final String UNSUPPORTED_EXCEPTION_MSG = "Vector3 not modifiable";
