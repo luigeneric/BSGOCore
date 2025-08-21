@@ -1,0 +1,75 @@
+<configuration>
+    <property name="log.dir" value="logs/"/>
+    <appender name="STDOUT_ALL" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level){level-color="%boldMagenta,%boldYellow,%boldRed"} %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <timestamp key="myTimestamp" datePattern="yyyy-MM-dd'_'HH-mm-ss.SSS"/>
+    <timestamp key="dateStamp" datePattern="yyyy-MM-dd"/>"
+    <appender name="FILE_ALL" class="ch.qos.logback.core.FileAppender">
+        <file>${log.dir}all-${myTimestamp}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="dbLogger" class="ch.qos.logback.core.FileAppender">
+        <file>${log.dir}dbLog-${myTimestamp}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="networkLogger" class="ch.qos.logback.core.FileAppender">
+        <file>${log.dir}networkLog-${myTimestamp}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="pulseManeuver" class="ch.qos.logback.core.FileAppender">
+        <file>${log.dir}networkLog-${myTimestamp}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="playerLogger" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <!-- in the absence of the class attribute, it is assumed that the
+             desired discriminator type is
+             ch.qos.logback.classic.sift.MDCBasedDiscriminator -->
+        <discriminator>
+            <key>userID</key>
+            <defaultValue>unknown</defaultValue>
+        </discriminator>
+        <sift>
+            <appender name="FILE-${userID}" class="ch.qos.logback.core.FileAppender">
+                <file>${log.dir}users_${dateStamp}/user-${userID}-${dateStamp}.log</file>
+                <append>true</append>
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                    <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+                </layout>
+            </appender>
+        </sift>
+    </appender>
+
+    <logger name="io.github.luigeneric.database" level="debug" additivity="false">
+        <appender-ref ref="dbLogger" />
+    </logger>
+    <logger name="io.github.luigeneric.networking" level="debug" additivity="true">
+        <appender-ref ref="networkLogger" />
+    </logger>
+    <logger name="io.github.luigeneric.core.player" level="debug" additivity="false">
+        <appender-ref ref="playerLogger" />
+    </logger>
+    <logger name="io.github.luigeneric.core.protocols" level="debug" additivity="false">
+        <appender-ref ref="playerLogger" />
+    </logger>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT_ALL" />
+        <appender-ref ref="FILE_ALL" />
+    </root>
+</configuration>
