@@ -80,6 +80,9 @@ gradle
 build
 quarkus.log
 
+sqlite
+**/sqlite
+
 
 sqlite/bgo_server.db
 sqlite/counters_queries/bgo_server.db
