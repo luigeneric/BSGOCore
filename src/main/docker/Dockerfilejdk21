@@ -1,0 +1,27 @@
+FROM eclipse-temurin:21
+
+
+RUN mkdir /opt/quarkus-app
+
+# We make four distinct layers so if there are application changes the library layers can be re-used
+COPY target/quarkus-app/lib/ /opt/quarkus-app/lib/
+COPY target/quarkus-app/*.jar /opt/quarkus-app/
+COPY target/quarkus-app/app/ /opt/quarkus-app/app/
+COPY target/quarkus-app/quarkus/ /opt/quarkus-app/quarkus/
+COPY ServerConfigurationUtils /opt/quarkus-app/ServerConfigurationUtils
+
+EXPOSE 27050
+EXPOSE 27051
+EXPOSE 27052
+
+
+
+WORKDIR "/opt/quarkus-app"
+
+ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Xms800m"
+#ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Xms800m -XX:StartFlightRecording=filename=/opt/quarkus-app/flightrecording.jfr,dumponexit=true,maxage=1d,settings=profile"
+#docker cp <container_name_or_id>:/opt/quarkus-app/flightrecording.jfr ./flightrecorder.jfr
+#docker cp game:/opt/quarkus-app/flightrecording.jfr ./flightrecorder.jfr
+
+
+ENTRYPOINT exec java $JAVA_OPTS -jar quarkus-run.jar
