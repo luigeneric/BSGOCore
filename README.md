@@ -4,6 +4,7 @@
 - The owner of this repository is not responsible for any damages caused by this software
 - The owner of this repository is not responsible for other people's actions (such as forks)
 - The server was created for educational purposes only
+- **The server is a version of the original BSGO 2.0 Resurrection project with minor changes**
 
 ### Contributing
 Contributions are welcome!  
