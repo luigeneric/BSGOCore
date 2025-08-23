@@ -1,5 +1,6 @@
 package io.github.luigeneric.core.player.login;
 
+import io.github.luigeneric.templates.startupconfig.GameServerParamsConfig;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,12 +24,33 @@ public class SessionRegistry
      */
     private final Map<String, Session> sessions;
     private final ReadWriteLock readWriteLock;
+    private final GameServerParamsConfig gameServerParamsConfig;
 
-    public SessionRegistry()
+    public SessionRegistry(final GameServerParamsConfig gameServerParamsConfig)
     {
+        this.gameServerParamsConfig = gameServerParamsConfig;
         this.sessions = new HashMap<>();
         this.readWriteLock = new ReentrantReadWriteLock();
+        setupDebugParams();
     }
+
+    private void setupDebugParams()
+    {
+        if (!gameServerParamsConfig.sessionSettings().ignoreSession())
+        {
+            return;
+        }
+
+        var debugSessions = gameServerParamsConfig.sessionSettings().sessions();
+        for (String debugSession : debugSessions)
+        {
+            var splitRes = debugSession.split("@");
+            var userId = splitRes[0];
+            var sessionStr = splitRes[1];
+            this.addSession(new Session(Long.parseLong(userId), sessionStr));
+        }
+    }
+
     private void readLock()
     {
         this.readWriteLock.readLock().lock();

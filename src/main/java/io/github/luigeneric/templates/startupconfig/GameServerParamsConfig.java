@@ -23,6 +23,8 @@ public interface GameServerParamsConfig
 
     PermissionParams permissionParams();
 
+    SessionSettings sessionSettings();
+
     default boolean shouldConnectToChatServer()
     {
         return chatServerPort() != 0;
@@ -38,6 +40,13 @@ public interface GameServerParamsConfig
     interface PermissionParams
     {
         Set<Long> devAccountIds();
+    }
+
+    interface SessionSettings
+    {
+        boolean ignoreSession();
+
+        Set<String> sessions();
     }
 }
 

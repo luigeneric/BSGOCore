@@ -19,7 +19,6 @@ public class Catalogue
     private final List<SkillCard> skillCards;
     private final Map<Long, MissionCard> missionCardsMap;
     private final Map<Long, BgoProtocolWriter> cardWriters;
-    private StaticCards staticCards;
 
 
     public Catalogue(final CardBuilder cardBuilder)
@@ -34,11 +33,11 @@ public class Catalogue
 
     public GalaxyMapCard galaxyMapCard()
     {
-        return staticCards.galaxyMapCard();
+        return fetchCardUnsafe(StaticCardGUID.GalaxyMap, CardView.GalaxyMap);
     }
     public GlobalCard globalCard()
     {
-        return staticCards.globalCard();
+        return fetchCardUnsafe(StaticCardGUID.GlobalCard, CardView.Global);
     }
 
     public final void setupCards() throws IllegalStateException
@@ -56,9 +55,6 @@ public class Catalogue
 
         final List<Long> freeCardGuids = getFreeCardGUIDs(100);
         log.info("next free CARD-GUIDS: {}", freeCardGuids);
-
-        staticCards = new StaticCards(fetchCardUnsafe(StaticCardGUID.GlobalCard, CardView.Global),
-                fetchCardUnsafe(StaticCardGUID.GalaxyMap, CardView.GalaxyMap));
     }
 
     public BgoProtocolWriter getProtocolWriter(final long cardGUID, final CardView view)
