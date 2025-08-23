@@ -5,12 +5,13 @@ import io.github.luigeneric.enums.StaticCardGUID;
 import io.github.luigeneric.templates.cards.*;
 import io.github.luigeneric.templates.templates.readers.CardBuilder;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
 @Slf4j
-@ApplicationScoped
+@Singleton
 public class Catalogue
 {
     private final CardBuilder cardBuilder;
@@ -55,17 +56,6 @@ public class Catalogue
 
         final List<Long> freeCardGuids = getFreeCardGUIDs(100);
         log.info("next free CARD-GUIDS: {}", freeCardGuids);
-
-        /*
-        final String os = System.getProperty("os.name").toLowerCase();
-        if (os.contains("win"))
-        {
-
-        }
-         */
-
-
-        finishedCards();
 
         staticCards = new StaticCards(fetchCardUnsafe(StaticCardGUID.GlobalCard, CardView.Global),
                 fetchCardUnsafe(StaticCardGUID.GalaxyMap, CardView.GalaxyMap));
@@ -187,12 +177,6 @@ public class Catalogue
         return skillCardsOfLevel;
     }
 
-    private void finishedCards()
-    {
-        log.info("Card-Setup finished" +
-                "\tcards sum: " + cardMap.size());
-
-    }
     private void addCards(Card[] cards)
     {
         if (cards != null)

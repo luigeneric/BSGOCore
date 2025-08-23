@@ -36,7 +36,7 @@ This implementation is intentionally kept simple and pragmatic: it works and pro
 - JDK 21
 - Maven 3.9.9
 ```
-WIP
+mvn quarkus:dev
 ```
 
 
