@@ -12,6 +12,7 @@ import io.github.luigeneric.templates.cards.ZoneCard;
 import io.github.luigeneric.templates.catalogue.Catalogue;
 import io.github.luigeneric.templates.utils.MapStarDesc;
 import io.github.luigeneric.utils.Utils;
+import io.quarkus.virtual.threads.VirtualThreads;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.Getter;
 
@@ -37,14 +38,14 @@ public class SectorRegistry
     private final SectorRandomGenerationUtils sectorRandomGenerationUtils;
 
     public SectorRegistry(final SectorFactory sectorFactory, Catalogue catalogue, final MicrometerRegistry micrometerRegistry,
-                          final SectorRandomGenerationUtils sectorRandomGenerationUtils)
+                          final SectorRandomGenerationUtils sectorRandomGenerationUtils, @VirtualThreads final ExecutorService executorService)
     {
         this.sectorFactory = sectorFactory;
         this.catalogue = catalogue;
         this.isShutdown = false;
         this.micrometerRegistry = micrometerRegistry;
 
-        this.executorService = Executors.newVirtualThreadPerTaskExecutor();
+        this.executorService = executorService;
         this.sectorMap = new ConcurrentSkipListMap<>();
         this.zonesMap = new ConcurrentSkipListMap<>();
         this.sectorRandomGenerationUtils = sectorRandomGenerationUtils;
