@@ -19,6 +19,7 @@ import io.github.luigeneric.templates.templates.readers.MissionTemplateReader;
 import io.github.luigeneric.templates.templates.readers.ShipConfigReader;
 import io.github.luigeneric.utils.Utils;
 import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.ShutdownEvent;
 import io.quarkus.runtime.StartupEvent;
 import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -30,7 +31,7 @@ import java.util.*;
 
 @ApplicationScoped
 @Slf4j
-public class ApplicationLifeCycle
+public class ApplicationBootstrap
 {
     @Inject
     ChatApi chatApi;
@@ -58,6 +59,18 @@ public class ApplicationLifeCycle
         }
     }
 
+    // Debugmethod, for removal
+    void onStop(@Observes ShutdownEvent ev) {
+        log.warn("APP SHUTDOWN at {} on thread {}", System.currentTimeMillis(), Thread.currentThread().getName());
+        Map<Thread, StackTraceElement[]> map = Thread.getAllStackTraces();
+        map.forEach((t, st) -> {
+            log.warn("Thread: {} - State: {}", t.getName(), t.getState());
+            for (StackTraceElement e : st) {
+                log.warn("  at {}", e.toString());
+            }
+        });
+    }
+
     @PreDestroy
     public void preDestroy()
     {
@@ -70,7 +83,6 @@ public class ApplicationLifeCycle
         if (stopped)
         {
             log.error("shutdown already triggered");
-            return;
         }
         stopped = true;
         log.warn("#################### SHUTDOWN EVENT TRIGGERED ####################");

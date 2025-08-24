@@ -1,0 +1,31 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "id": null,
+  "panels": [
+    {
+      "datasource": "Loki",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 0 },
+      "id": 1,
+      "options": {
+        "showLabels": true,
+        "showTime": true,
+        "wrapLogMessages": false
+      },
+      "targets": [
+        {
+          "expr": "{job=\"bsgo-server\"}",
+          "refId": "A"
+        }
+      ],
+      "title": "Recent logs (job=bsgo-server)",
+      "type": "logs"
+    }
+  ],
+  "schemaVersion": 30,
+  "style": "dark",
+  "tags": ["logs"],
+  "time": { "from": "now-1h", "to": "now" },
+  "title": "Logs Dashboard",
+  "version": 1
+}
