@@ -16,6 +16,7 @@ import io.github.luigeneric.core.protocols.scene.SceneProtocol;
 import io.github.luigeneric.core.sector.management.SectorRegistry;
 import io.github.luigeneric.templates.catalogue.Catalogue;
 import io.github.luigeneric.templates.startupconfig.GameServerParamsConfig;
+import io.quarkus.virtual.threads.VirtualThreads;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.spi.CDI;
 import lombok.extern.slf4j.Slf4j;
@@ -24,16 +25,15 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @ApplicationScoped
 public class GameServer implements IServerListenerSubscriber, UserDisconnectedSubscriber
 {
+    private final ExecutorService executorService;
     private final GameServerParamsConfig gameServerParams;
     private final Galaxy galaxy;
-    private final ExecutorService executorService;
     private final ScheduledService scheduledService;
     private final DbProvider dbProviderProvider;
     private final SessionRegistry sessionRegistry;
@@ -49,7 +49,8 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
     private final Catalogue catalogue;
 
 
-    public GameServer(final GameServerParamsConfig gameServerParams,
+    public GameServer(@VirtualThreads final ExecutorService executorService,
+                      final GameServerParamsConfig gameServerParams,
                       final Galaxy galaxy,
                       final DbProvider dbProviderProvider,
                       final SessionRegistry sessionRegistry,
@@ -66,8 +67,8 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
                       final Catalogue catalogue
     )
     {
+        this.executorService = executorService;
         this.scheduledService = scheduledService;
-        this.executorService = Executors.newVirtualThreadPerTaskExecutor();
         this.gameServerParams = gameServerParams;
         this.galaxy = galaxy;
         this.dbProviderProvider = dbProviderProvider;
@@ -101,9 +102,7 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
 
     public void start()
     {
-        Thread.ofVirtual()
-                .name("GameServer-ServerListener")
-                .start(serverListener);
+        executorService.execute(serverListener);
     }
 
     public void shutdownProcess()
