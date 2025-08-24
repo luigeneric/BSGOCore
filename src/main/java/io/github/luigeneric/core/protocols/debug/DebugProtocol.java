@@ -1,6 +1,6 @@
 package io.github.luigeneric.core.protocols.debug;
 
-import io.github.luigeneric.ApplicationLifeCycle;
+import io.github.luigeneric.ApplicationBootstrap;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
 import io.github.luigeneric.core.AbstractConnection;
@@ -83,7 +83,7 @@ public class DebugProtocol extends BgoProtocol
     private final BgoRandom bgoRandom;
     private final GameServerParamsConfig gameServerParamsConfig;
     private final Catalogue catalogue;
-    private final ApplicationLifeCycle applicationLifeCycle;
+    private final ApplicationBootstrap applicationBootstrap;
     private final ChatAccessBlocker chatAccessBlocker;
     private final RefundProcessor refundProcessor;
 
@@ -92,7 +92,7 @@ public class DebugProtocol extends BgoProtocol
     )
     {
         super(ProtocolID.Debug);
-        this.applicationLifeCycle = CDI.current().select(ApplicationLifeCycle.class).get();
+        this.applicationBootstrap = CDI.current().select(ApplicationBootstrap.class).get();
         this.refundProcessor = refundProcessor;
         this.catalogue = CDI.current().select(Catalogue.class).get();
         this.sectorRegistry = sectorRegistry;
@@ -184,7 +184,7 @@ public class DebugProtocol extends BgoProtocol
             }
             case "shutdown_server" ->
             {
-                applicationLifeCycle.onShutdown();
+                applicationBootstrap.onShutdown();
             }
             case "activate_loot" ->
             {
