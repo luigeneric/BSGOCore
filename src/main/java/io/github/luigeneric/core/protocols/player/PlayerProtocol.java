@@ -3,6 +3,7 @@ package io.github.luigeneric.core.protocols.player;
 import io.github.luigeneric.MicrometerRegistry;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.UsersContainer;
 import io.github.luigeneric.core.community.guild.Guild;
@@ -54,11 +55,9 @@ import io.github.luigeneric.templates.shipitems.ItemCountable;
 import io.github.luigeneric.templates.shipitems.ItemType;
 import io.github.luigeneric.templates.shipitems.ShipItem;
 import io.github.luigeneric.templates.shipitems.ShipSystem;
-import io.github.luigeneric.templates.startupconfig.GameServerParamsConfig;
 import io.github.luigeneric.templates.utils.ObjectStat;
 import io.github.luigeneric.templates.utils.ObjectStats;
 import io.github.luigeneric.templates.utils.Price;
-import io.github.luigeneric.utils.BgoRandom;
 import jakarta.enterprise.inject.spi.CDI;
 import lombok.extern.slf4j.Slf4j;
 
@@ -75,10 +74,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     private final EnumMap<ClientMessage, ProtocolMessageHandler> handlers;
     private final ExperienceToLevelAlgo experienceToLevelAlgo;
     private final DbProvider dbProviderProvider;
-    private final GameServerParamsConfig gameServerParams;
     private final DradisData dradisData;
     private final UsersContainer usersContainer;
-    private final BgoRandom bgoRandom;
     private final GuildRegistry guildRegistry;
     private final PlayerProtocolWriteOnly writer;
     private CharacterServices characterServices;
@@ -87,35 +84,33 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     private final MicrometerRegistry micrometerRegistry;
 
 
-    public PlayerProtocol(final GameServerParamsConfig gameServerParams, final DbProvider dbProvider,
+    public PlayerProtocol(final ProtocolContext ctx,
+                          final DbProvider dbProvider,
                           final ExperienceToLevelAlgo experienceToLevelAlgo,
                           final UsersContainer usersContainer,
                           final GuildRegistry guildRegistry,
-                          final BgoRandom bgoRandom,
                           final CharacterServices characterServices
     )
     {
-        super(ProtocolID.Player);
+        super(ProtocolID.Player, ctx);
         this.handlers = new EnumMap<>(ClientMessage.class);
-        this.catalogue = CDI.current().select(Catalogue.class).get();
-        this.micrometerRegistry = CDI.current().select(MicrometerRegistry.class).get();
-        this.gameServerParams = gameServerParams;
+        this.catalogue = ctx.catalogue();
+        this.micrometerRegistry = ctx.micrometerRegistry();
         this.experienceToLevelAlgo = experienceToLevelAlgo;
         this.dbProviderProvider = dbProvider;
         this.dradisData = new DradisData();
         this.usersContainer = usersContainer;
         this.guildRegistry = guildRegistry;
         this.writer = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Player);
-        this.bgoRandom = bgoRandom;
         this.characterServices = characterServices;
     }
 
     @Override
     protected void setupHandlers()
     {
-        this.handlers.put(ClientMessage.ChangeFaction, new ChangeFactionHandler(user, characterServices, catalogue, bgoRandom));
-        this.handlers.put(ClientMessage.ReadMail, new ReadMailHandler(user, writer));
-        this.handlers.put(ClientMessage.SendDradisData, new SendDradisDataHandler(user, dradisData));
+        this.handlers.put(ClientMessage.ChangeFaction, new ChangeFactionHandler(user(), characterServices, catalogue, ctx.rng()));
+        this.handlers.put(ClientMessage.ReadMail, new ReadMailHandler(user(), writer));
+        this.handlers.put(ClientMessage.SendDradisData, new SendDradisDataHandler(user(), dradisData));
     }
 
     @Override
@@ -132,7 +127,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     public void parseMessage(final int msgType, final BgoProtocolReader br) throws IOException
     {
         final ClientMessage clientMessage = ClientMessage.valueOf(msgType);
-        final SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
+        final SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
         final ProtocolMessageHandler handler = handlers.get(clientMessage);
         if (handler != null)
         {
@@ -144,25 +139,25 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             case PopupSeen ->
             {
                 final long popupId = br.readUint32();
-                log.info("PopupSeen noticed popupId " + popupId + " " + user.getUserLog());
+                log.info("PopupSeen noticed popupId " + popupId + " " + user().getUserLog());
             }
             case SelectFaction ->
             {
                 final Faction faction = Faction.valueOf(br.readByte());
-                log.info(user.getUserLog() + " SelectFaction " + faction);
+                log.info(user().getUserLog() + " SelectFaction " + faction);
                 if (faction != Faction.Colonial && faction != Faction.Cylon)
                 {
-                    user.setConnection(null);
+                    user().setConnection(null);
                     return;
                 }
 
 
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 if (player.getLocation().getGameLocation() == GameLocation.Starter)
                 {
                     player.setFaction(faction);
                     player.setupBasicHangar();
-                    user.send(writer.writeFaction(faction));
+                    user().send(writer.writeFaction(faction));
                     player.getLocation().changeState(new AvatarLocation(player.getLocation()));
                     sceneProtocol.sendLoadNextScene();
                     /*
@@ -174,7 +169,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 else
                 {
                     ///TODO ban?
-                    log.warn(user.getUserLog() +" CHEAT! send faction while not in Starter! current:"+ player.getLocation().getGameLocation());
+                    log.warn(user().getUserLog() +" CHEAT! send faction while not in Starter! current:"+ player.getLocation().getGameLocation());
                 }
             }
             case SelectTitle ->
@@ -186,17 +181,17 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             case CheckNameAvailability ->
             {
                 final String requestedName = br.readString();
-                log.info(user.getUserLog() + " Name-Request for Name: " + requestedName);
-                final boolean isFree = usersContainer.checkNameFree(requestedName, this.user.getPlayer().getUserID());
-                user.send(writeNameAvailability(isFree));
+                log.info(user().getUserLog() + " Name-Request for Name: " + requestedName);
+                final boolean isFree = usersContainer.checkNameFree(requestedName, this.user().getPlayer().getUserID());
+                user().send(writeNameAvailability(isFree));
             }
             case ChooseName ->
             {
                 final String nameChosen = br.readString();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 if (!player.getName().isEmpty())
                 {
-                    log.error(user.getUserLog() + " Cheat Player tried to change name even though the name was already set! " + nameChosen);
+                    log.error(user().getUserLog() + " Cheat Player tried to change name even though the name was already set! " + nameChosen);
                     return;
                 }
                 final boolean isPresent = usersContainer.chooseNameIfPresentInReservation(nameChosen, player.getUserID());
@@ -204,16 +199,16 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 if (isPresent)
                 {
                     player.setName(nameChosen);
-                    user.send(writer.writeName(nameChosen));
+                    user().send(writer.writeName(nameChosen));
                 }
             }
             case ChangeAvatar ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 AvatarDescription avatarDescription = new AvatarDescription();
                 avatarDescription.read(br);
                 player.getAvatarDescription().set(avatarDescription);
-                user.send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
+                user().send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
                 dbProviderProvider.updateAvatarDescription(player.getUserID(), avatarDescription);
             }
             case CreateAvatar ->
@@ -221,7 +216,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 try
                 {
                     final AvatarDescription avatarDescription = br.readDesc(AvatarDescription.class);
-                    final Player player = this.user.getPlayer();
+                    final Player player = this.user().getPlayer();
 
 
                     if (avatarDescription != null)
@@ -230,16 +225,16 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                         player.getAvatarDescription().set(avatarDescription);
                     }
 
-                    final SettingProtocol settingProtocol = user.getProtocol(ProtocolID.Setting);
+                    final SettingProtocol settingProtocol = user().getProtocol(ProtocolID.Setting);
                     //settingProtocol.writeDefaultBindings();
                     settingProtocol.sendSettings();
 
 
                     //send Avatar
-                    user.send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
+                    user().send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
 
                     //send playerId
-                    user.send(writer.writeId(player.getUserID()));
+                    user().send(writer.writeId(player.getUserID()));
 
 
                     //experience, spentXP, prev and nextLvLXP, Level
@@ -247,11 +242,11 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
 
                     //somehow I need to resend the faction because of race conditions I guess?
-                    user.send(writer.writeFaction(player.getFaction()));
+                    user().send(writer.writeFaction(player.getFaction()));
 
                     //sendPlayerShips
                     sendPlayerHangar();
-                    user.send(writer.writeActivePlayerShip(player.getHangar().getActiveShip().getServerId()));
+                    user().send(writer.writeActivePlayerShip(player.getHangar().getActiveShip().getServerId()));
                     sendAllShipInfoDurability();
                     sendAllShipSlots();
                     sendAllShipNames();
@@ -259,34 +254,34 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                     //chatsession TODO
 
-                    user.send(writer.writeSkills(player.getSkillBook()));
+                    user().send(writer.writeSkills(player.getSkillBook()));
 
                     //factors test
                     final Factors factors = player.getFactors();
-                    user.send(writer.writeFactors(factors));
+                    user().send(writer.writeFactors(factors));
 
                     //counters
                     player.getCounterFacade().counters().initAllUpdate();
-                    user.send(writer.writeCounters(player.getCounterFacade().counters()));
+                    user().send(writer.writeCounters(player.getCounterFacade().counters()));
 
                     //start resources
                     final ItemCountable startCubits =
-                            ItemCountable.fromGUID(ResourceType.Cubits.guid, gameServerParams.starterParams().startCubits());
+                            ItemCountable.fromGUID(ResourceType.Cubits.guid, ctx.gameServerParams().starterParams().startCubits());
                     final ItemCountable startTylium =
-                            ItemCountable.fromGUID(ResourceType.Tylium.guid, gameServerParams.starterParams().startTylium());
+                            ItemCountable.fromGUID(ResourceType.Tylium.guid, ctx.gameServerParams().starterParams().startTylium());
                     final ItemCountable startTitanium =
-                            ItemCountable.fromGUID(ResourceType.Titanium.guid, gameServerParams.starterParams().startTitanium());
+                            ItemCountable.fromGUID(ResourceType.Titanium.guid, ctx.gameServerParams().starterParams().startTitanium());
                     final ItemCountable startMerits =
-                            ItemCountable.fromGUID(ResourceType.Token.guid, gameServerParams.starterParams().startToken());
+                            ItemCountable.fromGUID(ResourceType.Token.guid, ctx.gameServerParams().starterParams().startToken());
 
                     player.getHold().addShipItem(startTylium);
                     player.getHold().addShipItem(startCubits);
                     player.getHold().addShipItem(startTitanium);
                     player.getHold().addShipItem(startMerits);
 
-                    user.send(writer.writeAllContainerItems(player.getHold()));
+                    user().send(writer.writeAllContainerItems(player.getHold()));
 
-                    if (gameServerParams.starterParams().testingMode())
+                    if (ctx.gameServerParams().starterParams().testingMode())
                     {
                         final long exp = 10_000_000;
                         this.addExperience(exp);
@@ -308,7 +303,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                     //send the active hangarship
                     final HangarShip activeShip = player.getHangar().getActiveShip();
-                    user.send(writeHangarShipStats(activeShip));
+                    user().send(writeHangarShipStats(activeShip));
 
                     player.getLocation().changeState(new CICLocation(player.getLocation()));
                     sceneProtocol.sendLoadNextScene();
@@ -327,47 +322,47 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final boolean useCubits = br.readBoolean();
 
                 //check if user is docked
-                if (user.getPlayer().getLocation().getGameLocation() != GameLocation.Room)
+                if (user().getPlayer().getLocation().getGameLocation() != GameLocation.Room)
                 {
                     log.warn("Cheat {} cheats RepairShip, wrong location for repair process location={}",
-                            user.getUserLog(), user.getPlayer().getLocation().getGameLocation());
+                            user().getUserLog(), user().getPlayer().getLocation().getGameLocation());
                     return;
                 }
 
                 final DurabilityCostCalculator durabilityCostCalculator =
                         new DurabilityCostCalculator(catalogue.globalCard());
-                final HangarShip hangarShipToRepair = user.getPlayer().getHangar().getByServerId(shipId);
+                final HangarShip hangarShipToRepair = user().getPlayer().getHangar().getByServerId(shipId);
                 final float costs = durabilityCostCalculator.getShipHullRepairCosts(hangarShipToRepair, useCubits);
 
                 final ResourceType resourceType = ResourceType.repairType(useCubits);
 
-                final HoldVisitor holdVisitor = new HoldVisitor(user, bgoRandom);
+                final HoldVisitor holdVisitor = new HoldVisitor(user(), ctx.rng());
                 final boolean reductionSuccessfully =
                         holdVisitor.reduceItemCountableByCount(resourceType, (long) costs);
                 if (!reductionSuccessfully)
                 {
-                    log.warn(user.getUserLog() + " Reduction in RepairShip was not correct!");
+                    log.warn(user().getUserLog() + " Reduction in RepairShip was not correct!");
                     return;
                 }
 
                 hangarShipToRepair.setDurabilityToMax();
 
-                user.send(writer.writeShipInfoDurability(hangarShipToRepair));
-                user.send(writer.writeShipSlots(hangarShipToRepair));
+                user().send(writer.writeShipInfoDurability(hangarShipToRepair));
+                user().send(writer.writeShipSlots(hangarShipToRepair));
                 hangarShipToRepair.getShipStats().setMaxHpPp();
 
                 sendCapabilityUndockDelay(REPAIR_DOCK_DELAY_TIME_SECONDS);
             }
             case RepairSystem ->
             {
-                MoveItemParser moveItemParser = new MoveItemParser(br, user.getPlayer());
+                MoveItemParser moveItemParser = new MoveItemParser(br, user().getPlayer());
                 moveItemParser.parseRepairSystem();
 
                 //check if user is docked
-                if (user.getPlayer().getLocation().getGameLocation() != GameLocation.Room)
+                if (user().getPlayer().getLocation().getGameLocation() != GameLocation.Room)
                 {
                     log.warn("Cheat {} cheats, repairSystem, wrong location for repair process location={}",
-                            user.getUserLog(), user.getPlayer().getLocation().getGameLocation());
+                            user().getUserLog(), user().getPlayer().getLocation().getGameLocation());
                     return;
                 }
 
@@ -387,7 +382,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                     }
                     default ->
                     {
-                        log.warn("Cheating user " + user.getPlayer().getPlayerLog() +
+                        log.warn("Cheating user " + user().getPlayer().getPlayerLog() +
                                 " attempt to repair item in " + fromContainer.getContainerID().getContainerType());
                     }
                 }
@@ -398,7 +393,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 }
 
 
-                final Hangar hangar = user.getPlayer().getHangar();
+                final Hangar hangar = user().getPlayer().getHangar();
                 final HangarShip activeShip = hangar.getActiveShip();
                 final ShipSlot slot = activeShip.getShipSlots().getSlot(serverID);
                 final DurabilityCostCalculator durabilityCostCalculator =
@@ -406,7 +401,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final int costs = (int) durabilityCostCalculator.getCostOfSystem(slot.getShipSystem(), useCubits);
                 final ResourceType resourceType = ResourceType.repairType(useCubits);
 
-                final HoldVisitor holdVisitor = new HoldVisitor(user, bgoRandom);
+                final HoldVisitor holdVisitor = new HoldVisitor(user(), ctx.rng());
                 final boolean reductionSuccessfully =
                         holdVisitor.reduceItemCountableByCount(resourceType, costs);
                 if (!reductionSuccessfully)
@@ -414,23 +409,23 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 durabilityCostCalculator.repairSystem(slot);
 
-                user.send(writer.writeShipInfoDurability(activeShip));
-                user.send(writer.writeShipSlots(activeShip));
+                user().send(writer.writeShipInfoDurability(activeShip));
+                user().send(writer.writeShipSlots(activeShip));
             }
             case RepairAll ->
             {
                 final int shipID = br.readUint16();
                 final boolean useCubits = br.readBoolean();
-                final var player = user.getPlayer();
+                final var player = user().getPlayer();
                 final HangarShip hangarShip = player.getHangar().getByServerId(shipID);
                 if (hangarShip == null)
                     return;
 
                 //check if user is docked
-                if (user.getPlayer().getLocation().getGameLocation() != GameLocation.Room)
+                if (user().getPlayer().getLocation().getGameLocation() != GameLocation.Room)
                 {
                     log.warn("Cheat {} cheats RepairAll, wrong location for repair process location={}",
-                            user.getUserLog(), user.getPlayer().getLocation().getGameLocation());
+                            user().getUserLog(), user().getPlayer().getLocation().getGameLocation());
                     return;
                 }
 
@@ -439,12 +434,12 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final long totalRepairCosts = durabilityCostCalculator.getRepairAllCosts(hangarShip, useCubits);
 
                 final ResourceType resourceType = ResourceType.repairType(useCubits);
-                final String dbgMsg = user.getPlayer().getName() + "TotalPrice " + totalRepairCosts + " type " + resourceType;
+                final String dbgMsg = user().getPlayer().getName() + "TotalPrice " + totalRepairCosts + " type " + resourceType;
                 //sendDebugMsg(dbgMsg);
                 //Log.info(dbgMsg);
 
 
-                final HoldVisitor holdVisitor = new HoldVisitor(user, bgoRandom);
+                final HoldVisitor holdVisitor = new HoldVisitor(user(), ctx.rng());
                 try
                 {
                     final boolean reductionSuccessfully =
@@ -454,7 +449,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 }
                 catch (IllegalArgumentException illegalArgumentException)
                 {
-                    log.warn(user.getUserLog() + " IllegalArgument exception in RepairAll" + illegalArgumentException.getMessage());
+                    log.warn(user().getUserLog() + " IllegalArgument exception in RepairAll" + illegalArgumentException.getMessage());
                     return;
                 }
 
@@ -465,8 +460,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                     durabilityCostCalculator.repairSystem(slot);
                 }
 
-                user.send(writer.writeShipInfoDurability(hangarShip));
-                user.send(writer.writeShipSlots(hangarShip));
+                user().send(writer.writeShipInfoDurability(hangarShip));
+                user().send(writer.writeShipSlots(hangarShip));
                 hangarShip.getShipStats().setMaxHpPp();
 
                 if (!catalogue.galaxyMapCard().isBaseSector(player.getFaction(), player.getLocation().getSectorID()))
@@ -476,8 +471,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             }
             case RequestCharacterServices ->
             {
-                //user.send(writer.writeCharacterServicesDummy(user));
-                user.send(writer.writeCharacterServices(this.characterServices));
+                //user().send(writer.writeCharacterServicesDummy(user));
+                user().send(writer.writeCharacterServices(this.characterServices));
             }
             case ResourceHardcap ->
             {
@@ -485,14 +480,14 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final boolean isToken = ResourceType.Token.guid == guid;
                 if (!isToken)
                 {
-                    log.error(user.getUserLog() + " RequestResourceHardcap was not token! -> client modification");
+                    log.error(user().getUserLog() + " RequestResourceHardcap was not token! -> client modification");
                     return;
                 }
-                final ResourceCap tokenCap = user.getPlayer().getMeritsCapFarmed();
+                final ResourceCap tokenCap = user().getPlayer().getMeritsCapFarmed();
                 final boolean isSameDate = tokenCap.getLastReset().getLocalDate().getDayOfYear() == LocalDateTime.now(Clock.systemUTC()).getDayOfYear();
                 if (!isSameDate)
                     tokenCap.resetCap();
-                user.send(writer.writeMeritsCap(tokenCap));
+                user().send(writer.writeMeritsCap(tokenCap));
             }
             case MoveItem ->
             {
@@ -504,12 +499,12 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 int shipId = br.readUint16();
                 try
                 {
-                    final Player player = this.user.getPlayer();
+                    final Player player = this.user().getPlayer();
                     log.warn("Sticker binding request on ship " + shipId);
                     StickerBinding stickerBinding = br.readDesc(StickerBinding.class);
                     HangarShip hangarShip = player.getHangar().getByServerId(shipId);
                     hangarShip.addSticker(stickerBinding);
-                    user.send(writer.writeShipStickerBinding(hangarShip));
+                    user().send(writer.writeShipStickerBinding(hangarShip));
                 }
                 catch (Exception ignored) {}
             }
@@ -517,7 +512,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             {
                 int shipID = br.readUint16();
                 int spotID = br.readUint16();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
 
                 HangarShip hangarShip = player.getHangar().getByServerId(shipID);
                 for (var sticker : hangarShip.getStickers())
@@ -532,30 +527,30 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             {
                 final int shipId = br.readUint16();
                 final String shipName = br.readString();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 final HangarShip hangarShip = player.getHangar().getByServerId(shipId);
                 if (hangarShip != null)
                 {
                     log.info("User sets shipname as {}", shipName);
                     hangarShip.setName(shipName);
-                    user.send(writeShipName(hangarShip));
+                    user().send(writeShipName(hangarShip));
                 }
             }
             case ScrapShip ->
             {
                 final int shipId = br.readUint16();
-                log.warn(user.getUserLog() + " Cheat ScrapShip(should never happen), id:" + shipId);
+                log.warn(user().getUserLog() + " Cheat ScrapShip(should never happen), id:" + shipId);
             }
             case BuySkill ->
             {
                 final int skillId = br.readUint16();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 final SkillBook skillBook = player.getSkillBook();
 
                 final boolean isEnough = skillBook.checkExperienceEnoughForNextLevel(skillId);
                 if (!isEnough)
                 {
-                    log.warn(user.getUserLog() + " Request for SkillBuy but not enough free experience " +
+                    log.warn(user().getUserLog() + " Request for SkillBuy but not enough free experience " +
                             "or the skill was null(id wrong, not mentioned in the map)");
                     return;
                 }
@@ -565,14 +560,14 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             case InstantSkillBuy ->
             {
                 final int skillID = br.readUint16();
-                log.error(user.getUserLog() + " InstantSkillBuy should never happen: " + skillID);
-                DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+                log.error(user().getUserLog() + " InstantSkillBuy should never happen: " + skillID);
+                DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
                 debugProtocol.sendEzMsg("Instant SkillBuy should never happen");
             }
 
             case MoveAll ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 MoveItemParser moveItemParser = new MoveItemParser(br, player);
                 try
                 {
@@ -584,7 +579,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 }
                 catch (IllegalArgumentException illegalArgumentException)
                 {
-                    log.warn(user.getUserLog() + " MoveAll mail items: " + illegalArgumentException.getMessage());
+                    log.warn(user().getUserLog() + " MoveAll mail items: " + illegalArgumentException.getMessage());
                     return;
                 }
 
@@ -597,7 +592,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 if (from.getContainerID() instanceof MailContainerID mailContainerID)
                 {
                     Mail mailRemoved = player.getMailBox().removeItem(mailContainerID.getMailID());
-                    user.send(writeRemoveItemsFromContainer(from, from.getAllItemsIDs()));
+                    user().send(writeRemoveItemsFromContainer(from, from.getAllItemsIDs()));
                     itemsToSend.addAll(mailRemoved.getMailContainer().getAllShipItems());
                 }
                 for (final ShipItem itemToSend : itemsToSend)
@@ -608,7 +603,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                         if (existingCountableOpt.isPresent())
                         {
                             ItemCountable existingCountable = existingCountableOpt.get();
-                            user.send(writeRemoveItem(to, existingCountable.getServerID()));
+                            user().send(writeRemoveItem(to, existingCountable.getServerID()));
                             to.removeShipItem(existingCountable.getServerID());
                             countable.incrementCount(existingCountable.getCount());
                         }
@@ -617,7 +612,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                     to.addShipItem(itemToSend);
                 }
 
-                user.send(writeAddItems(to, itemsToSend));
+                user().send(writeAddItems(to, itemsToSend));
             }
             case AddShip ->
             {
@@ -632,12 +627,12 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             case UpgradeShip ->
             {
                 final int shipID = br.readUint16();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 final Location location = player.getLocation();
                 final boolean isInRoom = location.getGameLocation() == GameLocation.Room;
                 if (!isInRoom)
                 {
-                    log.warn("User " + user.getUserLog() + " used UpgradeShip without Room, cheat!");
+                    log.warn("User " + user().getUserLog() + " used UpgradeShip without Room, cheat!");
                     return;
                 }
 
@@ -665,11 +660,11 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final ShipCard upgradedShipCard = optUpgradedShipCard.get();
 
 
-                ShopVisitor shopVisitor = new ShopVisitor(user, null, bgoRandom);
+                ShopVisitor shopVisitor = new ShopVisitor(user(), null, ctx.rng());
                 boolean isEnoughInHangar = ShopVisitor.isEnoughInContainer(shopItemCard.getUpgradePrice(), player.getHold(), 1);
                 if (!isEnoughInHangar)
                 {
-                    log.warn(user.getUserLog() + " request for shipupgrade but not enough ressources in hangar? --> cheat indicator");
+                    log.warn(user().getUserLog() + " request for shipupgrade but not enough ressources in hangar? --> cheat indicator");
                     return;
                 }
                 shopVisitor.removeBuyResources(shopItemCard.getUpgradePrice(), player.getHold(), 1);
@@ -698,9 +693,9 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 hangar.addHangarShip(upgradedHangarShip);
 
-                user.send(writeAddShip(upgradedHangarShip));
-                user.send(writer.writeShipSlots(upgradedHangarShip));
-                user.send(writer.writeShipInfoDurability(upgradedHangarShip));
+                user().send(writeAddShip(upgradedHangarShip));
+                user().send(writer.writeShipSlots(upgradedHangarShip));
+                user().send(writer.writeShipInfoDurability(upgradedHangarShip));
                 this.selectShip(shipID);
             }
             case SelectConsumable ->
@@ -708,7 +703,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final int shipID = br.readUint16();
                 final long consumableGUID = br.readGUID();
                 final int slotID = br.readUint16();
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
 
                 Hangar hangar = player.getHangar();
                 HangarShip ship = hangar.getByServerId(shipID);
@@ -726,12 +721,12 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                     final SpaceSubscribeInfo spaceSubscribeInfo = ship.getShipStats();
                     spaceSubscribeInfo.applyStats();
 
-                    user.send(writer.writeShipSlots(ship));
+                    user().send(writer.writeShipSlots(ship));
                 }
             }
             case UpgradeSystem ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 final MoveItemParser moveItemParser = new MoveItemParser(br, player);
                 final IContainer container = moveItemParser.parseContainer();
                 final int itemID = br.readUint16();
@@ -741,25 +736,25 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 if (itemToUpgrade == null)
                 {
-                    log.info(user.getUserLog() + " Upgrade item not found in container");
+                    log.info(user().getUserLog() + " Upgrade item not found in container");
                     return;
                 }
                 if (itemToUpgrade.getItemType() != ItemType.System)
                 {
-                    log.info(user.getUserLog() + " Upgrade Item was not of type System!");
+                    log.info(user().getUserLog() + " Upgrade Item was not of type System!");
                     return;
                 }
                 final ShipSystem shipSystemToUpgrade = (ShipSystem) itemToUpgrade;
                 final ShipSystemCard itemCard = shipSystemToUpgrade.getShipSystemCard();
                 if (itemCard == null)
                 {
-                    log.info(user.getUserLog() + " item card is null");
+                    log.info(user().getUserLog() + " item card is null");
                     return;
                 }
 
-                log.info(user.getUserLog() + " UpgradeSystem: " + container.getContainerID().getContainerType() + " " + itemID + " " + newLevel);
+                log.info(user().getUserLog() + " UpgradeSystem: " + container.getContainerID().getContainerType() + " " + itemID + " " + newLevel);
                 log.info("UpgradeSystem [{}] container: {}, itemID: {}, currentLevel: {}, newLevel: {}",
-                        user.getUserLog(),
+                        user().getUserLog(),
                         container.getContainerID().getContainerType(),
                         itemID,
                         shipSystemToUpgrade.getShipSystemCard().getLevel(),
@@ -769,42 +764,42 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 if (!itemCard.isUserUpgradeable())
                 {
-                    log.info(user.getUserLog() + " Cheat Try to upgrade but not upgradeable");
+                    log.info(user().getUserLog() + " Cheat Try to upgrade but not upgradeable");
                     return;
                 }
                 if (itemCard.getNextCardGuid() == 0)
                 {
-                    log.info(user.getUserLog() + " Cheat Try to upgrade but has no next Card");
+                    log.info(user().getUserLog() + " Cheat Try to upgrade but has no next Card");
                     return;
                 }
                 if (itemCard.getLevel() >= newLevel)
                 {
-                    log.info(user.getUserLog() + " Cheat ShipSystem upgrade level is lower or equal to current levl");
+                    log.info(user().getUserLog() + " Cheat ShipSystem upgrade level is lower or equal to current levl");
                     return;
                 }
                 if (newLevel > 10)
                 {
-                    log.info(user.getUserLog() + " Cheat ShipSystem upgrade level call higher than 10! -> cheat");
+                    log.info(user().getUserLog() + " Cheat ShipSystem upgrade level call higher than 10! -> cheat");
                     return;
                 }
                 if (container.getContainerID().getContainerType() == ContainerType.Shop)
                 {
-                    log.info(user.getUserLog() + " Update ShopSystem tried");
+                    log.info(user().getUserLog() + " Update ShopSystem tried");
                     return;
                 }
 
                 final long[] skillHashes = shipSystemToUpgrade.getShipSystemCard().getSkillHashes();
-                final boolean skillsForUpgradeSatisfied = user.getPlayer()
+                final boolean skillsForUpgradeSatisfied = user().getPlayer()
                         .getSkillBook()
                         .skillsForUpgradeSatisfied(skillHashes, itemCard.getLevel()+1);
                 if (!skillsForUpgradeSatisfied)
                 {
-                    log.warn("Cheat ({}) cannot update item because skill is not present!", user.getUserLog());
+                    log.warn("Cheat ({}) cannot update item because skill is not present!", user().getUserLog());
                     return;
                 }
 
                 final ContainerVisitor containerVisitor = ContainerVisitorFactory.
-                        createVisitor(container.getContainerID().getContainerType(), user, moveItemParser, bgoRandom);
+                        createVisitor(container.getContainerID().getContainerType(), user(), moveItemParser, ctx.rng());
 
                 final boolean successfull = containerVisitor.upgradeSystem(container, player.getHold(),
                         shipSystemToUpgrade, newLevel);
@@ -814,7 +809,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             }
             case UpgradeSystemByPack ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 MoveItemParser moveItemParser = new MoveItemParser(br, player);
                 final IContainer container = moveItemParser.parseContainer();
                 final int itemID = br.readUint16();
@@ -829,27 +824,27 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 if (!itemCard.isUserUpgradeable())
                 {
-                    log.info(user.getUserLog() + " Try to upgrade but not upgradeable");
+                    log.info(user().getUserLog() + " Try to upgrade but not upgradeable");
                     return;
                 }
                 if (itemCard.getNextCardGuid() == 0)
                 {
-                    log.info(user.getUserLog() + " Try to upgrade but has no next Card");
+                    log.info(user().getUserLog() + " Try to upgrade but has no next Card");
                     return;
                 }
                 if (container.getContainerID().getContainerType() == ContainerType.Shop)
                 {
-                    log.info(user.getUserLog() + " Update ShopSystem tried");
+                    log.info(user().getUserLog() + " Update ShopSystem tried");
                     return;
                 }
 
                 final long[] skillHashes = shipSystemToUpgrade.getShipSystemCard().getSkillHashes();
-                final boolean skillsForUpgradeSatisfied = user.getPlayer()
+                final boolean skillsForUpgradeSatisfied = user().getPlayer()
                         .getSkillBook()
                         .skillsForUpgradeSatisfied(skillHashes, itemCard.getLevel()+1);
                 if (!skillsForUpgradeSatisfied)
                 {
-                    log.warn("Cheat ({}) cannot update item because skill is not present!", user.getUserLog());
+                    log.warn("Cheat ({}) cannot update item because skill is not present!", user().getUserLog());
                     return;
                 }
 
@@ -860,14 +855,14 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 );
 
                 final ContainerVisitor containerVisitor = ContainerVisitorFactory.
-                        createVisitor(container.getContainerID().getContainerType(), user, moveItemParser, bgoRandom);
+                        createVisitor(container.getContainerID().getContainerType(), user(), moveItemParser, ctx.rng());
                 final boolean upgradeResult = containerVisitor.upgradeSystemByPack(container, player.getHold(),
                         shipSystemToUpgrade, packCount);
 
             }
             case UseAugment ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 MoveItemParser moveItemParser = new MoveItemParser(br, player);
                 moveItemParser.parseUseAugment();
                 final IContainer container = moveItemParser.getFrom();
@@ -905,16 +900,16 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 }
                 if (!canActivate)
                 {
-                    user.send(writer.writeCannotStackBoosters());
+                    user().send(writer.writeCannotStackBoosters());
                     return;
                 }
 
 
                 ContainerVisitor containerVisitor = ContainerVisitorFactory.createVisitor(
                         container.getContainerID().getContainerType(),
-                        this.user,
+                        user(),
                         moveItemParser,
-                        bgoRandom
+                        ctx.rng()
                 );
                 final boolean operationIsOkay = containerVisitor.useAugment();
                 if (!operationIsOkay)
@@ -925,18 +920,18 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             case SubmitMission ->
             {
                 final int missionId = br.readUint16();
-                final MissionBook missionBook = user.getPlayer().getCounterFacade().missionBook();
+                final MissionBook missionBook = user().getPlayer().getCounterFacade().missionBook();
                 log.info("Submit mission {}", missionId);
                 final Optional<Mission> optMission = missionBook.getByID(missionId);
                 if (optMission.isEmpty())
                 {
-                    //log.warn("Cheat User {} tried to submit a mission that is not present anymore!", user.getUserLog());
+                    //log.warn("Cheat User {} tried to submit a mission that is not present anymore!", user().getUserLog());
                     return;
                 }
                 final Mission mission = optMission.get();
                 if (mission.getMissionState() == null || mission.getMissionState() != Mission.MissionState.Completed)
                 {
-                    log.warn("Cheat, user {} tried to submit a mission in a wrong state {}", user.getUserLog(), mission.getMissionState());
+                    log.warn("Cheat, user {} tried to submit a mission in a wrong state {}", user().getUserLog(), mission.getMissionState());
                     return;
                 }
                 final MissionCardsFetchResult missionCardsFetchResult = catalogue.fetchMissionCards(mission.getMissionCardGUID());
@@ -949,24 +944,24 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final RewardCard rewardCard = missionCardsFetchResult.rewardCard();
                 final int exp = rewardCard.getExperience();
                 final List<ShipItem> lootAll = rewardCard.getShipItems();
-                final List<ShipItem> factionLoot = rewardCard.getShipItems(user.getPlayer().getFaction());
+                final List<ShipItem> factionLoot = rewardCard.getShipItems(user().getPlayer().getFaction());
                 final List<ShipItem> resultItemLst = new ArrayList<>();
                 resultItemLst.addAll(lootAll);
                 resultItemLst.addAll(factionLoot);
 
                 final NotificationProtocolWriteOnly notificationWriter = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Notification);
-                user.send(notificationWriter.writeMissionCompleted(missionId));
-                user.send(notificationWriter.writeMissionReward(mission.getMissionCardGUID(), resultItemLst));
-                user.send(writer.writeRemoveMissions(List.of(missionId)));
+                user().send(notificationWriter.writeMissionCompleted(missionId));
+                user().send(notificationWriter.writeMissionReward(mission.getMissionCardGUID(), resultItemLst));
+                user().send(writer.writeRemoveMissions(List.of(missionId)));
                 missionBook.removeItem(missionId);
                 addExperience(exp);
-                micrometerRegistry.missionSubmitted(user.getPlayer().getFaction());
-                user.getPlayer().getCounterFacade().incrementCounter(CounterCardType.missions_completed, 0);
-                resultItemLst.forEach(item -> ContainerVisitor.addShipItem(user, item, user.getPlayer().getHold()));
+                micrometerRegistry.missionSubmitted(user().getPlayer().getFaction());
+                user().getPlayer().getCounterFacade().incrementCounter(CounterCardType.missions_completed, 0);
+                resultItemLst.forEach(item -> ContainerVisitor.addShipItem(user(), item, user().getPlayer().getHold()));
             }
             case AugmentMassActivation ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
                 MoveItemParser moveItemParser = new MoveItemParser(br, player);
                 final long iterations = moveItemParser.parseAugmentMassActivation();
                 log.info("augmentMassAct: " + moveItemParser.getFrom() + " " + moveItemParser.getItemID() + " " + iterations);
@@ -974,7 +969,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
                 ContainerVisitor containerVisitor =
                         ContainerVisitorFactory
-                                .createVisitor(moveItemParser.getFrom().getContainerID().getContainerType(), user, moveItemParser, bgoRandom);
+                                .createVisitor(moveItemParser.getFrom().getContainerID().getContainerType(), user(), moveItemParser, ctx.rng());
 
                 final boolean operationIsOkay = containerVisitor.augmentMassActivationIsFineAndRemove(iterations);
                 if (!operationIsOkay) return;
@@ -990,9 +985,9 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     private void sendCapabilityUndockDelay(final int secondsBlocked)
     {
-        user.send(writeCapability(Capability.Undock, LocalDateTime.now(Clock.systemUTC()).plusSeconds(secondsBlocked)));
-        final Runnable delayedCapabilityReset = () -> user.send(writeCapabilityReset(Capability.Undock));
-        scheduledExecutorService.schedule(delayedCapabilityReset, secondsBlocked, TimeUnit.SECONDS);
+        user().send(writeCapability(Capability.Undock, LocalDateTime.now(Clock.systemUTC()).plusSeconds(secondsBlocked)));
+        final Runnable delayedCapabilityReset = () -> user().send(writeCapabilityReset(Capability.Undock));
+        ctx.scheduledExecutorService().schedule(delayedCapabilityReset, secondsBlocked, TimeUnit.SECONDS);
     }
 
     public void activateAugment(final long itemGUID)
@@ -1001,11 +996,11 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     }
     public void activateAugment(final long itemGUID, final int customTimeHours)
     {
-        final Factors factors = user.getPlayer().getFactors();
+        final Factors factors = user().getPlayer().getFactors();
         final Optional<AugmentTemplate> optAugmentTemplate = AugmentTemplates.getTemplateForId(itemGUID);
         if (optAugmentTemplate.isEmpty())
         {
-            log.error("Critical in augment activation, cannot find augment {} for user {}", itemGUID, user.getUserLog());
+            log.error("Critical in augment activation, cannot find augment {} for user {}", itemGUID, user().getUserLog());
             sendDebugMsg("Critical error in augment activation, cannot find augment!");
             return;
         }
@@ -1015,27 +1010,27 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             sendDebugMsg("Critical error in augment activation, augment is not oft type factor!");
             return;
         }
-        log.info("User {} activated augment item {}", user.getUserLog(), augmentFactorTemplate.getAssociatedItemGUID());
+        log.info("User {} activated augment item {}", user().getUserLog(), augmentFactorTemplate.getAssociatedItemGUID());
         final Collection<Factor> factorLst = Factor.fromTemplate(augmentFactorTemplate, customTimeHours);
         for (Factor factor : factorLst)
         {
             factors.addFactor(factor);
         }
-        user.send(writer.writeFactors(factorLst));
+        user().send(writer.writeFactors(factorLst));
     }
 
     private void sendDebugMsg(final String msg)
     {
-        final DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+        final DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
         debugProtocol.sendEzMsg(msg);
     }
 
     public void addShip(final long shipGuid)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         if (!player.getLocation().isInRoom())
         {
-            log.warn("Cheat={}, not in room while adding ship", user.getUserLog());
+            log.warn("Cheat={}, not in room while adding ship", user().getUserLog());
             return;
         }
 
@@ -1062,25 +1057,25 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             if (shipCard.getLevelRequirement() > currentPlayerLevel)
             {
                 log.warn("Cheat, user {} tried to buy ship without the required level current:{} required:{}",
-                        user.getUserLog(), currentPlayerLevel, shipCard.getLevelRequirement());
+                        user().getUserLog(), currentPlayerLevel, shipCard.getLevelRequirement());
                 return;
             }
             if (shopItemCard.getFaction() != player.getFaction())
             {
                 log.warn("Cheat, user {} tried to buy ship without the correct faction current:{} required:{}",
-                        user.getUserLog(), player.getFaction(), shopItemCard.getFaction());
+                        user().getUserLog(), player.getFaction(), shopItemCard.getFaction());
                 return;
             }
         }
 
         //check buy price
         final Price buyPrice = shopItemCard.getBuyPrice();
-        final ShopVisitor shopVisitor = new ShopVisitor(user, null, bgoRandom);
+        final ShopVisitor shopVisitor = new ShopVisitor(user(), null, ctx.rng());
         final boolean isEnoughInHangar = ContainerVisitor.isEnoughInContainer(buyPrice, player.getHold(), 1);
         //remove buy ressources if enough in hangar
         if (isEnoughInHangar)
         {
-            log.info("User adds ship " + user.getUserLog() + " " + buyPrice);
+            log.info("User adds ship " + user().getUserLog() + " " + buyPrice);
             shopVisitor.removeBuyResources(buyPrice, player.getHold(), 1);
             final Hangar hangar = player.getHangar();
             final HangarShip newShip = new HangarShip(player.getUserID(), shipCard.getHangarId(), shipGuid, "");
@@ -1089,23 +1084,23 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             newShip.getShipStats().setHp(newShip.getShipStats().getStatOrDefault(ObjectStat.MaxHullPoints));
             newShip.getShipStats().setPp(newShip.getShipStats().getStatOrDefault(ObjectStat.MaxPowerPoints));
             hangar.addHangarShip(newShip);
-            user.send(writeAddShip(newShip));
-            user.send(writer.writeShipSlots(newShip));
-            user.send(writer.writeShipInfoDurability(newShip));
+            user().send(writeAddShip(newShip));
+            user().send(writer.writeShipSlots(newShip));
+            user().send(writer.writeShipInfoDurability(newShip));
         }
     }
 
     public void addExperience(final long exp)
     {
-        if (user == null)
+        if (user() == null)
         {
             log.warn("user was null in playerprotocol for addexperience");
             return;
         }
-        user.getPlayer().getSkillBook().addExperience(exp);
-        final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+        user().getPlayer().getSkillBook().addExperience(exp);
+        final NotificationProtocol notificationProtocol = user().getProtocol(ProtocolID.Notification);
 
-        user.send(notificationProtocol.writer().writeExperienceGained((int) exp));
+        user().send(notificationProtocol.writer().writeExperienceGained((int) exp));
         sendExperienceCollective();
     }
 
@@ -1116,7 +1111,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
         final Optional<AugmentTemplate> optItem = AugmentTemplates.getTemplateForId(cardGUID);
         if (optItem.isEmpty() || !(optItem.get() instanceof final AugmentLootItemTemplate augmentLootItemTemplate))
         {
-            final DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+            final DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
             debugProtocol.sendEzMsg("not implemented!");
             return;
         }
@@ -1126,21 +1121,21 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             final List<LootEntryInfo> entries = augmentLootItemTemplate.getLootEntryInfos();
             for (final LootEntryInfo entry : entries)
             {
-                final boolean isOkay = bgoRandom.rollChance(entry.chance());
+                final boolean isOkay = ctx.rng().rollChance(entry.chance());
                 if (!isOkay)
                     continue;
-                final boolean isInLevelIntervall = entry.isInLevelIntervall(this.user.getPlayer().getSkillBook().get());
+                final boolean isInLevelIntervall = entry.isInLevelIntervall(this.user().getPlayer().getSkillBook().get());
                 if (!isInLevelIntervall)
                     continue;
 
-                final boolean isAllowedFaction = entry.allowedToReceiveFaction(user.getPlayer().getFaction());
+                final boolean isAllowedFaction = entry.allowedToReceiveFaction(user().getPlayer().getFaction());
                 if (!isAllowedFaction)
                     continue;
 
                 ShipItem shipItem;
                 if (entry.shipItem() instanceof ItemCountable itemCountable)
                 {
-                    final long newCount = bgoRandom.variateByPercentage(itemCountable.getCount(), entry.variationPercentage());
+                    final long newCount = ctx.rng().variateByPercentage(itemCountable.getCount(), entry.variationPercentage());
                     final ItemCountable cpyCountable = itemCountable.copy();
                     cpyCountable.updateCount(newCount);
                     shipItem = cpyCountable;
@@ -1153,33 +1148,33 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             }
         }
 
-        final Hold tmpHold = new Hold(user.getPlayer().getUserID());
+        final Hold tmpHold = new Hold(user().getPlayer().getUserID());
         tmpHold.addShipItems(augmentItems);
 
-        final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+        final NotificationProtocol notificationProtocol = user().getProtocol(ProtocolID.Notification);
         notificationProtocol.sendAugmentItemsAndAdd(tmpHold.getAllShipItems());
     }
 
     public void upgradeSkill(final int skillId)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final SkillBook skillBook = player.getSkillBook();
         skillBook.upgradeSkill(skillId);
 
-        user.send(writer.writeSpentExperience(skillBook.getSpentExperience()));
-        user.send(writer.writeSkills(player.getSkillBook()));
+        user().send(writer.writeSpentExperience(skillBook.getSpentExperience()));
+        user().send(writer.writeSkills(player.getSkillBook()));
 
         final HangarShip activeShip = player.getHangar().getActiveShip();
         activeShip.getShipStats().setSkillBook(skillBook);
     }
     public void resetSkill(final int skillID)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final SkillBook skillBook = player.getSkillBook();
         skillBook.resetSkill(skillID);
 
-        user.send(writer.writeSpentExperience(skillBook.getSpentExperience()));
-        user.send(writer.writeSkills(player.getSkillBook()));
+        user().send(writer.writeSpentExperience(skillBook.getSpentExperience()));
+        user().send(writer.writeSkills(player.getSkillBook()));
 
         final HangarShip activeShip = player.getHangar().getActiveShip();
         activeShip.getShipStats().setSkillBook(skillBook);
@@ -1205,11 +1200,11 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void selectShip(final int shipID)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final Hangar hangar = player.getHangar();
         if (!player.getLocation().isInRoom())
         {
-            log.info("User={} used selectShip but was not in room!", user.getUserLog());
+            log.info("User={} used selectShip but was not in room!", user().getUserLog());
             return;
         }
 
@@ -1233,8 +1228,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
         oldSubscribers.clear();
 
 
-        user.send(writer.writeActivePlayerShip(activeShip.getServerId()));
-        user.send(writeHangarShipStats(activeShip));
+        user().send(writer.writeActivePlayerShip(activeShip.getServerId()));
+        user().send(writeHangarShipStats(activeShip));
 
         if (!catalogue.galaxyMapCard().isBaseSector(player.getFaction(), player.getLocation().getSectorID()))
         {
@@ -1265,7 +1260,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     private void moveItem(final BgoProtocolReader br)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final MoveItemParser moveItemParser = new MoveItemParser(br, player);
         try
         {
@@ -1288,7 +1283,7 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
         IContainer toContainer = moveItemParser.getTo();
         //ContainerVisitor visitor = new HoldVisitor(client, moveItemParser);
         ContainerVisitor visitor = ContainerVisitorFactory.createVisitor(fromContainer.getContainerID().getContainerType(),
-                user, moveItemParser, bgoRandom);
+                user(), moveItemParser, ctx.rng());
 
         try
         {
@@ -1298,8 +1293,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             if (e.getMessage().equals(ContainerVisitor.EXCEPT_MSG_CANNOT_FIND))
             {
                 //client modification or unexpected behaviour
-                log.error("MoveItem " + e.getMessage() + " " + user.getUserLog());
-                DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+                log.error("MoveItem " + e.getMessage() + " " + user().getUserLog());
+                DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
                 debugProtocol.sendEzMsg(e.getMessage() + " " + player.getUserID());
             }
         }
@@ -1332,30 +1327,30 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void factionSwitchProcess(final boolean withPrice, final float cubitsPrice)
     {
-        log.info("User faction change triggered " + user.getUserLog());
+        log.info("User faction change triggered " + user().getUserLog());
         if (withPrice)
         {
             final long finalPrice = cubitsPrice == -1 ? (long) characterServices.cubitsPriceFaction() : (long) cubitsPrice;
-            final HoldVisitor holdVisitor = new HoldVisitor(user, bgoRandom);
+            final HoldVisitor holdVisitor = new HoldVisitor(user(), ctx.rng());
             final boolean isReduceSuccessfully = holdVisitor
                     .reduceItemCountableByCount(ResourceType.Cubits, finalPrice);
             if (!isReduceSuccessfully)
             {
-                log.warn("User used ChangeFaction but not enough cubits for change! " + user.getUserLog());
+                log.warn("User used ChangeFaction but not enough cubits for change! " + user().getUserLog());
                 return;
             }
         }
 
-        final Location currentLocation = user.getPlayer().getLocation();
+        final Location currentLocation = user().getPlayer().getLocation();
         final boolean isInRoom = currentLocation.getGameLocation() == GameLocation.Room;
         if (!isInRoom)
         {
-            log.warn(user.getUserLog() + "faction switch but not in room");
+            log.warn(user().getUserLog() + "faction switch but not in room");
             return;
         }
 
-        final Hangar hangar = user.getPlayer().getHangar();
-        ShipSlotVisitor shipSlotVisitor = new ShipSlotVisitor(user, null);
+        final Hangar hangar = user().getPlayer().getHangar();
+        ShipSlotVisitor shipSlotVisitor = new ShipSlotVisitor(user(), null);
         for (final HangarShip hangarShip : hangar.getAllHangarShips())
         {
             for (ShipSlot slot : hangarShip.getShipSlots().values())
@@ -1363,20 +1358,20 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
                 final ShipItem removedShipItem = slot.removeShipItem();
                 if (removedShipItem == null || removedShipItem.getCardGuid() == 0)
                     continue;
-                shipSlotVisitor.addShipItem(removedShipItem, user.getPlayer().getLocker());
+                shipSlotVisitor.addShipItem(removedShipItem, user().getPlayer().getLocker());
             }
         }
         final List<ShipCard> shipCards = hangar.getAllHangarShips().stream()
                 .map(HangarShip::getShipCard)
                 .toList();
 
-        final ShipCardConverter shipCardConverter = new ShipCardConverter(user.getPlayer().getFaction());
+        final ShipCardConverter shipCardConverter = new ShipCardConverter(user().getPlayer().getFaction());
         final List<ShipCard> oppositeShipCards = shipCardConverter.convertAllCards(shipCards);
         hangar.removeAllHangarShips();
         for (final ShipCard oppositeShipCard : oppositeShipCards)
         {
             hangar.addHangarShip(new HangarShip(
-                    user.getPlayer().getUserID(),
+                    user().getPlayer().getUserID(),
                     oppositeShipCard.getHangarId(),
                     oppositeShipCard.getCardGuid(),
                     ""
@@ -1384,8 +1379,8 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             );
         }
         hangar.setActiveShipIndex(1);
-        final Location location = user.getPlayer().getLocation();
-        final Faction invertedFaction = Faction.invert(user.getPlayer().getFaction());
+        final Location location = user().getPlayer().getLocation();
+        final Faction invertedFaction = Faction.invert(user().getPlayer().getFaction());
         final int baseSectorId = GalaxyMapCard.getStartSector(invertedFaction);
         final GalaxyMapCard galaxyMapCard = catalogue.fetchCardUnsafe(StaticCardGUID.GalaxyMap, CardView.GalaxyMap);
         var optStar = galaxyMapCard.getStar(baseSectorId);
@@ -1395,47 +1390,47 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
             return;
         }
         log.info("Remove user from guild");
-        if (user.getPlayer().getGuild().isPresent())
+        if (user().getPlayer().getGuild().isPresent())
         {
-            final Guild guild = user.getPlayer().getGuild().get();
-            guild.removePlayer(user.getPlayer().getUserID());
-            user.getPlayer().setGuild(null);
-            CommunityProtocol communityProtocol = user.getProtocol(ProtocolID.Community);
+            final Guild guild = user().getPlayer().getGuild().get();
+            guild.removePlayer(user().getPlayer().getUserID());
+            user().getPlayer().setGuild(null);
+            CommunityProtocol communityProtocol = user().getProtocol(ProtocolID.Community);
             final BgoProtocolWriter guildLeaveBw = communityProtocol
                     .writer()
-                    .writeGuildRemove(user.getPlayer().getUserID(), true);
+                    .writeGuildRemove(user().getPlayer().getUserID(), true);
             communityProtocol.getGuildProcessing().sendToEachGuildMember(guild, guildLeaveBw);
         }
         log.info("remove from party");
-        final Optional<IParty> optParty = user.getPlayer().getParty();
+        final Optional<IParty> optParty = user().getPlayer().getParty();
         if (optParty.isPresent())
         {
             final IParty party = optParty.get();
-            final CommunityProtocol communityProtocol = user.getProtocol(ProtocolID.Community);
-            communityProtocol.getPartyProcessing().removeUserFromParty(user, party);
+            final CommunityProtocol communityProtocol = user().getProtocol(ProtocolID.Community);
+            communityProtocol.getPartyProcessing().removeUserFromParty(user(), party);
         }
         //double check
-        if (user.getPlayer().getParty().isPresent())
+        if (user().getPlayer().getParty().isPresent())
         {
-            log.error("warning for faction switch, switch created but still in party, user={}", user.getUserLog());
+            log.error("warning for faction switch, switch created but still in party, user={}", user().getUserLog());
         }
 
         log.info("Remove missions");
-        user.getPlayer().getCounterFacade().missionBook().resetWithoutTimestamp();
+        user().getPlayer().getCounterFacade().missionBook().resetWithoutTimestamp();
 
 
         log.info("Switch faction to " + invertedFaction);
-        user.getPlayer().setFaction(invertedFaction);
+        user().getPlayer().setFaction(invertedFaction);
 
         log.info("SetLocation to " + baseSectorId + " " + optStar.get().getSectorGuid());
         location.setLocation(GameLocation.Room, baseSectorId, optStar.get().getSectorGuid());
         log.info("setup dummy character");
-        final PlayerAvatar avatarDesc = user.getPlayer().getAvatarDescription();
+        final PlayerAvatar avatarDesc = user().getPlayer().getAvatarDescription();
 
         log.info("Send disconnect!");
-        SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
-        user.send(sceneProtocol.writeDisconnect());
-        log.info("Faction switch process finished for user " + user.getUserLog());
+        SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
+        user().send(sceneProtocol.writeDisconnect());
+        log.info("Faction switch process finished for user " + user().getUserLog());
     }
 
 
@@ -1462,12 +1457,12 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void sendExperienceCollective()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final SkillBook skillBook = player.getSkillBook();
-        user.send(writer.writeExperience(skillBook.getExperience()));
-        user.send(writer.writeSpentExperience(skillBook.getSpentExperience()));
-        user.send(writeNormalExperience(skillBook.getExperience()));
-        user.send(writePlayerLevel(skillBook.getExperience()));
+        user().send(writer.writeExperience(skillBook.getExperience()));
+        user().send(writer.writeSpentExperience(skillBook.getSpentExperience()));
+        user().send(writeNormalExperience(skillBook.getExperience()));
+        user().send(writePlayerLevel(skillBook.getExperience()));
     }
 
 
@@ -1497,21 +1492,21 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void sendAllShipInfoDurability()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         List<HangarShip> hangarShips = player.getHangar().getAllHangarShips();
         for (final HangarShip ship : hangarShips)
-            user.send(writer.writeShipInfoDurability(ship));
+            user().send(writer.writeShipInfoDurability(ship));
     }
 
     public void sendAllShipNames()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final Hangar hangar = player.getHangar();
         for (final HangarShip hangarShip : hangar.getAllHangarShips())
         {
             if (!hangarShip.getName().isEmpty())
             {
-                user.send(writeShipName(hangarShip));
+                user().send(writeShipName(hangarShip));
             }
         }
     }
@@ -1526,10 +1521,10 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     }
     public void sendAllStickerBindings()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         for (HangarShip ship : player.getHangar().getAllHangarShips())
         {
-            user.send(writer.writeShipStickerBinding(ship));
+            user().send(writer.writeShipStickerBinding(ship));
         }
     }
     public BgoProtocolWriter writeShipStickerBindingsRemove(final HangarShip hangarShip)
@@ -1548,10 +1543,10 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void sendAllShipSlots()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         for (final HangarShip ship : player.getHangar().getAllHangarShips())
         {
-            user.send(writer.writeShipSlots(ship));
+            user().send(writer.writeShipSlots(ship));
         }
     }
 
@@ -1577,30 +1572,30 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
     @Override
     public boolean sendSpacePropertyBuffer(final BasePropertyBuffer spacePropertyBuffer)
     {
-        if (user == null)
+        if (user() == null)
         {
             log.error("Send result error of BasePropertyBuffer because user is null");
             return false;
         }
 
         final BgoProtocolWriter bw = writer.writeSpacePropertyBuffer(spacePropertyBuffer);
-        return user.send(bw);
+        return user().send(bw);
     }
 
     @Override
     public long userId()
     {
-        return this.user.getPlayer().getUserID();
+        return this.user().getPlayer().getUserID();
     }
 
 
     public void sendPlayerHangar()
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final List<HangarShip> hangarShips = player.getHangar().getAllHangarShips();
         for (HangarShip hangarShip : hangarShips)
         {
-            user.send(writeAddShip(hangarShip));
+            user().send(writeAddShip(hangarShip));
         }
     }
     public BgoProtocolWriter writeAddShip(final HangarShip hangarShip)
@@ -1658,59 +1653,59 @@ public class PlayerProtocol extends BgoProtocol implements StatsProtocolSubscrib
 
     public void sendCharacter()
     {
-        if (user == null)
+        if (user() == null)
         {
             log.error("SendCharacter but the given user was null!");
             return;
         }
-        final Player player = this.user.getPlayer();
-        this.user.send(writer.writeReset());
-        this.user.send(writer.writeId(player.getUserID()));
-        this.user.send(writer.writeName(player.getName()));
-        this.user.send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
-        this.user.send(writer.writeFaction(player.getFaction()));
+        final Player player = this.user().getPlayer();
+        this.user().send(writer.writeReset());
+        this.user().send(writer.writeId(player.getUserID()));
+        this.user().send(writer.writeName(player.getName()));
+        this.user().send(writer.writeAvatarDescription(player.getAvatarDescription().get()));
+        this.user().send(writer.writeFaction(player.getFaction()));
         this.sendExperienceCollective();
-        this.user.send(writer.writeSkills(player.getSkillBook()));
+        this.user().send(writer.writeSkills(player.getSkillBook()));
         this.sendPlayerHangar();
         this.sendAllShipInfoDurability();
         this.sendAllShipSlots();
         this.sendAllShipNames();
         this.sendAllStickerBindings();
-        this.user.send(writer.writeMailBox(player.getMailBox()));
+        this.user().send(writer.writeMailBox(player.getMailBox()));
         if (player.getHangar().hasActiveShip())
         {
-            this.user.send(writer.writeActivePlayerShip(player.getHangar().getActiveShip().getServerId()));
-            this.user.send(this.writeHangarShipStats(player.getHangar().getActiveShip()));
+            this.user().send(writer.writeActivePlayerShip(player.getHangar().getActiveShip().getServerId()));
+            this.user().send(this.writeHangarShipStats(player.getHangar().getActiveShip()));
         }
 
         final LocalDateTime endTime = LocalDateTime.of(2024, 6, 1, 0, 0, 0);
 
-        if (!user.getPlayer().getFactors().hasFactorSource(FactorSource.Holiday)
+        if (!user().getPlayer().getFactors().hasFactorSource(FactorSource.Holiday)
                 && LocalDateTime.now(Clock.systemUTC()).isBefore(endTime))
         {
-            user.getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.Loot, FactorSource.Holiday, 50, endTime));
-            user.getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.Experience, FactorSource.Holiday, 10f, endTime));
-            user.getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.AsteroidYield, FactorSource.Holiday, 30f, endTime));
+            user().getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.Loot, FactorSource.Holiday, 50, endTime));
+            user().getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.Experience, FactorSource.Holiday, 10f, endTime));
+            user().getPlayer().getFactors().addFactor(Factor.fromEndTime(FactorType.AsteroidYield, FactorSource.Holiday, 30f, endTime));
         }
-        this.user.send(writer.writeFactors(player.getFactors()));
+        this.user().send(writer.writeFactors(player.getFactors()));
 
 
         player.getCounterFacade().initAllUpdate();
-        this.user.send(writer.writeCounters(player.getCounterFacade().counters()));
-        this.user.send(writer.writeAllContainerItems(player.getHold()));
-        this.user.send(writer.writeAllContainerItems(player.getLocker()));
-        this.user.send(writer.writeMissions(player.getCounterFacade().missionBook()));
-        final SettingProtocol settingProtocol = this.user.getProtocol(ProtocolID.Setting);
+        this.user().send(writer.writeCounters(player.getCounterFacade().counters()));
+        this.user().send(writer.writeAllContainerItems(player.getHold()));
+        this.user().send(writer.writeAllContainerItems(player.getLocker()));
+        this.user().send(writer.writeMissions(player.getCounterFacade().missionBook()));
+        final SettingProtocol settingProtocol = this.user().getProtocol(ProtocolID.Setting);
         settingProtocol.sendSettings();
-        final CommunityProtocol communityProtocol = this.user.getProtocol(ProtocolID.Community);
+        final CommunityProtocol communityProtocol = this.user().getProtocol(ProtocolID.Community);
         final Optional<Guild> optFetchedGuild = guildRegistry.getGuildOfPlayerID(player.getUserID());
-        optFetchedGuild.ifPresent(g -> user.getPlayer().setGuild(g));
+        optFetchedGuild.ifPresent(g -> user().getPlayer().setGuild(g));
 
-        final Optional<Guild> optGuild = user.getPlayer().getGuild();
-        optGuild.ifPresent(guild -> user.send(communityProtocol.writer().writeGuildInfo(new GuildInfoMessage(guild))));
-        final Optional<IParty> optParty = user.getPlayer().getParty();
-        optParty.ifPresent(party -> user.send(communityProtocol.writer().writeParty(party)));
-        final SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
+        final Optional<Guild> optGuild = user().getPlayer().getGuild();
+        optGuild.ifPresent(guild -> user().send(communityProtocol.writer().writeGuildInfo(new GuildInfoMessage(guild))));
+        final Optional<IParty> optParty = user().getPlayer().getParty();
+        optParty.ifPresent(party -> user().send(communityProtocol.writer().writeParty(party)));
+        final SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
 
 
 

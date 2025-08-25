@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.dialog;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.galaxy.Galaxy;
 import io.github.luigeneric.core.player.Player;
@@ -19,20 +20,16 @@ import java.util.List;
 public class DialogProtocol extends BgoProtocol
 {
     private MissionDistributor missionDistributor;
-    private final Galaxy galaxy;
-    private final BgoRandom bgoRandom;
-    public DialogProtocol(final Galaxy galaxy, final BgoRandom bgoRandom)
+    public DialogProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Dialog);
-        this.galaxy = galaxy;
-        this.bgoRandom = bgoRandom;
+        super(ProtocolID.Dialog, ctx);
     }
 
     @Override
     public void injectUser(User user)
     {
         super.injectUser(user);
-        this.missionDistributor = new MissionDistributor(user.getPlayer(), galaxy, bgoRandom);
+        this.missionDistributor = new MissionDistributor(user().getPlayer(), ctx.galaxy(), ctx.rng());
     }
 
     @Override
@@ -47,40 +44,40 @@ public class DialogProtocol extends BgoProtocol
             case Say ->
             {
                 final byte index = br.readByte();
-                log.warn(user.getUserLog() + "Dialog say " + index);
+                log.warn(user().getUserLog() + "Dialog say " + index);
                 if (index != 1)
                 {
-                    log.warn(user.getUserLog() + "Wrong index given " + index);
+                    log.warn(user().getUserLog() + "Wrong index given " + index);
                     return;
                 }
-                final Player player = user.getPlayer();
+                final Player player = user().getPlayer();
                 //doesn't matter, just by default get assignments
-                user.send(writeStopped());
+                user().send(writeStopped());
 
                 final boolean updated = missionDistributor.updateMissionBook();
                 log.debug("User updated missions ? {} {}", updated, player.getCounterFacade().missionBook());
                 if (updated)
                 {
                     PlayerProtocolWriteOnly playerProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Player);
-                    user.send(playerProtocolWriteOnly.writeMissions(player.getCounterFacade().missionBook()));
+                    user().send(playerProtocolWriteOnly.writeMissions(player.getCounterFacade().missionBook()));
                 }
             }
             case Advance ->
             {
-                log.warn(user.getUserLog() + "Advance daylies");
+                log.warn(user().getUserLog() + "Advance daylies");
                 Remark remark1 = new Remark((byte) 1, "%$bgo.npc_no2.Phrase__04a77746-d78a-4e4e-98bf-68f988d63b0e__0%", "");
 
                 final List<Remark> remarks = List.of(remark1);
-                user.send(writePcRemarks(remarks));
+                user().send(writePcRemarks(remarks));
             }
             case Stop ->
             {
-                user.send(writeStopped());
+                user().send(writeStopped());
             }
 
             default ->
             {
-                log.warn(user.getUserLog() + "DialogProtocol not implemented for version: " + msgType);
+                log.warn(user().getUserLog() + "DialogProtocol not implemented for version: " + msgType);
             }
         }
     }

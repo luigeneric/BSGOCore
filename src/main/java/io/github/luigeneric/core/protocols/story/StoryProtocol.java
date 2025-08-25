@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.story;
 
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.protocols.BgoProtocol;
 import io.github.luigeneric.core.protocols.ProtocolID;
 import lombok.extern.slf4j.Slf4j;
@@ -13,9 +14,9 @@ import java.util.HashMap;
 public class StoryProtocol extends BgoProtocol
 {
     private final StoryProtocolWriteOnly writer;
-    public StoryProtocol()
+    public StoryProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Story);
+        super(ProtocolID.Story, ctx);
         this.writer = new StoryProtocolWriteOnly();
     }
 
@@ -33,40 +34,40 @@ public class StoryProtocol extends BgoProtocol
             case TriggerControl ->
             {
                 final ControlType controlType = ControlType.forValue(br.readByte());
-                log.warn(user.getUserLog() + "StoryProtocol Trigger Control " + controlType);
+                log.warn(user().getUserLog() + "StoryProtocol Trigger Control " + controlType);
             }
             case MessageBoxOk ->
             {
-                log.warn(user.getUserLog() + "StoryProtocol MessageBoxOk");
+                log.warn(user().getUserLog() + "StoryProtocol MessageBoxOk");
             }
             case Skip ->
             {
-                log.info(user.getUserLog() + "StoryProtocol Skip");
+                log.info(user().getUserLog() + "StoryProtocol Skip");
             }
             case Abandon ->
             {
-                log.warn(user.getUserLog() + "StoryProtocol Abandon");
+                log.warn(user().getUserLog() + "StoryProtocol Abandon");
             }
             case Continue ->
             {
-                log.warn(user.getUserLog() + "StoryProtocol Continue");
+                log.warn(user().getUserLog() + "StoryProtocol Continue");
             }
             case Decline ->
             {
-                log.warn(user.getUserLog() + "StoryProtocol Decline");
+                log.warn(user().getUserLog() + "StoryProtocol Decline");
             }
             case CutsceneFinished ->
             {
-                log.info(user.getUserLog() + "StoryProtocol cutsceneFinished called!");
+                log.info(user().getUserLog() + "StoryProtocol cutsceneFinished called!");
             }
 
             case LookingAtTrigger ->
             {
-                log.warn(user.getUserLog() + "StoryProtocol LookingAtTrigger");
+                log.warn(user().getUserLog() + "StoryProtocol LookingAtTrigger");
             }
             default ->
             {
-                log.error(user.getUserLog() + "StoryProtocol: Could not handle replyType: " + clientMessage + " msgType: " + msgType);
+                log.error(user().getUserLog() + "StoryProtocol: Could not handle replyType: " + clientMessage + " msgType: " + msgType);
             }
         }
     }

@@ -54,6 +54,6 @@ public class BotFighterMoving extends NpcShip
                 .toList();
         if (killObjectives.isEmpty())
             return false;
-        return !killObjectives.get(0).getObjectivesToKill().isEmpty();
+        return !killObjectives.getFirst().getObjectivesToKill().isEmpty();
     }
 }

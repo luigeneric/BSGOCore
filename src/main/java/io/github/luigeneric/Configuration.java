@@ -24,8 +24,6 @@ public class Configuration
     UsersContainer usersContainer;
     @Inject
     GameServerParamsConfig gameServerParamsConfig;
-    @Inject
-    DbProvider dbProvider;
 
 
     @Produces

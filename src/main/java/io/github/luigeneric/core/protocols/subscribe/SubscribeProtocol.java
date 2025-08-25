@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.subscribe;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.UsersContainer;
 import io.github.luigeneric.core.community.guild.Guild;
@@ -22,9 +23,9 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
     private final UsersContainer usersContainer;
     private final SubscribeProtocolWriteOnly writer;
 
-    public SubscribeProtocol(final UsersContainer usersContainer)
+    public SubscribeProtocol(final ProtocolContext ctx, final UsersContainer usersContainer)
     {
-        super(ProtocolID.Subscribe);
+        super(ProtocolID.Subscribe, ctx);
         this.usersContainer = usersContainer;
         this.writer = new SubscribeProtocolWriteOnly();
     }
@@ -38,7 +39,7 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
     public void parseMessage(final int msgType, final BgoProtocolReader br) throws IOException
     {
         final ClientMessage clientMessage = ClientMessage.forValue((short) msgType);
-        final Player thisPlayer = user.getPlayer();
+        final Player thisPlayer = user().getPlayer();
         if (clientMessage == null)
         {
             log.error("ClientMessage was null for SubscribeProtocol, userID:" + thisPlayer.getUserID());
@@ -71,20 +72,20 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                     {
                         case Name ->
                         {
-                            log.error(user.getUserLog() + " Subscribe on something that you never should subscribe on " + type);
+                            log.error(user().getUserLog() + " Subscribe on something that you never should subscribe on " + type);
                         }
                         case Level ->
                         {
-                            userToSubscribe.getPlayer().getSkillBook().addSubscriber(new LevelSubscriberUser(user, writer));
+                            userToSubscribe.getPlayer().getSkillBook().addSubscriber(new LevelSubscriberUser(user(), writer));
                         }
                         case Medal ->
                         {
-                            userToSubscribe.getPlayer().getPlayerMedals().addSubscriber(new MedalSubscriberUser(user, writer));
+                            userToSubscribe.getPlayer().getPlayerMedals().addSubscriber(new MedalSubscriberUser(user(), writer));
                         }
                         case Wing ->
                         {
-                            log.info(user.getPlayer().getPlayerLog() + " subscribe to guild!");
-                            userToSubscribe.getPlayer().getPlayerGuild().addSubscriber(new GuildSubscriberUser(user, writer));
+                            log.info(user().getPlayer().getPlayerLog() + " subscribe to guild!");
+                            userToSubscribe.getPlayer().getPlayerGuild().addSubscriber(new GuildSubscriberUser(user(), writer));
                         }
                         case Title ->
                         {
@@ -92,14 +93,14 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                         }
                         case Ships ->
                         {
-                            userToSubscribe.getPlayer().getHangar().addSubscriber(new ShipsSubscriberUser(user, writer));
+                            userToSubscribe.getPlayer().getHangar().addSubscriber(new ShipsSubscriberUser(user(), writer));
                         }
                         case Location ->
                         {
-                            userToSubscribe.getPlayer().getLocation().addSubscriber(new LocationSubscriberUser(user, writer));
+                            userToSubscribe.getPlayer().getLocation().addSubscriber(new LocationSubscriberUser(user(), writer));
                         }
 
-                        default -> log.error(user.getUserLog() + " SubscribeProtocol: unknown type to sub at!" + type);
+                        default -> log.error(user().getUserLog() + " SubscribeProtocol: unknown type to sub at!" + type);
                     }
                 }
             }
@@ -144,7 +145,7 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                         }
                         default ->
                         {
-                            log.error(user.getUserLog() + "Unsubscribe to type " + type + " not implemented!");
+                            log.error(user().getUserLog() + "Unsubscribe to type " + type + " not implemented!");
                         }
                     }
                 }
@@ -158,7 +159,7 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                     final HangarShip activeShip = optPlayer.get().getPlayer().getHangar().getActiveShip();
                     if (playerID == thisPlayer.getUserID())
                     {
-                        final PlayerProtocol playerProtocol = this.user.getProtocol(ProtocolID.Player);
+                        final PlayerProtocol playerProtocol = this.user().getProtocol(ProtocolID.Player);
                         activeShip.getShipStats().addSubscriber(playerProtocol);
                     }
                     else
@@ -176,17 +177,17 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                     final HangarShip activeShip = foundPlayer.get().getPlayer().getHangar().getActiveShip();
                     if ((playerID == thisPlayer.getUserID()))
                     {
-                        activeShip.getShipStats().removeSubscriber(this.user.getProtocol(ProtocolID.Player));
+                        activeShip.getShipStats().removeSubscriber(this.user().getProtocol(ProtocolID.Player));
                     }
                     else
                         activeShip.getShipStats().removeSubscriber(this);
                 }
                 else
                 {
-                    log.warn(user.getUserLog() + "UnsubscibeStats on not present PlayerShip");
+                    log.warn(user().getUserLog() + "UnsubscibeStats on not present PlayerShip");
                 }
             }
-            default -> log.warn(user.getUserLog() + "SubscribeProtocol " + clientMessage + " not implemented");
+            default -> log.warn(user().getUserLog() + "SubscribeProtocol " + clientMessage + " not implemented");
         }
     }
 
@@ -202,15 +203,15 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
             {
                 case Name ->
                 {
-                    user.send(writer.writePlayerName(playerID, infoRequestUser.getPlayer().getName()));
+                    user().send(writer.writePlayerName(playerID, infoRequestUser.getPlayer().getName()));
                 }
                 case Faction ->
                 {
-                    user.send(writer.writePlayerFaction(playerID, infoRequestUser.getPlayer().getFaction()));
+                    user().send(writer.writePlayerFaction(playerID, infoRequestUser.getPlayer().getFaction()));
                 }
                 case Avatar ->
                 {
-                    user.send(writer.writePlayerAvatar(playerID, infoRequestUser.getPlayer().getAvatarDescription().get()));
+                    user().send(writer.writePlayerAvatar(playerID, infoRequestUser.getPlayer().getAvatarDescription().get()));
                 }
                 case Ships ->
                 {
@@ -218,21 +219,21 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                     final String shipName = hangar.getActiveShip().getName();
                     final List<Long> guids = hangar.getSortedGUIDs();
                     HangarShipsUpdate hangarShipsUpdate = new HangarShipsUpdate(shipName, guids);
-                    user.send(writer.writePlayerShips(playerID, hangarShipsUpdate));
+                    user().send(writer.writePlayerShips(playerID, hangarShipsUpdate));
                 }
                 case Level ->
                 {
                     final short level = infoRequestUser.getPlayer().getSkillBook().get();
-                    user.send(writer.writePlayerLevel(playerID, level));
+                    user().send(writer.writePlayerLevel(playerID, level));
                 }
                 case Medal ->
                 {
                     final MedalStatus medals = infoRequestUser.getPlayer().getPlayerMedals().get();
-                    user.send(writer.writePlayerMedal(playerID, medals));
+                    user().send(writer.writePlayerMedal(playerID, medals));
                 }
                 case Location ->
                 {
-                    user.send(writer.writePlayerLocation(playerID, infoRequestUser.getPlayer().getLocation()));
+                    user().send(writer.writePlayerLocation(playerID, infoRequestUser.getPlayer().getLocation()));
                 }
                 case Wing ->
                 {
@@ -242,12 +243,12 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
                         final Guild guild = optGuild.get();
                         try
                         {
-                            user.send(writer.writePlayerGuild(playerID, guild));
-                            user.send(writer.writePlayerLocation(playerID, infoRequestUser.getPlayer().getLocation()));
+                            user().send(writer.writePlayerGuild(playerID, guild));
+                            user().send(writer.writePlayerLocation(playerID, infoRequestUser.getPlayer().getLocation()));
                         }
                         catch (IllegalArgumentException illegalArgumentException)
                         {
-                            log.error(user.getUserLog() + "Weird stacktrace " + illegalArgumentException.getMessage());
+                            log.error(user().getUserLog() + "Weird stacktrace " + illegalArgumentException.getMessage());
                             illegalArgumentException.printStackTrace();
                         }
                     }
@@ -276,14 +277,14 @@ public class SubscribeProtocol extends BgoProtocol implements StatsProtocolSubsc
     @Override
     public boolean sendSpacePropertyBuffer(final BasePropertyBuffer spacePropertyBuffer)
     {
-        if (user == null)
+        if (user() == null)
         {
             log.error("sendSpacePropertyBuffer but user was null");
             return false;
         }
 
         final BgoProtocolWriter bw = writer.writeSpacePropertyBuffer(spacePropertyBuffer);
-        return this.user.send(bw);
+        return this.user().send(bw);
     }
 
     @Override

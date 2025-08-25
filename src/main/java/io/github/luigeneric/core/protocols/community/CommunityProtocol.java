@@ -4,6 +4,7 @@ import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
 import io.github.luigeneric.chatapi.ChatApi;
 import io.github.luigeneric.core.ChatAccessBlocker;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.UsersContainer;
 import io.github.luigeneric.core.community.guild.GuildRegistry;
@@ -28,13 +29,15 @@ public class CommunityProtocol extends BgoProtocol
     private final ChatApi chatApi;
     private final ChatAccessBlocker chatAccessBlocker;
 
-    public CommunityProtocol(final UsersContainer usersContainer,
-                             final PartyRegistry partyRegistry,
-                             final GuildRegistry guildRegistry,
-                             final ChatAccessBlocker chatAccessBlocker
+    public CommunityProtocol(
+            final ProtocolContext ctx,
+            final UsersContainer usersContainer,
+            final GuildRegistry guildRegistry,
+            final PartyRegistry partyRegistry,
+            final ChatAccessBlocker chatAccessBlocker
     )
     {
-        super(ProtocolID.Community);
+        super(ProtocolID.Community, ctx);
         this.chatApi = CDI.current().select(ChatApi.class).get();
         this.writer = new CommunityProtocolWriteOnly();
         this.guildProcessing = new GuildProcessing(usersContainer, guildRegistry, writer);
@@ -77,7 +80,7 @@ public class CommunityProtocol extends BgoProtocol
     public void parseMessage(final int msgType, final BgoProtocolReader br) throws IOException
     {
         final ClientMessage clientMessage = ClientMessage.forValue((short) msgType);
-        final Player userChar = this.user.getPlayer();
+        final Player userChar = this.user().getPlayer();
         partyProcessing.processMessage(clientMessage, br);
         guildProcessing.processMessage(clientMessage, br);
         switch (clientMessage)
@@ -85,7 +88,7 @@ public class CommunityProtocol extends BgoProtocol
             case RecruitLevel ->
             {
                 final long level = 0;
-                user.send(writer.writeRequiredRecruitLevel(level));
+                user().send(writer.writeRequiredRecruitLevel(level));
             }
             case FriendInvite ->
             {
@@ -119,14 +122,14 @@ public class CommunityProtocol extends BgoProtocol
             case ChatAuthFailed ->
             {
                 final String sessionId = br.readString();
-                log.info("ChatAuthFailed! " + user.getUserLogSimple());
+                log.info("ChatAuthFailed! " + user().getUserLogSimple());
                 this.chatConnected = false;
             }
             case ChatConnected ->
             {
                 final String sessionId = br.readString();
                 this.chatConnected = true;
-                chatApi.sendUserPosition(user.getPlayer().getUserID(), user.getPlayer().getLocation().getSectorID());
+                chatApi.sendUserPosition(user().getPlayer().getUserID(), user().getPlayer().getLocation().getSectorID());
             }
         }
     }
@@ -143,13 +146,13 @@ public class CommunityProtocol extends BgoProtocol
         final boolean canAccessChat = this.chatAccessBlocker.checkUserCanAccessChat(this.userId);
         if (!canAccessChat)
         {
-            final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
-            user.send(notificationProtocol.writer().writeDebugMessage("User chat blacklist"));
+            final NotificationProtocol notificationProtocol = user().getProtocol(ProtocolID.Notification);
+            user().send(notificationProtocol.writer().writeDebugMessage("User chat blacklist"));
             return;
         }
         final BgoProtocolWriter bw = writer.writeChatSessionId(chatSessionID, chatProjectID, chatLanguage, chatServerUrl);
         this.chatSessionInitialized = true;
-        user.send(bw);
+        user().send(bw);
     }
 
     public boolean isChatSessionInitialized()

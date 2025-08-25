@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.arena;
 
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.protocols.BgoProtocol;
 import io.github.luigeneric.core.protocols.ProtocolID;
 import io.github.luigeneric.core.protocols.ProtocolRegistryWriteOnly;
@@ -17,9 +18,9 @@ public class ArenaProtocol extends BgoProtocol
 {
     private final ArenaProtocolWriteOnly writer;
 
-    public ArenaProtocol()
+    public ArenaProtocol(final ProtocolContext ctx)
     {
-        super(ProtocolID.Arena);
+        super(ProtocolID.Arena, ctx);
         writer = new ArenaProtocolWriteOnly();
     }
 
@@ -33,12 +34,12 @@ public class ArenaProtocol extends BgoProtocol
             {
                 final NotificationProtocolWriteOnly notificationProtocolWriteOnly =
                         ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Notification);
-                user.send(notificationProtocolWriteOnly.writeDebugMessage("ARENA NOT IMPLEMENTED"));
-                user.send(writer.writeArenaClosed());
+                user().send(notificationProtocolWriteOnly.writeDebugMessage("ARENA NOT IMPLEMENTED"));
+                user().send(writer.writeArenaClosed());
             }
             default ->
             {
-                log.error("ArenaProtocol could not handle replyType: " + clientMessage);
+                log.error("ArenaProtocol could not handle replyType: {}", clientMessage);
             }
         }
     }

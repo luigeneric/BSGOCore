@@ -1,6 +1,7 @@
 package io.github.luigeneric.core.protocols.zone;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.player.location.Location;
 import io.github.luigeneric.core.player.location.ZoneLocation;
 import io.github.luigeneric.core.protocols.BgoProtocol;
@@ -15,9 +16,9 @@ import java.io.IOException;
 public class ZoneProtocol extends BgoProtocol
 {
     private final ZoneProtocolWriteOnly writer;
-    public ZoneProtocol()
+    public ZoneProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Zone);
+        super(ProtocolID.Zone, ctx);
         this.writer = new ZoneProtocolWriteOnly();
     }
 
@@ -40,24 +41,24 @@ public class ZoneProtocol extends BgoProtocol
             case AdmissionStatus ->
             {
                 final long zoneGuid = br.readGUID();
-                log.info("RequestAdmissionStatus {} {}", user.getUserLogSimple(), zoneGuid);
+                log.info("RequestAdmissionStatus {} {}", user().getUserLogSimple(), zoneGuid);
             }
             case Join ->
             {
                 final long zoneGuid = br.readGUID();
-                log.info("Join zone {} {}", user.getUserLogSimple(), zoneGuid);
+                log.info("Join zone {} {}", user().getUserLogSimple(), zoneGuid);
 
 
-                if (user.getPlayer().getLocation().getGameLocation() != GameLocation.Room)
+                if (user().getPlayer().getLocation().getGameLocation() != GameLocation.Room)
                 {
-                    log.warn("RoomProtocol, quit while not in room! " + user.getPlayer().getLocation().getGameLocation() + " " +
-                            user.getPlayer().getPlayerLog());
+                    log.warn("RoomProtocol, quit while not in room! " + user().getPlayer().getLocation().getGameLocation() + " " +
+                            user().getPlayer().getPlayerLog());
                     return;
                 }
 
                 try
                 {
-                    var ship = user.getPlayer().getHangar().getActiveShip();
+                    var ship = user().getPlayer().getHangar().getActiveShip();
                     if (ship.getShipStats().getHp() == 0)
                         ship.getShipStats().setHp(1);
                 }
@@ -67,15 +68,15 @@ public class ZoneProtocol extends BgoProtocol
                 }
                 ///TODO add hasPaidAdmission check
 
-                final Location location = user.getPlayer().getLocation();
+                final Location location = user().getPlayer().getLocation();
                 //location.setLocation(GameLocation.Zone, sectorId, sectorGuid, zoneGuid);
                 location.changeState(new ZoneLocation(location));
-                final SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
+                final SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
                 sceneProtocol.sendLoadNextScene();
             }
             case Leave ->
             {
-                log.info("Leave zone {}", user.getUserLogSimple());
+                log.info("Leave zone {}", user().getUserLogSimple());
             }
             case ScoreboardSubscribe, ScoreboardUnsubscribe -> scoreboardHandling(clientMessage == ClientMessage.ScoreboardSubscribe);
             default ->

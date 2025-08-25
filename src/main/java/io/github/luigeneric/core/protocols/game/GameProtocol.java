@@ -3,6 +3,7 @@ package io.github.luigeneric.core.protocols.game;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.UsersContainer;
 import io.github.luigeneric.core.community.party.IParty;
@@ -76,7 +77,6 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
 {
     private final EnumMap<ClientMessage, ProtocolMessageHandler> handlers;
     private final SectorRegistry sectorRegistry;
-    private final Galaxy galaxy;
     private long jumpTargetSectorID;
     private long jumpTargetSectorGUID;
     private boolean isJumping;
@@ -88,13 +88,14 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     private final UsersContainer usersContainer;
     private long[] groupJumpPlayerIds;
 
-    public GameProtocol(final SectorRegistry sectorRegistry, final Galaxy galaxy, final UsersContainer usersContainer)
+    public GameProtocol(final ProtocolContext ctx,
+                        final SectorRegistry sectorRegistry,
+                        final UsersContainer usersContainer)
     {
-        super(ProtocolID.Game);
+        super(ProtocolID.Game, ctx);
         this.handlers = new EnumMap<>(ClientMessage.class);
         this.writer = ProtocolRegistryWriteOnly.game();
         this.sectorRegistry = sectorRegistry;
-        this.galaxy = galaxy;
         this.jumpTargetSectorID = -1;
         this.usersContainer = usersContainer;
         this.completeJumpFlag = new AtomicBoolean(false);
@@ -104,7 +105,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     @Override
     protected void setupHandlers()
     {
-        this.handlers.put(ClientMessage.Mining, new MiningHandler(user, sectorRegistry));
+        this.handlers.put(ClientMessage.Mining, new MiningHandler(ctx.user(), sectorRegistry));
     }
 
     @Override
@@ -125,13 +126,13 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
         //respawn options not good, just dock the player
         final long respawnSectorId =
                 respawnOpts.sectorIds().isEmpty() ?
-                        GalaxyMapCard.getStartSector(user.getPlayer().getFaction()) :
+                        GalaxyMapCard.getStartSector(user().getPlayer().getFaction()) :
                         respawnOpts.sectorIds().getFirst();
 
         final Optional<MapStarDesc> optStar = CDI.current().select(Catalogue.class).get().galaxyMapCard().getStar(respawnSectorId);
         optStar.ifPresent(star ->
         {
-            user.getPlayer().getLocation()
+            user().getPlayer().getLocation()
                     .setLocation(GameLocation.Room, star.getId(), star.getSectorGuid());
         });
     }
@@ -164,7 +165,9 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             case RequestAnchor ->
             {
                 final long targetId = br.readUint32();
-                if (1==1)
+                // ignore this for now
+                log.warn("RequestAnchor called but not implemented yet");
+                if (true)
                     return;
 
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
@@ -177,7 +180,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     return;
                 }
 
-                final Optional<IParty> optParty = user.getPlayer().getParty();
+                final Optional<IParty> optParty = user().getPlayer().getParty();
                 if (optParty.isEmpty())
                 {
                     log.error("RequestAnchor but user has no party!");
@@ -194,7 +197,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final SpaceObject targetToDock = targetSpaceObjectCarrier.get();
                 if (targetToDock.isRemoved())
                 {
-                    log.warn("Target spaceObject to dock is removed! {}", user.getUserLog());
+                    log.warn("Target spaceObject to dock is removed! {}", user().getUserLog());
                     return;
                 }
                 final Optional<User> optUserToDockAt = usersContainer.get(targetToDock.getPlayerId());
@@ -214,8 +217,8 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final boolean isInSameParty = partyOfUserToDockAt.isInParty(playerShip.getPlayerId());
                 if (!isInSameParty)
                 {
-                    log.error("Cheat, user to dock at={} is not in the same party as you={}", userToDockAt.getUserLog(), user.getUserLog());
-                    user.send(ProtocolRegistryWriteOnly.writeDebugMessage("Cannot dock on user not in the same party, report this"));
+                    log.error("Cheat, user to dock at={} is not in the same party as you={}", userToDockAt.getUserLog(), user().getUserLog());
+                    user().send(ProtocolRegistryWriteOnly.writeDebugMessage("Cannot dock on user not in the same party, report this"));
                     return;
                 }
 
@@ -233,7 +236,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 playerVisibility.changeVisibility(false, ChangeVisibilityReason.Anchor, targetId);
                 targetToDock.getSpaceObjectState().addAnchoredId(playerShip.getPlayerId());
                 final PlayerProtocolWriteOnly playerProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Player);
-                user.send(playerProtocolWriteOnly.writeAnchor(targetId));
+                user().send(playerProtocolWriteOnly.writeAnchor(targetId));
                 final CommunityProtocolWriteOnly communityProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Community);
                 final BgoProtocolWriter partyAnchorBuffer = communityProtocolWriteOnly.writePartyAnchor(targetId, playerShip.getPlayerId(), true);
                 partyOfUser.sendToAllMembers(partyAnchorBuffer);
@@ -259,7 +262,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     log.warn("PlayerVisibility is already visible but set visible to true again??");
                     return;
                 }
-                final Optional<IParty> optParty = user.getPlayer().getParty();
+                final Optional<IParty> optParty = user().getPlayer().getParty();
                 if (optParty.isEmpty())
                 {
                     log.error("Party is not present so you cant undock");
@@ -269,7 +272,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
 
                 playerVisibility.changeVisibility(true, ChangeVisibilityReason.Anchor);
                 final PlayerProtocolWriteOnly playerProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Player);
-                user.send(playerProtocolWriteOnly.writeUnAnchor(playerShip.getObjectID(), UnanchorReason.Default));
+                user().send(playerProtocolWriteOnly.writeUnAnchor(playerShip.getObjectID(), UnanchorReason.Default));
 
                 final long anchoredObjectIdTo = playerVisibility.getAnchoredObjectId();
                 final Optional<SpaceObject> optAnchoredTo = sector.getCtx().spaceObjects().get(anchoredObjectIdTo);
@@ -295,25 +298,25 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             }
             case JumpIn ->
             {
-                final Optional<Sector> optSector = sectorRegistry.getSectorById(user.getPlayer().getSectorId());
+                final Optional<Sector> optSector = sectorRegistry.getSectorById(user().getPlayer().getSectorId());
                 if (optSector.isEmpty())
                 {
-                    log.warn("{} JumpIn but Sector is null for id {}", user.getUserLog(), user.getPlayer().getSectorId());
+                    log.warn("{} JumpIn but Sector is null for id {}", user().getUserLog(), user().getPlayer().getSectorId());
                     return;
                 }
                 final Sector sector = optSector.get();
-                final Optional<User> optUserInSector = sector.getCtx().users().getUser(user.getPlayer().getUserID());
+                final Optional<User> optUserInSector = sector.getCtx().users().getUser(user().getPlayer().getUserID());
                 log.info("optUsrInSector " + optUserInSector);
                 //if exists, user is in respawn
                 if (lastRespawnOptions.get() != null)
                 {
                     // I can't believe I have to check for this crap
-                    log.warn("{} cheat jumpIn but user was dead and respawn opts sent", user.getUserLog());
+                    log.warn("{} cheat jumpIn but user was dead and respawn opts sent", user().getUserLog());
                     return;
                 }
 
-                log.info("{} JumpIn {}", user.getUserLog(), sector.getId());
-                optSector.get().getSectorJoinQueue().userJoinQueue(this.user, this.groupJumpPlayerIds);
+                log.info("{} JumpIn {}", user().getUserLog(), sector.getId());
+                optSector.get().getSectorJoinQueue().userJoinQueue(user(), this.groupJumpPlayerIds);
                 this.groupJumpPlayerIds = null;
             }
             case Jump ->
@@ -322,35 +325,35 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
                 if (!secPlayerShip.bothPresent())
                 {
-                    log.error(user.getUserLog() + "Jump but no spaceShip and no sector!");
+                    log.error(user().getUserLog() + "Jump but no spaceShip and no sector!");
                     return;
                 }
                 var playerShip = secPlayerShip.playerShip();
 
                 if (playerShip.isRemoved())
                 {
-                    log.error(user.getUserLog() + " Cheat PlayerShip is removed but jump request received");
+                    log.error(user().getUserLog() + " Cheat PlayerShip is removed but jump request received");
                     return;
                 }
 
-                log.info(user.getUserLog() + "JumpReqeust for sectorID: " + sectorID);
+                log.info(user().getUserLog() + "JumpReqeust for sectorID: " + sectorID);
 
-                final boolean sectorExists = this.galaxy.getGalaxyMapCard().getStars().containsKey(sectorID);
+                final boolean sectorExists = ctx.galaxy().getGalaxyMapCard().getStars().containsKey(sectorID);
                 if (!sectorExists)
                 {
-                    log.error(user.getUserLog() + "JumpRequest: sector doesn't exists! " + sectorID);
+                    log.error(user().getUserLog() + "JumpRequest: sector doesn't exists! " + sectorID);
                 }
-                final Optional<MapStarDesc> optStar = galaxy.getGalaxyMapCard().getStar(sectorID);
+                final Optional<MapStarDesc> optStar = ctx.galaxy().getGalaxyMapCard().getStar(sectorID);
                 if (optStar.isEmpty())
                 {
-                    log.error("Error in fetch galaxystar, cannot find sectorID {} in jumpQuery by user {}", sectorID, user.getUserLog());
+                    log.error("Error in fetch galaxystar, cannot find sectorID {} in jumpQuery by user {}", sectorID, user().getUserLog());
                     return;
                 }
                 final MapStarDesc starDestination = optStar.get();
-                final Optional<MapStarDesc> optSourceStar = galaxy.getGalaxyMapCard().getStar(user.getPlayer().getSectorId());
+                final Optional<MapStarDesc> optSourceStar = ctx.galaxy().getGalaxyMapCard().getStar(user().getPlayer().getSectorId());
                 if (optSourceStar.isEmpty())
                 {
-                    log.error(user.getUserLog() + "JumpRequest: source-sector doesn't exists! " + user.getPlayer().getSectorId());
+                    log.error(user().getUserLog() + "JumpRequest: source-sector doesn't exists! " + user().getPlayer().getSectorId());
                     return;
                 }
                 final MapStarDesc sourceStar = optSourceStar.get();
@@ -361,16 +364,16 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 if (GalaxyMapCard.isBaseSector(Faction.invert(playerShip.getFaction()), sectorID) || !canJumpFaction || !canJumpDistance)
                 {
                     if (!canJumpDistance)
-                        log.error(user.getUserLog() + " Cheat user tried to jump while no jump range distance " + jumpDistance + " range " + ftlJumpRange);
+                        log.error(user().getUserLog() + " Cheat user tried to jump while no jump range distance " + jumpDistance + " range " + ftlJumpRange);
 
-                    final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+                    final NotificationProtocol notificationProtocol = user().getProtocol(ProtocolID.Notification);
                     notificationProtocol.sendJumpSectorNotAllowed();
                     return;
                 }
 
-                if (user.getPlayer().isModifiedAssemblyFlag())
+                if (user().getPlayer().isModifiedAssemblyFlag())
                 {
-                    log.warn("Cheating user tried to jump while modified " + user.getUserLog());
+                    log.warn("Cheating user tried to jump while modified " + user().getUserLog());
                 }
 
                 final float charge = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.FtlCharge);
@@ -386,16 +389,16 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
                 if (!secPlayerShip.bothPresent())
                 {
-                    log.error(user.getUserLog() + "Jump but no spaceShip and no sector!");
+                    log.error(user().getUserLog() + "Jump but no spaceShip and no sector!");
                     return;
                 }
                 var playerShip = secPlayerShip.playerShip();
                 var sector = secPlayerShip.sector();
 
-                final Optional<MapStarDesc> optStar = galaxy.getGalaxyMapCard().getStar(sectorID);
+                final Optional<MapStarDesc> optStar = ctx.galaxy().getGalaxyMapCard().getStar(sectorID);
                 if (optStar.isEmpty())
                 {
-                    log.error("Error in fetch galaxystar, cannot find sectorID {} in jumpQuery by user {}", sectorID, user.getUserLog());
+                    log.error("Error in fetch galaxystar, cannot find sectorID {} in jumpQuery by user {}", sectorID, user().getUserLog());
                     return;
                 }
                 final MapStarDesc starDestination = optStar.get();
@@ -403,7 +406,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
 
                 if (GalaxyMapCard.isBaseSector(Faction.invert(playerShip.getFaction()), sectorID) || !canJump)
                 {
-                    final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+                    final NotificationProtocol notificationProtocol = user().getProtocol(ProtocolID.Notification);
                     notificationProtocol.sendJumpSectorNotAllowed();
                     return;
                 }
@@ -413,24 +416,24 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             case RequestJumpToBeacon ->
             {
                 final long sectorID = br.readUint32();
-                DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+                DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
                 debugProtocol.sendEzMsg("RequestJumpToBeacon is not implemented! " + sectorID);
             }
             case StopJump ->
             {
-                log.info(user.getUserLog() + "StopJump call");
+                log.info(user().getUserLog() + "StopJump call");
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
                 if (!secPlayerShip.bothPresent()) return;
                 this.isJumping = false;
 
-                final Player player = this.user.getPlayer();
+                final Player player = this.user().getPlayer();
 
                 secPlayerShip.sector().getJumpRegistry().removeJump(player.getUserID());
             }
             case StopGroupJump ->
             {
-                log.info(user.getUserLog() + "Request stop group jump");
-                final Optional<IParty> optParty = user.getPlayer().getParty();
+                log.info(user().getUserLog() + "Request stop group jump");
+                final Optional<IParty> optParty = user().getPlayer().getParty();
                 if (optParty.isEmpty())
                     return;
 
@@ -445,10 +448,10 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 var sector = secPlayerShip.sector();
 
                 final IParty party = optParty.get();
-                final boolean isLeader = party.getLeader().equals(this.user);
+                final boolean isLeader = party.getLeader().equals(user());
                 final BgoProtocolWriter stopBw = isLeader ?
                         writer.writeLeaderStopGroupJump() :
-                        writer.writeStopGroupJump(user.getPlayer().getUserID());
+                        writer.writeStopGroupJump(user().getPlayer().getUserID());
                 for (final User member : party.getMembers())
                 {
                     if (isLeader)
@@ -457,7 +460,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     }
                     else
                     {
-                        if (member.equals(this.user))
+                        if (member.equals(user()))
                         {
                             sector.getJumpRegistry().removeJump(member.getPlayer().getUserID());
                         }
@@ -469,17 +472,17 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             {
                 if (!this.isJumping)
                 {
-                    log.info("User quit gameprotocol but is jumping: " + user.getUserLog());
+                    log.info("User quit gameprotocol but is jumping: " + user().getUserLog());
                     return;
                 }
-                final Player player = user.getPlayer();
+                final Player player = user().getPlayer();
                 player.getLocation().setLocation(GameLocation.Space, jumpTargetSectorID, jumpTargetSectorGUID);
-                final SceneProtocol sceneProt = user.getProtocol(ProtocolID.Scene);
+                final SceneProtocol sceneProt = user().getProtocol(ProtocolID.Scene);
                 sceneProt.sendLoadNextScene();
                 this.jumpTargetSectorID = -1;
                 this.jumpTargetSectorGUID = -1;
                 this.isJumping = false;
-                log.info("User quit gameprotocol {}", user.getUserLog());
+                log.info("User quit gameprotocol {}", user().getUserLog());
             }
             case CompleteJump ->
             {
@@ -487,7 +490,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
                 if (!secPlayerShip.bothPresent())
                 {
-                    log.warn("Cheat {} RequestCompleteJump but sector or ship not present", user.getUserLog());
+                    log.warn("Cheat {} RequestCompleteJump but sector or ship not present", user().getUserLog());
                     return;
                 }
 
@@ -496,7 +499,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final BgoProtocolWriter bw = writer.writeChangeVisibility(playerShip.getObjectID(),
                         playerShip.getPlayerVisibility());
                 this.sector.getSectorSender().sendToAllClients(bw);
-                this.user.send(bw);
+                this.user().send(bw);
                  */
                 this.completeJumpFlag.set(true);
             }
@@ -505,7 +508,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final long respawnSectorID = br.readUint32();
                 final long respawnPlayerID = br.readUint32();
                 //as of now not implemented
-                log.info(user.getUserLog() + "RespawnLocation: " + respawnSectorID + " respawnPlayerID: " + respawnPlayerID);
+                log.info(user().getUserLog() + "RespawnLocation: " + respawnSectorID + " respawnPlayerID: " + respawnPlayerID);
 
                 final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
 
@@ -514,7 +517,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 log.info("both present result " + secPlayerShip.bothPresent());
                 if (secPlayerShip.bothPresent() && !playerShip.isDead())
                 {
-                    log.warn(user.getUserLog() + " cheat SelectRespawnLocation but ship is not dead");
+                    log.warn(user().getUserLog() + " cheat SelectRespawnLocation but ship is not dead");
                     return;
                 }
 
@@ -522,27 +525,27 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final RespawnOptions lastTmpSpawnOpts = this.lastRespawnOptions.get();
                 if (lastTmpSpawnOpts == null)
                 {
-                    log.warn(user.getUserLog() + " cheat user selected respawn opts while not set!");
+                    log.warn(user().getUserLog() + " cheat user selected respawn opts while not set!");
                     return;
                 }
                 log.info("lastTmpSpawnOpts " + lastTmpSpawnOpts);
                 final boolean selectedRespawnSectorIdIsValid = lastTmpSpawnOpts.sectorIds().contains(respawnSectorID);
                 if (!selectedRespawnSectorIdIsValid)
                 {
-                    log.warn(user.getUserLog() + " cheat user selected respawn opts sectorId not valid");
+                    log.warn(user().getUserLog() + " cheat user selected respawn opts sectorId not valid");
                     return;
                 }
 
                 final Optional<Sector> optSector = this.sectorRegistry.getSectorById(respawnSectorID);
                 if (optSector.isEmpty())
                 {
-                    log.warn(user.getUserLog() + "SelectRespawnLocation but sector empty!");
+                    log.warn(user().getUserLog() + "SelectRespawnLocation but sector empty!");
                     return;
                 }
                 final Sector sector = optSector.get();
 
-                final Player player = this.user.getPlayer();
-                sector.getSpaceObjectRemover().playerSelectedRespawnLocation(user.getPlayer().getUserID());
+                final Player player = this.user().getPlayer();
+                sector.getSpaceObjectRemover().playerSelectedRespawnLocation(user().getPlayer().getUserID());
                 player.getLocation().setLocation(GameLocation.Room, respawnSectorID, sector.getSectorGuid());
 
                 dockProcedure(true);
@@ -823,7 +826,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final Optional<SpaceObject> optionalSpaceObject = sector.getCtx().spaceObjects().get(dockObjectID);
                 if (optionalSpaceObject.isEmpty())
                 {
-                    log.warn(user.getUserLog() + "Error docking on target! not existing");
+                    log.warn(user().getUserLog() + "Error docking on target! not existing");
                     return;
                 }
                 final SpaceObject spaceObjectToDockAt = optionalSpaceObject.get();
@@ -832,7 +835,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 //caught cheating
                 if (!ownerCard.isDockable())
                 {
-                    log.error("Caught cheating by docking on nondockable ship " + user.getPlayer().getPlayerLog());
+                    log.error("Caught cheating by docking on nondockable ship " + user().getPlayer().getPlayerLog());
                     return;
                 }
                 final Vector3 playerPos = playerShip.getMovementController().getPosition();
@@ -841,7 +844,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 if (distance > ownerCard.getDockRange())
                 {
                     log.error("Caught cheating by docking on dockable ship but its too far away " + distance +
-                            " " + user.getPlayer().getPlayerLog());
+                            " " + user().getPlayer().getPlayerLog());
                     return;
                 }
                 dockProcedure(playerShip.isDead());
@@ -851,7 +854,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final var sectorAndPlayerShip = getSectorAndPlayerShip();
                 if (!sectorAndPlayerShip.bothPresent())
                 {
-                    log.error("CancelDocking not working, playership or sector not present {}", user.getUserLogSimple());
+                    log.error("CancelDocking not working, playership or sector not present {}", user().getUserLogSimple());
                     return;
                 }
 
@@ -885,7 +888,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     public void jumpProcedure(final JumpRegistry jumpRegistry, final long targetSectorID,
                               final float baseChargeTime, final boolean isInCombat)
     {
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         final float chargeTime = isInCombat ? baseChargeTime * 4 : baseChargeTime;
 
         jumpRegistry.addJumpOutRequest(player.getUserID(), targetSectorID, chargeTime, new long[0]);
@@ -893,7 +896,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     }
     public void groupJump(final Sector currentSector, final long targetSectorID, final long[] playerIDs)
     {
-        final Optional<IParty> optParty = this.user.getPlayer().getParty();
+        final Optional<IParty> optParty = this.user().getPlayer().getParty();
         if (optParty.isEmpty())
         {
             log.error("Group jump but no party!");
@@ -974,13 +977,13 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 case Loot ->
                 {
                     br.readUint32();
-                    log.error("Request that should never happened: {} {}", ClientMessage.Loot, user.getUserLog());
+                    log.error("Request that should never happened: {} {}", ClientMessage.Loot, user().getUserLog());
                 }
                 //should never happen2
                 case WhoIs ->
                 {
                     br.readUint32();
-                    log.error("Request that should never happened: {} {}", ClientMessage.WhoIs, user.getUserLog());
+                    log.error("Request that should never happened: {} {}", ClientMessage.WhoIs, user().getUserLog());
                 }
                 case UnSubscribeInfo ->
                 {
@@ -1020,7 +1023,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     final SpaceObject objToSubAt = optObjToSubAt.get();
                     if (objToSubAt.isPlayer())
                     {
-                        log.error("PlayerSubscribe request on standard SpaceObject {}", user.getUserLog());
+                        log.error("PlayerSubscribe request on standard SpaceObject {}", user().getUserLog());
                         continue;
                     }
 
@@ -1045,12 +1048,12 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     final int abilityID = br.readUint16();
                     final long[] targetIDs = br.readUint32Array();
 
-                    final Player player = user.getPlayer();
+                    final Player player = user().getPlayer();
 
 
                     if (player.getLocation().getGameLocation() != GameLocation.Space)
                     {
-                        log.warn(user.getUserLog() + "AbilityCastRequest but user was not in space, he was in " +
+                        log.warn(user().getUserLog() + "AbilityCastRequest but user was not in space, he was in " +
                                 player.getLocation().getGameLocation());
                         continue;
                     }
@@ -1065,7 +1068,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                         {
                             ShipSlot slot = slots.get().getSlot(abilityID);
                             log.info("user={}, CastSlotAbility id={}, targetIds={}, slot={}",
-                                    user.getUserLog(),
+                                    user().getUserLog(),
                                     abilityID,
                                     Arrays.toString(targetIDs),
                                     slot
@@ -1093,7 +1096,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     final long[] targetIDs = br.readUint32Array();
 
                     //Log2.infoIn("CastImmutableSlotAbility: " + abilityID + " "  + Arrays.toString(targetIDs));
-                    final Player player = user.getPlayer();
+                    final Player player = user().getPlayer();
 
                     final SectorPlayerShipFetchResult secPlayerShip = getSectorAndPlayerShip();
                     if (!secPlayerShip.bothPresent())
@@ -1188,7 +1191,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             final int shipTier = playerShip.getShipCard().getTier();
             dockDelay = isZeroRule ? 0 : 10 * shipTier;
         }
-        user.send(writer.writeDockingDelay(dockDelay));
+        user().send(writer.writeDockingDelay(dockDelay));
 
         final Runnable runnable = () ->
         {
@@ -1196,8 +1199,8 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             {
                 sector.getSpaceObjectRemover().notifyRemovingCauseAdded(playerShip, RemovingCause.Dock);
             }
-            final SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
-            final Location currentLocation = user.getPlayer().getLocation();
+            final SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
+            final Location currentLocation = user().getPlayer().getLocation();
             if (currentLocation.getSectorID() == 0 || currentLocation.getSectorID() == 6)
                 currentLocation.changeState(new CICLocation(currentLocation));
             else
@@ -1215,30 +1218,30 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
 
             if (isAlreadyDead)
             {
-                final var activeStats = user.getPlayer().getHangar()
+                final var activeStats = user().getPlayer().getHangar()
                         .getActiveShip().getShipStats();
                 final float maxHP = activeStats.getStatOrDefault(ObjectStat.MaxHullPoints);
                 final float newHP = maxHP * 0.25f;
                 activeStats.setHp(newHP);
             }
         };
-        this.dockFuture = scheduledExecutorService.schedule(runnable, (long) dockDelay, TimeUnit.SECONDS);
+        this.dockFuture = ctx.scheduledExecutorService().schedule(runnable, (long) dockDelay, TimeUnit.SECONDS);
         if(!isAlreadyDead)
             playerShip.getSpaceObjectState().setDocking(true);
     }
 
     private Optional<Sector> getSector()
     {
-        if (user == null)
+        if (user() == null)
         {
             return Optional.empty();
         }
-        final Player player = user.getPlayer();
+        final Player player = user().getPlayer();
         return sectorRegistry.getSectorById(player.getSectorId());
     }
     private Optional<PlayerShip> getPlayerShip(final Sector sector)
     {
-        return sector.getCtx().users().getPlayerShipByUserID(user.getPlayer().getUserID());
+        return sector.getCtx().users().getPlayerShipByUserID(user().getPlayer().getUserID());
     }
     private SectorPlayerShipFetchResult getSectorAndPlayerShip()
     {
@@ -1269,7 +1272,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     public void sendJump(final long sectorID, final float cooldown, final boolean soloJump)
     {
         this.jumpTargetSectorID = sectorID;
-        final MapStarDesc star = galaxy.getGalaxyMapCard().getStars().get(sectorID);
+        final MapStarDesc star = ctx.galaxy().getGalaxyMapCard().getStars().get(sectorID);
         if (star == null)
         {
             log.error("Cannot find sector "+sectorID + " to jump to!");
@@ -1278,33 +1281,33 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
         this.jumpTargetSectorGUID = star.getSectorGuid();
         this.isJumping = true;
 
-        final BgoProtocolWriter bw = writer.writeJump(cooldown, soloJump, this.galaxy.getGalaxyMapCard().getStars().get(sectorID).getSectorGuid());
+        final BgoProtocolWriter bw = writer.writeJump(cooldown, soloJump, ctx.galaxy().getGalaxyMapCard().getStars().get(sectorID).getSectorGuid());
 
-        this.user.send(bw);
+        this.user().send(bw);
     }
 
     public boolean sendRespawnOptions()
     {
-        if (this.user == null || !this.user.isConnected())
+        if (user() == null || !this.user().isConnected())
         {
-            boolean isUserNull = user == null;
+            boolean isUserNull = user() == null;
             boolean isUserDisconnected = false;
             if (!isUserNull)
             {
-                isUserDisconnected = user.isConnected();
+                isUserDisconnected = user().isConnected();
             }
 
             log.error("SendRespawnOptions but user was null={}, connected={}", isUserNull, isUserDisconnected);
             return false;
         }
-        final Player player = this.user.getPlayer();
+        final Player player = this.user().getPlayer();
         this.isRespawnSend = true;
         final List<Long> carrierIDs = new ArrayList<>();
         final List<Long> respawnLocations = new ArrayList<>();
 
-        final Map<Long, MapStarDesc> stars = galaxy.getGalaxyMapCard().getStars();
+        final Map<Long, MapStarDesc> stars = ctx.galaxy().getGalaxyMapCard().getStars();
         final MapStarDesc mySector = stars.get(player.getSectorId());
-        final Faction enemyFaction = user.getPlayer().getFaction().enemyFaction();
+        final Faction enemyFaction = user().getPlayer().getFaction().enemyFaction();
 
         final List<MapStarDesc> sorted = stars.values().stream()
                 //remove all sectors that are enemy base sectors
@@ -1346,7 +1349,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
             }
         }
         this.lastRespawnOptions.set(new RespawnOptions(respawnLocations, carrierIDs));
-        return user.send(writer.writeSpawnOptions(respawnLocations, carrierIDs));
+        return user().send(writer.writeSpawnOptions(respawnLocations, carrierIDs));
     }
 
     public AtomicBoolean getCompleteJumpFlag()
@@ -1357,14 +1360,14 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
     @Override
     public boolean sendSpacePropertyBuffer(final BasePropertyBuffer spacePropertyBuffer)
     {
-        if (user == null || !user.isConnected())
+        if (user() == null || !user().isConnected())
         {
             log.warn("sending basepropertybuffer even thou user is null");
             return false;
         }
 
         final BgoProtocolWriter bw = writer.writeSpacePropertyBuffer(spacePropertyBuffer);
-        return this.user.send(bw);
+        return this.user().send(bw);
     }
 
     @Override

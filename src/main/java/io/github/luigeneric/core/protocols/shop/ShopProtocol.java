@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.shop;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.player.Hangar;
 import io.github.luigeneric.core.player.HangarShip;
@@ -36,15 +37,13 @@ public class ShopProtocol extends BgoProtocol
     private final Set<Long> shipBlackList;
     private final Set<Long> consumableBlacklist;
     private final Set<Long> systemBlackList;
-    private final GameServerParamsConfig gameServerParams;
     private Shop shop;
     private EventShop eventShop;
     private final Catalogue catalogue;
-    public ShopProtocol(final GameServerParamsConfig gameServerParams)
+    public ShopProtocol(final ProtocolContext ctx)
     {
-        super(ProtocolID.Shop);
+        super(ProtocolID.Shop, ctx);
         this.catalogue = CDI.current().select(Catalogue.class).get();
-        this.gameServerParams = gameServerParams;
         this.shipBlackList = new HashSet<>();
         this.consumableBlacklist = new HashSet<>();
         this.systemBlackList = new HashSet<>();
@@ -104,7 +103,7 @@ public class ShopProtocol extends BgoProtocol
     private void setupShipBlackList()
     {
         // if in test mode, do not add to blacklist
-        if (!gameServerParams.starterParams().testingMode())
+        if (!ctx.gameServerParams().starterParams().testingMode())
         {
             //brimir
             this.shipBlackList.add(98636899L); //obj key
@@ -142,22 +141,22 @@ public class ShopProtocol extends BgoProtocol
             case EventShopItems ->
             {
                 log.info("write event shop items to the client");
-                user.send(writeEventShopItems(eventShop));
+                user().send(writeEventShopItems(eventShop));
             }
             case Close ->
             {
-                log.error(user.getPlayer().getPlayerLog() + "CLOSE SHOP NOT IMPLEMENTED");
+                log.error(user().getPlayer().getPlayerLog() + "CLOSE SHOP NOT IMPLEMENTED");
             }
             case AllSales ->
             {
-                user.send(writeSales());
-                user.send(writeUpgradeSales());
+                user().send(writeSales());
+                user().send(writeUpgradeSales());
             }
             case Items ->
             {
                 try
                 {
-                    user.send(writeShopItems(shop));
+                    user().send(writeShopItems(shop));
                 }
                 catch (IllegalArgumentException illegalArgumentException)
                 {
@@ -166,15 +165,15 @@ public class ShopProtocol extends BgoProtocol
                 /*
                 if (gameServerParams.starterParams().testingMode())
                 {
-                    user.send(writeEventShop(11133L, true));
+                    user().send(writeEventShop(11133L, true));
                 }
                  */
-                user.send(writeEventShop(11133L, true));
+                user().send(writeEventShop(11133L, true));
             }
 
             default ->
             {
-                log.error(user.getUserLog() + "ShopProtocol, case not implemented " + clientMessage);
+                log.error(user().getUserLog() + "ShopProtocol, case not implemented " + clientMessage);
             }
         }
 
@@ -182,7 +181,7 @@ public class ShopProtocol extends BgoProtocol
 
     private void setupEventShop()
     {
-        final Player player = user.getPlayer();
+        final Player player = user().getPlayer();
         this.eventShop = player.getEventShop();
         eventShop.removeAllShipItems();
 
@@ -201,7 +200,7 @@ public class ShopProtocol extends BgoProtocol
 
     private Shop setupShop()
     {
-        final Player player = user.getPlayer();
+        final Player player = user().getPlayer();
         Shop shop = player.getShop();
         shop.removeAllShipItems();
 
@@ -216,7 +215,7 @@ public class ShopProtocol extends BgoProtocol
                 continue;
 
 
-            //if (gameServerParams.starterParams().isLive() && (card.getTier() == 4) && !this.user.getPlayer().getBgoAdminRoles().hasRole(BgoAdminRoles.Developer))
+            //if (gameServerParams.starterParams().isLive() && (card.getTier() == 4) && !this.user().getPlayer().getBgoAdminRoles().hasRole(BgoAdminRoles.Developer))
             //    continue;
 
             if (card.getShopCategory() == ShopCategory.Ship)
@@ -239,7 +238,7 @@ public class ShopProtocol extends BgoProtocol
         {
             //if live mode do not publish t4 items if non-admin
             /*
-            if (gameServerParams.starterParams().isLive() && (sysCard.getTier() == 4) && !this.user.getPlayer().getBgoAdminRoles().hasRole(BgoAdminRoles.Developer))
+            if (gameServerParams.starterParams().isLive() && (sysCard.getTier() == 4) && !this.user().getPlayer().getBgoAdminRoles().hasRole(BgoAdminRoles.Developer))
                 continue;
              */
 
@@ -251,19 +250,19 @@ public class ShopProtocol extends BgoProtocol
                 continue;
 
             // ???
-            if (sysCard.getCardGuid() == 225 && !user.getPlayer().getBgoAdminRoles().hasOneRole(BgoAdminRoles.Developer, BgoAdminRoles.CommunityManager))
+            if (sysCard.getCardGuid() == 225 && !user().getPlayer().getBgoAdminRoles().hasOneRole(BgoAdminRoles.Developer, BgoAdminRoles.CommunityManager))
             {
                 continue;
             }
 
             if (sysCard.getLevel() == 1 || sysCard.getShipSlotType() == ShipSlotType.avionics)
             {
-                if (sysCard.getShipSlotType() == ShipSlotType.avionics && hasAlreadyInHoldLockerSlot(sysCard.getCardGuid(), user))
+                if (sysCard.getShipSlotType() == ShipSlotType.avionics && hasAlreadyInHoldLockerSlot(sysCard.getCardGuid(), user()))
                     continue;
 
                 shop.addShipItem(ShipSystem.fromGUID(sysCard.getCardGuid()));
             }
-            if (gameServerParams.starterParams().testingMode())
+            if (ctx.gameServerParams().starterParams().testingMode())
             {
                 if (sysCard.getLevel() == 10)
                 {
@@ -280,8 +279,8 @@ public class ShopProtocol extends BgoProtocol
 
     public boolean hasAlreadyInHoldLockerSlot(final long itemGUID, final User user)
     {
-        final Hold hold = user.getPlayer().getHold();
-        final Locker locker = user.getPlayer().getLocker();
+        final Hold hold = user().getPlayer().getHold();
+        final Locker locker = user().getPlayer().getLocker();
 
 
         final Optional<ShipItem> contains = hold.getByGUID(itemGUID);
@@ -291,7 +290,7 @@ public class ShopProtocol extends BgoProtocol
         if (containsLocker.isPresent())
             return true;
 
-        final Hangar hangar = user.getPlayer().getHangar();
+        final Hangar hangar = user().getPlayer().getHangar();
         final List<HangarShip> allShips = hangar.getAllHangarShips();
         for (final HangarShip ship : allShips)
         {

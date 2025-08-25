@@ -32,27 +32,26 @@ public class LoginProtocol extends BgoProtocol
 {
     private final SessionRegistry sessionRegistry;
     private final DbProvider dbProviderProvider;
-    private final AbstractConnection connection;
     private final UsersContainer usersContainer;
     private final IProtocolRegistry protocolRegistry;
     private final UserDisconnectedSubscriber userDisconnectedSubscriber;
-    private final GameServerParamsConfig gameServerParams;
     private final LoginProtocolWriteOnly writer;
     private final MissionUpdater missionUpdater;
-    public LoginProtocol(final SessionRegistry sessionRegistry, final DbProvider dbProviderProvider, final AbstractConnection connection,
-                         final UsersContainer usersContainer, final IProtocolRegistry protocolRegistry,
-                         final UserDisconnectedSubscriber userDisconnectedSubscriber, final GameServerParamsConfig gameServerParams,
+    public LoginProtocol(final ProtocolContext ctx,
+                         final SessionRegistry sessionRegistry,
+                         final DbProvider dbProviderProvider,
+                         final UsersContainer usersContainer,
+                         final IProtocolRegistry protocolRegistry,
+                         final UserDisconnectedSubscriber userDisconnectedSubscriber,
                          final MissionUpdater missionUpdater
     )
     {
-        super(ProtocolID.Login);
+        super(ProtocolID.Login, ctx);
         this.sessionRegistry = sessionRegistry;
         this.dbProviderProvider = dbProviderProvider;
-        this.connection = connection;
         this.usersContainer = usersContainer;
         this.protocolRegistry = protocolRegistry;
         this.userDisconnectedSubscriber = userDisconnectedSubscriber;
-        this.gameServerParams = gameServerParams;
         this.missionUpdater = missionUpdater;
         this.writer = new LoginProtocolWriteOnly();
     }
@@ -70,7 +69,7 @@ public class LoginProtocol extends BgoProtocol
         {
             case Init ->
             {
-                connection.send(writer.writeSrvRevision());
+                ctx.connection().send(writer.writeSrvRevision());
             }
             case Player ->
             {
@@ -84,7 +83,7 @@ public class LoginProtocol extends BgoProtocol
 
                 //SESSION HANDLING
                 //-1 if session not existing
-                final SessionHandlingResult sessionHandlingResult = sessionHandling(sessionCode, connection);
+                final SessionHandlingResult sessionHandlingResult = sessionHandling(sessionCode, ctx.connection());
                 if (!sessionHandlingResult.isValid())
                 {
                     log.info("Session is not valid, stop Login");
@@ -95,7 +94,7 @@ public class LoginProtocol extends BgoProtocol
                 MDC.put("userID", String.valueOf(playerID));
                 log.info("User tries to login with session {}", sessionHandlingResult.session());
                 log.info("Assembly MD5 {}", playerNameArg);
-                if (!gameServerParams.ignoreHashes() && !gameServerParams.allowedHashes().contains(playerNameArg))
+                if (!ctx.gameServerParams().ignoreHashes() && !ctx.gameServerParams().allowedHashes().contains(playerNameArg))
                 {
                     log.warn("Cheat, player used modified assembly! {} {}", playerIDArg, playerID);
                     isModifiedAssemblyFlag = true;
@@ -107,7 +106,7 @@ public class LoginProtocol extends BgoProtocol
                     return;
                 }
                 final Session session = optSession.get();
-                PlayerlessUser playerlessUser = new PlayerlessUser(connection, session, protocolRegistry);
+                PlayerlessUser playerlessUser = new PlayerlessUser(ctx.connection(), session, protocolRegistry);
                 this.usersContainer.addWithoutChar(playerID, playerlessUser);
 
                 final Optional<User> optExUser = this.getExistingUser(playerID);
@@ -117,17 +116,17 @@ public class LoginProtocol extends BgoProtocol
                 {
                     log.info("No existing account found for player {}", playerID);
                     var missionBook = new MissionBook(playerID, missionUpdater);
-                    final Player player = new Player(playerID, gameServerParams, missionBook);
+                    final Player player = new Player(playerID, ctx.gameServerParams(), missionBook);
                     //TODO add try-catch clause to check if there is no pre-char
                     final User newUser = this.usersContainer.playerCreated(player);
                     player.setModifiedAssemblyFlag(isModifiedAssemblyFlag);
 
                     //connection notifies the old session to close
                     // therefore we need to set the connection first and afterwards set the session
-                    newUser.setConnection(connection);
+                    newUser.setConnection(ctx.connection());
                     newUser.setSession(session);
                     newUser.setUserDisconnectedSubscriber(this.userDisconnectedSubscriber);
-                    connection.send(writer.writePlayer(newUser.getPlayer().getBgoAdminRoles()));
+                    ctx.connection().send(writer.writePlayer(newUser.getPlayer().getBgoAdminRoles()));
                     //setup registry so all protocols work
                     newUser.getProtocolRegistry().loginFinished(newUser);
 
@@ -143,7 +142,7 @@ public class LoginProtocol extends BgoProtocol
                     }
 
                     final CommunityProtocol communityProtocol = newUser.getProtocolRegistry().getProtocol(ProtocolID.Community);
-                    communityProtocol.sendChatSessionId("", 860, "us", gameServerParams.chatServerAddress());
+                    communityProtocol.sendChatSessionId("", 860, "us", ctx.gameServerParams().chatServerAddress());
                 }
                 //there is already an existing account
                 else
@@ -154,23 +153,23 @@ public class LoginProtocol extends BgoProtocol
                     this.injectUser(existingUser);
                     existingUser.getPlayer().setModifiedAssemblyFlag(isModifiedAssemblyFlag);
 
-                    if (user.getProtocolRegistry().getAllProtocols().size() == 1)
+                    if (user().getProtocolRegistry().getAllProtocols().size() == 1)
                     {
-                        this.protocolRegistry.loginFinished(user);
+                        this.protocolRegistry.loginFinished(user());
                     }
                     else
                     {
-                        this.protocolRegistry.injectOldRegistry(user);
+                        this.protocolRegistry.injectOldRegistry(user());
                     }
 
                     final SettingProtocol settingProtocol = this.protocolRegistry.getProtocol(ProtocolID.Setting);
                     settingProtocol.sendSettings();
-                    user.setConnection(connection);
-                    user.setSession(session);
-                    user.send(writer.writePlayer(user.getPlayer().getBgoAdminRoles()));
-                    PlayerProtocol playerProtocol = user.getProtocol(ProtocolID.Player);
-                    user.setUserDisconnectedSubscriber(this.userDisconnectedSubscriber);
-                    protocolRegistry.injectOldRegistry(user);
+                    user().setConnection(ctx.connection());
+                    user().setSession(session);
+                    user().send(writer.writePlayer(user().getPlayer().getBgoAdminRoles()));
+                    PlayerProtocol playerProtocol = user().getProtocol(ProtocolID.Player);
+                    user().setUserDisconnectedSubscriber(this.userDisconnectedSubscriber);
+                    protocolRegistry.injectOldRegistry(user());
                     playerProtocol.sendCharacter();
                     /*
                     PrometheusMetrics.INSTANCE.getPlayersOnline()
@@ -178,7 +177,7 @@ public class LoginProtocol extends BgoProtocol
                             .inc();
                      */
                     final CommunityProtocol communityProtocol = this.protocolRegistry.getProtocol(ProtocolID.Community);
-                    communityProtocol.sendChatSessionId("", 860, "us", gameServerParams.chatServerAddress());
+                    communityProtocol.sendChatSessionId("", 860, "us", ctx.gameServerParams().chatServerAddress());
                 }
             }
             case Echo ->

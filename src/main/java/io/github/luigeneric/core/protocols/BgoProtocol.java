@@ -3,27 +3,34 @@ package io.github.luigeneric.core.protocols;
 
 import io.github.luigeneric.ScheduledService;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import org.slf4j.MDC;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.ScheduledExecutorService;
 
 public abstract class BgoProtocol extends WriteOnlyProtocol
 {
-    protected User user;
+    protected final ProtocolContext ctx;
     protected long userId;
-    protected ScheduledService scheduledExecutorService;
 
-    public BgoProtocol(final ProtocolID protocolID)
+    public BgoProtocol(final ProtocolID protocolID, final ProtocolContext ctx)
     {
         super(protocolID);
         this.userId = -1;
+        this.ctx = ctx;
+    }
+
+    public User user()
+    {
+        return ctx.user();
     }
 
     public void injectUser(final User user)
     {
-        this.user = user;
+        this.ctx.user(user);
         if (user != null)
         {
             if (userId == -1)
@@ -38,11 +45,6 @@ public abstract class BgoProtocol extends WriteOnlyProtocol
     protected void setupHandlers(){}
 
     public abstract void parseMessage(final int msgType, final BgoProtocolReader br) throws IOException;
-
-    public void injectScheduler(ScheduledService scheduledExecutorService)
-    {
-        this.scheduledExecutorService = scheduledExecutorService;
-    }
 
 
     public void onDisconnect()

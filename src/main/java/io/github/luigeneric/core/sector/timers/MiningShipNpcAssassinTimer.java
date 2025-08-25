@@ -16,6 +16,8 @@ import io.github.luigeneric.templates.sectortemplates.MiningShipConfig;
 import io.github.luigeneric.templates.sectortemplates.NpcGuidLootId;
 import io.github.luigeneric.utils.BgoRandom;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class MiningShipNpcAssassinTimer extends DelayedTimer
         this.miningShipConfig = miningShipConfig;
         this.spaceObjectFactory = spaceObjectFactory;
         this.joinQueue = joinQueue;
-        this.bgoRandom = new BgoRandom();
+        this.bgoRandom = ctx.bgoRandom();
     }
 
     @Override
@@ -41,19 +43,19 @@ public class MiningShipNpcAssassinTimer extends DelayedTimer
     {
         final List<MiningShip> miningShips = this.sectorSpaceObjects.getSpaceObjectsOfEntityType(SpaceEntityType.MiningShip);
         final long tickTimeStamp = tick.getTimeStamp();
-        final long npcSpawnDelay = miningShipConfig.secondsUntilNpcSpawns() * 1000L;
-        final long initialDelay = miningShipConfig.npcInitialSpawnDelaySeconds() * 1000L;
+        final long npcSpawnDelayMillis = miningShipConfig.secondsUntilNpcSpawns() * 1000L;
+        final long initialSpawnDelayMillis = miningShipConfig.npcInitialSpawnDelaySeconds() * 1000L;
         for (final MiningShip miningShip : miningShips)
         {
             final long lastTimeAssassin = miningShip.getLastTimeAssassin();
             //there was no npc spawn ever
             if (lastTimeAssassin == 0)
             {
-                miningShip.setLastTimeAssassin(tickTimeStamp + initialDelay - npcSpawnDelay);
+                miningShip.setLastTimeAssassin(tickTimeStamp + initialSpawnDelayMillis - npcSpawnDelayMillis);
                 continue;
             }
 
-            final long timeStampWhenNpcShouldSpawn = npcSpawnDelay + lastTimeAssassin;
+            final long timeStampWhenNpcShouldSpawn = npcSpawnDelayMillis + lastTimeAssassin;
             final long diff = tickTimeStamp - timeStampWhenNpcShouldSpawn;
             if (diff < 0)
                 continue;
@@ -80,11 +82,24 @@ public class MiningShipNpcAssassinTimer extends DelayedTimer
                 assassinPos.add(assassinTransform.getRotation().direction().add(rightAxis.mult(bgoRandom.getRndBetween(-600, 600))));
                 assassinPos.add(assassinTransform.getRotation().direction().add(forwardAxis.mult(bgoRandom.getRndBetween(450, 700))));
 
-                final SpaceObject newAssassin = this.spaceObjectFactory.createBotFighter(npcGuidLootId.npcGUID(),
-                        List.of(miningShip), List.of(), List.of(),
+                //test if distance between assassin and miningship is greater than autoAggroDistance?
+                final float distance = assassinPos.distance(miningTransform.getPosition());
+
+
+                final SpaceObject newAssassin = this.spaceObjectFactory.createBotFighter(
+                        npcGuidLootId.npcGUID(),
+                        List.of(miningShip),
+                        List.of(),
+                        List.of(),
                         assassinTransform,
                         new NpcBehaviourTemplate(
-                                1, 400, 2500, 15, false, 400),
+                                1,
+                                400,
+                                2500,
+                                15,
+                                false,
+                                400
+                        ),
                         npcGuidLootId.lootID());
                 this.joinQueue.addSpaceObject(newAssassin);
             }

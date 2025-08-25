@@ -511,8 +511,20 @@ public class SpaceObjectFactory
         return missile;
     }
 
+    /**
+     *
+     * @param guid                 type guid such as npc guid
+     * @param objectivesToKill     spaceObjects to kill
+     * @param objectivesToDefend   spaceObjects to defend
+     * @param patrolObjectives     contains an area the npc has to defend
+     * @param startPosition        start position of the npc
+     * @param npcBehaviourTemplate npc behaviour template
+     * @param lootTemplateIDs      templateIds to loot
+     * @return a new moving Botfighter object
+     */
     public BotFighterMoving createBotFighter(final long guid,
-                                             final List<SpaceObject> objectivesToKill, final List<SpaceObject> objectivesToDefend,
+                                             final List<SpaceObject> objectivesToKill,
+                                             final List<SpaceObject> objectivesToDefend,
                                              final List<PatrolObjective> patrolObjectives,
                                              final Transform startPosition,
                                              final NpcBehaviourTemplate npcBehaviourTemplate,
@@ -525,7 +537,7 @@ public class SpaceObjectFactory
         if (optOwnerCard.isEmpty() || optWorldCard.isEmpty() || optShipCard.isEmpty())
         {
             throw new IllegalArgumentException("guid " + guid + " atleast 1 card is missing! " +
-                    optOwnerCard.isPresent()+" "+optWorldCard.isPresent() + " " + optShipCard.isPresent());
+                    optOwnerCard.isPresent() + " " + optWorldCard.isPresent() + " " + optShipCard.isPresent());
         }
         final OwnerCard ownerCard = optOwnerCard.get();
         final WorldCard worldCard = optWorldCard.get();
@@ -536,10 +548,10 @@ public class SpaceObjectFactory
                 FactionGroup.Group0);
         final ShipSubscribeInfo spaceSubscribeInfo = new ShipSubscribeInfo(freeID, shipCard.getStats());
         final ArrayList<NpcObjective> fullObjectiveLst = new ArrayList<>()
-                {{
-                        new KillObjective(0, objectivesToKill);
-                        new DefendObjective(1, objectivesToDefend);
-                }};
+        {{
+            new KillObjective(0, objectivesToKill);
+            new DefendObjective(1, objectivesToDefend);
+        }};
         fullObjectiveLst.addAll(patrolObjectives);
         final BotFighterMoving botFighterMoving = new BotFighterMoving(freeID, ownerCard, worldCard, shipCard, shipCard.getFaction(), FactionGroup.Group0,
                 new ShipBindings(), new ShipAspects(), spaceSubscribeInfo, npcBehaviourTemplate, fullObjectiveLst, this.tick.getTimeStamp());

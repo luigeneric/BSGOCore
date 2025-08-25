@@ -3,6 +3,7 @@ package io.github.luigeneric.core.protocols.setting;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.player.HelpScreenType;
 import io.github.luigeneric.core.player.Player;
 import io.github.luigeneric.core.player.settings.*;
@@ -21,9 +22,9 @@ import java.util.Map;
 public class SettingProtocol extends BgoProtocol
 {
     private final SettingProtocolWriteOnly writer;
-    public SettingProtocol()
+    public SettingProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Setting);
+        super(ProtocolID.Setting, ctx);
         this.writer = new SettingProtocolWriteOnly();
     }
 
@@ -38,11 +39,11 @@ public class SettingProtocol extends BgoProtocol
         final ClientMessage clientMessage = ClientMessage.valueOf(msgType);
         if (clientMessage == null)
         {
-            log.warn("ClientMessage was null in SettingProtocol " + user.getPlayer().getPlayerLog());
+            log.warn("ClientMessage was null in SettingProtocol " + user().getPlayer().getPlayerLog());
             return;
         }
         //Log.serverInfo("SettingProtocol: " + clientMessage.name());
-        final Player player = user.getPlayer();
+        final Player player = user().getPlayer();
         switch (clientMessage)
         {
             case SaveSettings ->
@@ -55,7 +56,7 @@ public class SettingProtocol extends BgoProtocol
             {
                 final List<InputBinding> controls = readControls(br);
                 final Settings settings = player.getSettings();
-                log.info(user.getUserLog() + "UserKeys: " + controls.size() + " " + controls);
+                log.info(user().getUserLog() + "UserKeys: " + controls.size() + " " + controls);
                 settings.getInputBindings().set(controls);
                 //settings.setControls(controls);
             }
@@ -68,9 +69,9 @@ public class SettingProtocol extends BgoProtocol
             case SetSyfyShip ->
             {
                 final boolean isOn = br.readBoolean();
-                log.warn(user.getUserLog() + "Received set syfy with stat: " + isOn);
+                log.warn(user().getUserLog() + "Received set syfy with stat: " + isOn);
             }
-            default -> log.error(user.getUserLog() + "Unknown messageType in SettingProtocol: " + msgType);
+            default -> log.error(user().getUserLog() + "Unknown messageType in SettingProtocol: " + msgType);
         }
     }
 
@@ -194,11 +195,11 @@ public class SettingProtocol extends BgoProtocol
 
     public void sendSettings()
     {
-        final Player player = user.getPlayer();
+        final Player player = user().getPlayer();
         final UserSettings serverSavedSettings = player.getSettings().getServerSavedUserSettings();
         final BgoProtocolWriter buffer = writer.writeSettings(serverSavedSettings);
-        user.send(writer.writeInputBindings(player.getSettings().getInputBindings()));
-        user.send(buffer);
+        user().send(writer.writeInputBindings(player.getSettings().getInputBindings()));
+        user().send(buffer);
 
     }
 
