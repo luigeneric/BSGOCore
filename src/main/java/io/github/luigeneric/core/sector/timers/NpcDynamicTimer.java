@@ -34,13 +34,14 @@ public class NpcDynamicTimer extends NpcTimer
                            final AbilityCastRequestQueue abilityCastRequestQueue,
                            final SectorDamageHistory sectorDamageHistory,
                            final ISpaceObjectRemover remover,
-                           final SectorCards sectorCards
+                           final SectorCards sectorCards,
+                           final BgoRandom bgoRandom
 
     )
     {
         super(tick, sectorSpaceObjects, delayedTicks, abilityCastRequestQueue, sectorDamageHistory, sectorCards);
         this.remover = remover;
-        this.bgoRandom = new BgoRandom();
+        this.bgoRandom = bgoRandom;
     }
 
     @Override

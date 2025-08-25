@@ -1,6 +1,7 @@
 package io.github.luigeneric.core.protocols.ranking;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.protocols.BgoProtocol;
 import io.github.luigeneric.core.protocols.ProtocolID;
 import io.github.luigeneric.enums.RankingGroup;
@@ -15,9 +16,9 @@ import java.util.Map;
 public class RankingProtocol extends BgoProtocol
 {
     private final RankingProtocolWriteOnly writer;
-    public RankingProtocol()
+    public RankingProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Ranking);
+        super(ProtocolID.Ranking, ctx);
         this.writer = new RankingProtocolWriteOnly();
     }
 
@@ -33,7 +34,7 @@ public class RankingProtocol extends BgoProtocol
         //Log.info("RankingProtocol: " + clientMessage);
         if (clientMessage == null)
         {
-            log.warn("Invalid ClientMessage in RankingProtocol " + msgType + " user: " + user.getPlayer().getPlayerLog());
+            log.warn("Invalid ClientMessage in RankingProtocol " + msgType + " user: " + user().getPlayer().getPlayerLog());
             return;
         }
 
@@ -58,7 +59,7 @@ public class RankingProtocol extends BgoProtocol
                 }
                 if (sendValuesInvalid)
                 {
-                    log.warn("Ranking Request counter, values invalid " + user.getPlayer().getPlayerLog());
+                    log.warn("Ranking Request counter, values invalid " + user().getPlayer().getPlayerLog());
                     return;
                 }
 

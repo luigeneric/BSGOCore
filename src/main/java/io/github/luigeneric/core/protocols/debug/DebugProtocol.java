@@ -3,10 +3,7 @@ package io.github.luigeneric.core.protocols.debug;
 import io.github.luigeneric.ApplicationBootstrap;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
-import io.github.luigeneric.core.AbstractConnection;
-import io.github.luigeneric.core.ChatAccessBlocker;
-import io.github.luigeneric.core.User;
-import io.github.luigeneric.core.UsersContainer;
+import io.github.luigeneric.core.*;
 import io.github.luigeneric.core.movement.maneuver.PulseManeuver;
 import io.github.luigeneric.core.movement.maneuver.TeleportManeuver;
 import io.github.luigeneric.core.player.AdminRoles;
@@ -80,27 +77,26 @@ public class DebugProtocol extends BgoProtocol
     private final SectorRegistry sectorRegistry;
     private final UsersContainer usersContainer;
     private final DebugProtocolWriteOnly writer;
-    private final BgoRandom bgoRandom;
-    private final GameServerParamsConfig gameServerParamsConfig;
     private final Catalogue catalogue;
     private final ApplicationBootstrap applicationBootstrap;
     private final ChatAccessBlocker chatAccessBlocker;
     private final RefundProcessor refundProcessor;
 
-    public DebugProtocol(final SectorRegistry sectorRegistry, final UsersContainer usersContainer, final BgoRandom bgoRandom,
-                         final ChatAccessBlocker chatAccessBlocker, final RefundProcessor refundProcessor
+    public DebugProtocol(final ProtocolContext ctx, 
+                         final SectorRegistry sectorRegistry,
+                         final UsersContainer usersContainer,
+                         final ChatAccessBlocker chatAccessBlocker,
+                         final RefundProcessor refundProcessor
     )
     {
-        super(ProtocolID.Debug);
+        super(ProtocolID.Debug, ctx);
         this.applicationBootstrap = CDI.current().select(ApplicationBootstrap.class).get();
         this.refundProcessor = refundProcessor;
         this.catalogue = CDI.current().select(Catalogue.class).get();
         this.sectorRegistry = sectorRegistry;
         this.usersContainer = usersContainer;
         this.writer = new DebugProtocolWriteOnly();
-        this.bgoRandom = bgoRandom;
         this.chatAccessBlocker = chatAccessBlocker;
-        this.gameServerParamsConfig = CDI.current().select(GameServerParamsConfig.class).get();
     }
 
     public DebugProtocolWriteOnly writer()
@@ -116,11 +112,11 @@ public class DebugProtocol extends BgoProtocol
             {
                 try
                 {
-                    ZoneProtocol zoneProtocol = user.getProtocol(ProtocolID.Zone);
+                    ZoneProtocol zoneProtocol = ctx.user().getProtocol(ProtocolID.Zone);
                     var bw = zoneProtocol.getWriter().writeActiveZones(List.of(
                             ZoneDesc.createZoneInfiniteTime(463726137)
                     ));
-                    user.send(List.of(bw));
+                    ctx.user().send(List.of(bw));
                 }
                 catch (Exception e)
                 {
@@ -129,10 +125,10 @@ public class DebugProtocol extends BgoProtocol
             }
             case "update_role" ->
             {
-                final AdminRoles roles = user.getPlayer().getBgoAdminRoles();
+                final AdminRoles roles = ctx.user().getPlayer().getBgoAdminRoles();
 
                 if (roles.hasRole(BgoAdminRoles.Console) &&
-                        user.getPlayer().getUserID() == 1 || user.getPlayer().getUserID() == 2)
+                        ctx.user().getPlayer().getUserID() == 1 || ctx.user().getPlayer().getUserID() == 2)
                 {
                     try
                     {
@@ -156,9 +152,9 @@ public class DebugProtocol extends BgoProtocol
             }
             case "update_role_name" ->
             {
-                final AdminRoles roles = user.getPlayer().getBgoAdminRoles();
+                final AdminRoles roles = ctx.user().getPlayer().getBgoAdminRoles();
                 if (roles.hasRole(BgoAdminRoles.Console) &&
-                        user.getPlayer().getUserID() == 1 || user.getPlayer().getUserID() == 2)
+                        ctx.user().getPlayer().getUserID() == 1 || ctx.user().getPlayer().getUserID() == 2)
                 {
                     try
                     {
@@ -217,9 +213,9 @@ public class DebugProtocol extends BgoProtocol
             }
             case "activate_di" ->
             {
-                final AdminRoles roles = user.getPlayer().getBgoAdminRoles();
+                final AdminRoles roles = ctx.user().getPlayer().getBgoAdminRoles();
                 if (roles.hasRole(BgoAdminRoles.Console) &&
-                        user.getPlayer().getUserID() == 1 || user.getPlayer().getUserID() == 2)
+                        ctx.user().getPlayer().getUserID() == 1 || ctx.user().getPlayer().getUserID() == 2)
                 {
                     try
                     {
@@ -386,7 +382,7 @@ public class DebugProtocol extends BgoProtocol
             }
             case "getAllShipCountsByObjectKey" ->
             {
-                final boolean isTestingMode = gameServerParamsConfig.starterParams().testingMode();
+                final boolean isTestingMode = ctx.gameServerParams().starterParams().testingMode();
 
                 final Map<Long, Long> result = usersContainer.values().stream()
                         .filter(usr -> isTestingMode || !usr.getPlayer().getBgoAdminRoles().hasOneRole(BgoAdminRoles.Developer))
@@ -414,7 +410,7 @@ public class DebugProtocol extends BgoProtocol
             {
                 try
                 {
-                    final boolean isTestingMode = gameServerParamsConfig.starterParams().testingMode();
+                    final boolean isTestingMode = ctx.gameServerParams().starterParams().testingMode();
                     final Map<Long, Long> fullObjKeyMap = usersContainer.values().stream()
                             .filter(usr -> isTestingMode || !usr.getPlayer().getBgoAdminRoles().hasOneRole(BgoAdminRoles.Developer))
                             .filter(usr -> isTestingMode || !usr.getPlayer().getBgoAdminRoles().hasOneRole(BgoAdminRoles.CommunityManager))
@@ -499,7 +495,7 @@ public class DebugProtocol extends BgoProtocol
         final ClientMessage clientMessage = ClientMessage.forValue(msgType);
         log.info("DebugProtocol: " + clientMessage);
 
-        final Player player = this.user.getPlayer();
+        final Player player = this.ctx.user().getPlayer();
         final AdminRoles roles = player.getBgoAdminRoles();
         final boolean isConsole = roles.hasRole(BgoAdminRoles.Console);
         final boolean isModerator = roles.hasRole(BgoAdminRoles.Mod);
@@ -510,7 +506,7 @@ public class DebugProtocol extends BgoProtocol
             {
                 additionalStr = br.readString();
             }
-            log.warn("User has too low permissions but used DebugProtocol={} otherMsg={}", user.getUserLog(), additionalStr);
+            log.warn("User has too low permissions but used DebugProtocol={} otherMsg={}", ctx.user().getUserLog(), additionalStr);
             return;
         }
 
@@ -518,11 +514,11 @@ public class DebugProtocol extends BgoProtocol
         {
             case Activity ->
             {
-                log.error("Report activity used but it's not implemented in client anymore! " + user.getUserLog());
+                log.error("Report activity used but it's not implemented in client anymore! " + ctx.user().getUserLog());
             }
             case ProcessState ->
             {
-                user.send(writer.writeProcessState("State not set"));
+                ctx.user().send(writer.writeProcessState("State not set"));
             }
             case UpgradeSystem ->
             {
@@ -531,9 +527,9 @@ public class DebugProtocol extends BgoProtocol
             case Command ->
             {
                 final String command = br.readString();
-                log.warn(user.getUserLog() + " Command call " + command + " from " + player.getName());
+                log.warn(ctx.user().getUserLog() + " Command call " + command + " from " + player.getName());
 
-                final PlayerProtocol playerProtocol = user.getProtocol(ProtocolID.Player);
+                final PlayerProtocol playerProtocol = ctx.user().getProtocol(ProtocolID.Player);
 
                 if (roles.hasRole(BgoAdminRoles.Developer))
                 {
@@ -547,7 +543,7 @@ public class DebugProtocol extends BgoProtocol
                         final Map<String, List<User>> grouped = this.usersContainer.userStream(User::isConnected)
                                 .collect(Collectors.groupingBy(user ->
                                 {
-                                    final Optional<AbstractConnection> optConnection = user.getConnection();
+                                    final Optional<AbstractConnection> optConnection = ctx.user().getConnection();
                                     if (optConnection.isEmpty())
                                         return "";
                                     return optConnection.get().addressPrettyPrint();
@@ -682,14 +678,14 @@ public class DebugProtocol extends BgoProtocol
                             final Sector currentSector = optCurrentSector.get();
 
                             final SectorUsers users = currentSector.getCtx().users();
-                            final Optional<PlayerShip> optPlayerShip = users.getPlayerShipByUserID(user.getPlayer().getUserID());
+                            final Optional<PlayerShip> optPlayerShip = users.getPlayerShipByUserID(ctx.user().getPlayer().getUserID());
                             if (optPlayerShip.isEmpty())
                                 return;
                             final PlayerShip playerShip = optPlayerShip.get();
                             final var optTarget = playerShip.getSpaceSubscribeInfo().getTargetObjectID();
                             optTarget.ifPresent(targetID ->
                             {
-                                final StoryProtocol storyProtocol = user.getProtocol(ProtocolID.Story);
+                                final StoryProtocol storyProtocol = ctx.user().getProtocol(ProtocolID.Story);
                                 final BgoProtocolWriter highlightBw = storyProtocol.writer().writeHighlightObject(targetID.get(), isHighlighted);
                                 currentSector.getCtx().sender().sendToAllClients(highlightBw);
                             });
@@ -791,7 +787,7 @@ public class DebugProtocol extends BgoProtocol
                         if (optSector.isEmpty())
                             return;
                         final var sector = optSector.get();
-                        var optPlayerShip = sector.getCtx().users().getPlayerShipByUserID(user.getPlayer().getUserID());
+                        var optPlayerShip = sector.getCtx().users().getPlayerShipByUserID(ctx.user().getPlayer().getUserID());
                         if (optPlayerShip.isEmpty())
                             return;
                         var playerShip = optPlayerShip.get();
@@ -927,13 +923,13 @@ public class DebugProtocol extends BgoProtocol
                             final Optional<Sector> optCurrentSector = this.sectorRegistry.getSectorById(player.getSectorId());
                             if (optCurrentSector.isEmpty()) return;
                             final Sector currentSector = optCurrentSector.get();
-                            final GameProtocol gameProtocol = user.getProtocol(ProtocolID.Game);
+                            final GameProtocol gameProtocol = ctx.user().getProtocol(ProtocolID.Game);
                             final Optional<PlayerShip> optPlayerShip = currentSector.getCtx().users().getPlayerShipByUserID(player.getUserID());
                             if (optPlayerShip.isEmpty()) return;
                             final PlayerShip playerShip = optPlayerShip.get();
                             final BgoProtocolWriter bw = gameProtocol.writer()
                                     .writeChangeVisibility(playerShip.getObjectID(), isVisible, changeVisibilityReason);
-                            user.send(bw);
+                            ctx.user().send(bw);
                         }
                         catch (Exception e)
                         {
@@ -942,24 +938,24 @@ public class DebugProtocol extends BgoProtocol
                     }
                     case "scan_all" ->
                     {
-                        scanAll(this.user);
+                        scanAll(user());
                     }
                     case "remove_factors" ->
                     {
-                        user.getPlayer().getFactors().removeAll();
+                        ctx.user().getPlayer().getFactors().removeAll();
                         PlayerProtocolWriteOnly playerProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Player);
-                        user.send(playerProtocolWriteOnly.writeFactors(user.getPlayer().getFactors()));
+                        ctx.user().send(playerProtocolWriteOnly.writeFactors(ctx.user().getPlayer().getFactors()));
                         sendEzMsg("factor-map cleared");
                     }
                     //not working
                     case "send_banner_box" ->
                     {
                         StoryProtocolWriteOnly storyProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Story);
-                        this.user.send(storyProtocolWriteOnly.writeBannerBox(230));
+                        this.ctx.user().send(storyProtocolWriteOnly.writeBannerBox(230));
                     }
                     case "dump_factors" ->
                     {
-                        var factors = user.getPlayer().getFactors();
+                        var factors = ctx.user().getPlayer().getFactors();
                         sendEzMsg("factors " + factors.values().size());
                         factors.values().forEach(factor -> sendEzMsg(factor.toString()));
                     }
@@ -967,7 +963,7 @@ public class DebugProtocol extends BgoProtocol
                     case "mission_log" ->
                     {
                         StoryProtocolWriteOnly storyProtocolWriteOnly = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Story);
-                        this.user.send(storyProtocolWriteOnly.writeMissionLog("testtext"));
+                        this.ctx.user().send(storyProtocolWriteOnly.writeMissionLog("testtext"));
                     }
                     case "scan_all_playername" ->
                     {
@@ -992,14 +988,14 @@ public class DebugProtocol extends BgoProtocol
                         augmentItems.add(d);
                         augmentItems.add(s);
 
-                        final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+                        final NotificationProtocol notificationProtocol = ctx.user().getProtocol(ProtocolID.Notification);
                         notificationProtocol.sendAugmentItemsAndAdd(augmentItems);
                     }
                     case "set_settings" ->
                     {
                         final float volume = 0.3f;
                         player.getSettings().getServerSavedUserSettings().put(UserSetting.MusicVolume, new UserSettingFloat(volume));
-                        SettingProtocol settingProtocol = user.getProtocol(ProtocolID.Setting);
+                        SettingProtocol settingProtocol = ctx.user().getProtocol(ProtocolID.Setting);
                         settingProtocol.sendSettings();
                     }
                     case "room" ->
@@ -1009,7 +1005,7 @@ public class DebugProtocol extends BgoProtocol
                         br.readString();
                         if (room.equals("cic"))
                         {
-                            final GameProtocol gameProtocol = user.getProtocol(ProtocolID.Game);
+                            final GameProtocol gameProtocol = ctx.user().getProtocol(ProtocolID.Game);
                             gameProtocol.dockProcedure(false, true);
                         } else
                         {
@@ -1083,7 +1079,7 @@ public class DebugProtocol extends BgoProtocol
                         {
                             final String rawTimeInMinutes = br.readString();
                             final int timeInMinutes = Integer.parseInt(rawTimeInMinutes);
-                            final NotificationProtocol notificationProtocol = user.getProtocol(ProtocolID.Notification);
+                            final NotificationProtocol notificationProtocol = ctx.user().getProtocol(ProtocolID.Notification);
                             final BgoProtocolWriter bw = notificationProtocol.writer().writeEmergencyMessage("Shutdown", timeInMinutes);
                             for (User user1 : usersContainer.userList())
                             {
@@ -1104,9 +1100,9 @@ public class DebugProtocol extends BgoProtocol
 
                         final JumpErrorSeverity jumpErrorSeverity = JumpErrorSeverity.forValue((byte) errInt);
                         final JumpErrorReason jumpErrorReason = JumpErrorReason.forValue((byte) reasonInt);
-                        NotificationProtocol notificationProtocol = this.user.getProtocol(ProtocolID.Notification);
+                        NotificationProtocol notificationProtocol = this.ctx.user().getProtocol(ProtocolID.Notification);
                         final BgoProtocolWriter bw = notificationProtocol.writer().writeJumpNotification(jumpErrorSeverity, jumpErrorReason);
-                        user.send(bw);
+                        ctx.user().send(bw);
                     }
                     case "stats_debug_dump" ->
                     {
@@ -1136,8 +1132,8 @@ public class DebugProtocol extends BgoProtocol
                         final var optShip = sector.getCtx().users().getPlayerShipByUserID(player.getUserID());
                         if (optShip.isEmpty())return;
                         final var ship = optShip.get();
-                        GameProtocol gameProtocol = user.getProtocol(ProtocolID.Game);
-                        user.send(gameProtocol.writer().writeUpdateFactionGroup(ship.getObjectID(), factionGroup));
+                        GameProtocol gameProtocol = ctx.user().getProtocol(ProtocolID.Game);
+                        ctx.user().send(gameProtocol.writer().writeUpdateFactionGroup(ship.getObjectID(), factionGroup));
                     }
                     case "randomTentacle" ->
                     {
@@ -1327,11 +1323,11 @@ public class DebugProtocol extends BgoProtocol
                         final boolean isPlanetoid = target.getSpaceEntityType() == SpaceEntityType.Planetoid;
                         if (!isPlanetoid)
                             return;
-                        sector.getCtx().spaceObjectFactory().createMiningShip(user, (Planetoid) target);
+                        sector.getCtx().spaceObjectFactory().createMiningShip(user(), (Planetoid) target);
                     }
                     case "template_from_sector" ->
                     {
-                        final long sectorId = user.getPlayer().getLocation().getSectorID();
+                        final long sectorId = ctx.user().getPlayer().getLocation().getSectorID();
                         final Optional<Sector> optSector = sectorRegistry.getSectorById(sectorId);
                         if (optSector.isEmpty())
                         {
@@ -1351,7 +1347,7 @@ public class DebugProtocol extends BgoProtocol
                             return;
                         }
 
-                        GameProtocol gameProtocol = user.getProtocol(ProtocolID.Game);
+                        GameProtocol gameProtocol = ctx.user().getProtocol(ProtocolID.Game);
                         gameProtocol.jumpProcedure(optCurrentSector.get().getJumpRegistry(), optTargetSector.get().getId(), 1, false);
                     }
 
@@ -1403,7 +1399,7 @@ public class DebugProtocol extends BgoProtocol
                         {
                             return;
                         }
-                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                         if (optSector.isEmpty()) return;
                         final Sector sector = optSector.get();
                         final Comet comet = sector.getCtx().spaceObjectFactory().createComet(23);
@@ -1411,7 +1407,7 @@ public class DebugProtocol extends BgoProtocol
                     }
                     case "spawn_fog" ->
                     {
-                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                         if (optSector.isEmpty()) return;
                         final Sector sector = optSector.get();
                         final DebrisPile debrisPile = sector.getCtx().spaceObjectFactory().createDebrisPile(16);
@@ -1423,7 +1419,7 @@ public class DebugProtocol extends BgoProtocol
                         {
                             final long guid = parseStringAsLong(br);
                             final long yAxis = parseStringAsLong(br);
-                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                             if (optSector.isEmpty()) return;
                             final Sector sector = optSector.get();
 
@@ -1453,7 +1449,7 @@ public class DebugProtocol extends BgoProtocol
                             final long yaw = this.parseStringAsLong(br);
                             final long roll = this.parseStringAsLong(br);
 
-                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                             if (optSector.isEmpty()) return;
                             final Sector sector = optSector.get();
 
@@ -1472,7 +1468,7 @@ public class DebugProtocol extends BgoProtocol
                         {
                             final String rawGuid = br.readString();
                             final long guid = Long.parseLong(rawGuid);
-                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                            final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                             if (optSector.isEmpty()) return;
                             final Sector sector = optSector.get();
 
@@ -1485,7 +1481,7 @@ public class DebugProtocol extends BgoProtocol
                     }
                     case "kill_all_debris" ->
                     {
-                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                         if (optSector.isEmpty()) return;
                         final Sector sector = optSector.get();
                         for (SpaceObject debris : sector.getCtx().spaceObjects().getSpaceObjectsOfEntityType(SpaceEntityType.Debris))
@@ -1495,7 +1491,7 @@ public class DebugProtocol extends BgoProtocol
                     }
                     case "kill_all_planets" ->
                     {
-                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.user.getPlayer().getSectorId());
+                        final Optional<Sector> optSector = this.sectorRegistry.getSectorById(this.ctx.user().getPlayer().getSectorId());
                         if (optSector.isEmpty()) return;
                         final Sector sector = optSector.get();
                         for (SpaceObject debris : sector.getCtx().spaceObjects().getSpaceObjectsOfEntityType(SpaceEntityType.Planet))
@@ -1509,7 +1505,7 @@ public class DebugProtocol extends BgoProtocol
                         shipItems.add(ItemCountable.fromGUID(ResourceType.Cubits.guid, 100));
                         NotificationProtocolWriteOnly notificationProtocol = ProtocolRegistryWriteOnly.getProtocol(ProtocolID.Notification);
                         var bw = notificationProtocol.writeMissionReward(676816152L, shipItems);
-                        user.send(bw);
+                        ctx.user().send(bw);
                     }
                     case "messageAllRestart" ->
                     {
@@ -1548,7 +1544,7 @@ public class DebugProtocol extends BgoProtocol
                             final ShipSystem shipSystem = ShipSystem.fromGUID(itemGUID);
 
                             final Hold hold = tmp.getPlayer().getHold();
-                            final HoldVisitor holdVisitor = new HoldVisitor(tmp, bgoRandom);
+                            final HoldVisitor holdVisitor = new HoldVisitor(tmp, ctx.rng());
                             holdVisitor.addShipItem(shipSystem, hold);
                         } catch (Exception ex)
                         {
@@ -1581,7 +1577,7 @@ public class DebugProtocol extends BgoProtocol
                             final ShipSystem shipSystem = ShipSystem.fromGUID(toFetchItem.getCardGuid());
 
                             final Hold hold = tmp.getPlayer().getHold();
-                            final HoldVisitor holdVisitor = new HoldVisitor(tmp, bgoRandom);
+                            final HoldVisitor holdVisitor = new HoldVisitor(tmp, ctx.rng());
                             holdVisitor.addShipItem(shipSystem, hold);
                         } catch (Exception ex)
                         {
@@ -1608,7 +1604,7 @@ public class DebugProtocol extends BgoProtocol
                             final ItemCountable countable = ItemCountable.fromGUID(itemGUID, count);
 
                             final Hold hold = tmp.getPlayer().getHold();
-                            HoldVisitor holdVisitor = new HoldVisitor(tmp, bgoRandom);
+                            HoldVisitor holdVisitor = new HoldVisitor(tmp, ctx.rng());
                             holdVisitor.addShipItem(countable, hold);
                         } catch (Exception ex)
                         {
@@ -1670,7 +1666,7 @@ public class DebugProtocol extends BgoProtocol
 
     private void addResources(final String resourceType, final String rawAmount, final Player player)
     {
-        ShopVisitor shopVisitor = new ShopVisitor(user, null, bgoRandom);
+        ShopVisitor shopVisitor = new ShopVisitor(user(), null, ctx.rng());
 
         try
         {
@@ -1752,7 +1748,7 @@ public class DebugProtocol extends BgoProtocol
                 .append('\n')
                 .append("Cylons: ")
                 .append(cylons);
-        user.send(writer.writeCommand(sb));
+        ctx.user().send(writer.writeCommand(sb));
     }
     private void sendTotalSectorDistr()
     {
@@ -1771,7 +1767,7 @@ public class DebugProtocol extends BgoProtocol
                     .append(" colonials ").append(coloSize)
                     .append(" cylons ").append(cyloSoze);
         }
-        user.send(writer.writeCommand(sb));
+        ctx.user().send(writer.writeCommand(sb));
     }
 
     private long parseStringAsLong(final BgoProtocolReader br) throws IOException, NumberFormatException
@@ -1796,13 +1792,13 @@ public class DebugProtocol extends BgoProtocol
                 .filter(usr -> usr.getPlayer().getFaction() == Faction.Cylon)
                 .count();
         final String msg = "current playerCount: " + connectedCount + " colonial: " + connectedColonials + " cylons: " + connectedCylons;
-        user.send(writer.writeCommand(msg));
+        ctx.user().send(writer.writeCommand(msg));
     }
 
 
     public void sendEzMsg(final CharSequence charSequence)
     {
-        this.user.send(writer.writeMessage(charSequence));
+        this.ctx.user().send(writer.writeMessage(charSequence));
     }
 
     enum ClientMessage

@@ -2,6 +2,7 @@ package io.github.luigeneric.core.protocols.universe;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.galaxy.Galaxy;
 import io.github.luigeneric.core.galaxy.IGalaxySubscriber;
@@ -15,21 +16,19 @@ import java.io.IOException;
 @Slf4j
 public class UniverseProtocol extends BgoProtocol implements IGalaxySubscriber
 {
-    private final Galaxy galaxy;
     private long id;
     private Faction faction;
 
-    public UniverseProtocol(final Galaxy galaxy)
+    public UniverseProtocol(final ProtocolContext ctx)
     {
-        super(ProtocolID.Universe);
-        this.galaxy = galaxy;
+        super(ProtocolID.Universe, ctx);
     }
 
     @Override
     public void injectUser(User user)
     {
         super.injectUser(user);
-        this.faction = user.getPlayer().getFaction();
+        this.faction = user().getPlayer().getFaction();
     }
 
     @Override
@@ -39,19 +38,19 @@ public class UniverseProtocol extends BgoProtocol implements IGalaxySubscriber
         if (clientMessage == null)
             return;
 
-        this.id = user.getPlayer().getUserID();
+        this.id = user().getPlayer().getUserID();
 
         switch (clientMessage)
         {
             //oberse galaxymap
             case SubscribeGalaxyMap ->
             {
-                this.galaxy.addSubscriber(this);
+                ctx.galaxy().addSubscriber(this);
             }
             //remove from observables
             case UnsubscribeGalaxyMap ->
             {
-                this.galaxy.removeSubscriber(this);
+                ctx.galaxy().removeSubscriber(this);
             }
         }
     }
@@ -60,7 +59,7 @@ public class UniverseProtocol extends BgoProtocol implements IGalaxySubscriber
     public void onDisconnect()
     {
         super.onDisconnect();
-        this.galaxy.removeSubscriber(this);
+        ctx.galaxy().removeSubscriber(this);
     }
 
     @Override
@@ -95,14 +94,14 @@ public class UniverseProtocol extends BgoProtocol implements IGalaxySubscriber
     @Override
     public void mapUpdateReceived(final BgoProtocolWriter galaxyMapUpdatesProtocolWriter)
     {
-        if (user == null || !user.isConnected())
+        if (user() == null || !user().isConnected())
         {
             log.info("User subscribed to universe but user is null or disconnected, remove from subscribers");
-            galaxy.removeSubscriber(this);
+            ctx.galaxy().removeSubscriber(this);
             return;
         }
 
-        this.user.send(galaxyMapUpdatesProtocolWriter);
+        this.user().send(galaxyMapUpdatesProtocolWriter);
     }
 
 

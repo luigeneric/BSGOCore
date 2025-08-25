@@ -29,14 +29,32 @@ This implementation is intentionally kept simple and pragmatic: it works and pro
 ---
 
 ## Usage (WIP)
-### Requirements
+### Install prerequisites
 - Game files are not provided, you have to own a copy yourself.
-- Loginserver not provided
-- Chatserver not provided
-- JDK 21
-- Maven 3.9.9
+- Loginserver not provided (for testing not required)
+- Chatserver not provided (for testing not required)
+- Java (tested with JDK 21)
+- Maven 3.9.9 or higher
+### setup for test run
+- copy contents ``.env.example`` to ``.env``
+- edit .env, set
+  - CLIENT_PATH
+  - GAMESERVER_IGNORE_HASHES=true
+- *The files are not yet provided* required: ServerConfigurationUtils folder (the server will search for template files and Cards (something like template files but in an ubiquitous language of the game)
+  - AugmentTemplates
+  - ColliderTemplates
+  - JsonCards
+  - LootTemplates
+  - MissionTemplateConfiguration
+  - SectorTemplates
+  - ShipConfigTemplates
+  - ZoneTemplates(empty, not implemented yet)
+- start the server using the following command in the project root directory:
 ```
-mvn quarkus:dev
+mvn clean quarkus:dev
+// in another terminal (powershell)
+// runclient will access the path to your client using .env file
+.\runclient.bat 127.0.0.1 en
 ```
 
 

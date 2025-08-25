@@ -343,7 +343,7 @@ public class SectorFactory
         timers.add(new NpcStaticTimer(tick, spaceObjects, Utils.timeToTicks(TimeUnit.SECONDS, 5),
                 abilityCastRequestQueue, sectorDamageHistory, sectorCards));
         timers.add(new NpcDynamicTimer(tick, spaceObjects, Utils.timeToTicks(TimeUnit.SECONDS, 3),
-                abilityCastRequestQueue, sectorDamageHistory, remover, sectorCards));
+                abilityCastRequestQueue, sectorDamageHistory, remover, sectorCards, ctx.bgoRandom()));
         timers.add(new MovementHeartbeat(tick, spaceObjects, Utils.timeToTicks(TimeUnit.SECONDS, 3), users, sender));
         timers.add(new LogoutTimer(tick, spaceObjects, Utils.timeToTicks(TimeUnit.SECONDS, 10f), users, remover));
         timers.add(new BoostCostTimer(tick, spaceObjects, Utils.timeToTicks(TimeUnit.SECONDS, 1), users, sectorCards.sectorCard()));

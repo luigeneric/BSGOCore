@@ -3,6 +3,7 @@ package io.github.luigeneric.core.protocols.room;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.player.location.Location;
 import io.github.luigeneric.core.player.location.SpaceLocation;
 import io.github.luigeneric.core.protocols.BgoProtocol;
@@ -20,11 +21,9 @@ import java.util.Objects;
 @Slf4j
 public class RoomProtocol extends BgoProtocol
 {
-    private final GameServerParamsConfig gameServerParams;
-    public RoomProtocol(final GameServerParamsConfig gameServerParams)
+    public RoomProtocol(final ProtocolContext ctx)
     {
-        super(ProtocolID.Room);
-        this.gameServerParams = gameServerParams;
+        super(ProtocolID.Room, ctx);
     }
 
     @Override
@@ -33,7 +32,7 @@ public class RoomProtocol extends BgoProtocol
         final ClientMessage clientMessage =
                 Objects.requireNonNull(ClientMessage.valueOf(msgType), "ClientMessage was " + msgType);
 
-        final SceneProtocol sceneProtocol = user.getProtocol(ProtocolID.Scene);
+        final SceneProtocol sceneProtocol = user().getProtocol(ProtocolID.Scene);
         switch (clientMessage)
         {
             case Talk ->
@@ -45,24 +44,24 @@ public class RoomProtocol extends BgoProtocol
                     return;
 
                 //Log.infoIn("Talk: " + npc);
-                user.send(writeTalk(npc));
+                user().send(writeTalk(npc));
                 Remark remark = new Remark((byte) 1, "%$bgo.npc_no8.Phrase__2382939f-71b5-4822-8549-a64bd9f47a6d__0%", "");
-                final DialogProtocol dialogProtocol = user.getProtocol(ProtocolID.Dialog);
-                user.send(dialogProtocol.writeNpcRemark(remark));
+                final DialogProtocol dialogProtocol = user().getProtocol(ProtocolID.Dialog);
+                user().send(dialogProtocol.writeNpcRemark(remark));
             }
             case Quit ->
             {
-                if (user.getPlayer().getLocation().getGameLocation() != GameLocation.Room)
+                if (user().getPlayer().getLocation().getGameLocation() != GameLocation.Room)
                 {
-                    log.error("RoomProtocol, quit while not in room! " + user.getPlayer().getLocation().getGameLocation() + " " +
-                            user.getPlayer().getPlayerLog());
+                    log.error("RoomProtocol, quit while not in room! " + user().getPlayer().getLocation().getGameLocation() + " " +
+                            user().getPlayer().getPlayerLog());
                     return;
                 }
 
                 log.info("User requested RoomProtocol quit");
                 try
                 {
-                    var ship = user.getPlayer().getHangar().getActiveShip();
+                    var ship = user().getPlayer().getHangar().getActiveShip();
                     if (ship.getShipStats().getHp() == 0)
                         ship.getShipStats().setHp(1);
                 }
@@ -71,7 +70,7 @@ public class RoomProtocol extends BgoProtocol
                     log.error("Uncaught exception", exception);
                 }
 
-                final Location location = user.getPlayer().getLocation();
+                final Location location = user().getPlayer().getLocation();
                 location.changeState(new SpaceLocation(location));
                 sceneProtocol.sendLoadNextScene();
             }

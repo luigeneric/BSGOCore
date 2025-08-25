@@ -4,6 +4,7 @@ package io.github.luigeneric.core.protocols.scene;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
 import io.github.luigeneric.chatapi.ChatApi;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.player.Player;
 import io.github.luigeneric.core.player.location.Location;
@@ -27,9 +28,9 @@ public class SceneProtocol extends BgoProtocol
     private final AtomicBoolean sceneLoadedFlag;
     private final ChatApi chatApi;
 
-    public SceneProtocol()
+    public SceneProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Scene);
+        super(ProtocolID.Scene, ctx);
         this.properlyLoggedOut = true;
         this.sceneLoadedFlag = new AtomicBoolean(false);
         this.chatApi = CDI.current().select(ChatApi.class).get();
@@ -59,7 +60,7 @@ public class SceneProtocol extends BgoProtocol
             }
             case QuitLogin ->
             {
-                final Player player = this.user.getPlayer();
+                final Player player = user().getPlayer();
                 final Location location = player.getLocation();
                 location.setLocation(location.getNonDisconnectLocation(), location.getSectorID(), location.getSectorGUID());
                 sendLoadNextScene();
@@ -70,7 +71,7 @@ public class SceneProtocol extends BgoProtocol
             }
             case Disconnect ->
             {
-                switch (user.getPlayer().getLocation().getGameLocation())
+                switch (user().getPlayer().getLocation().getGameLocation())
                 {
                     case Room ->
                     {
@@ -78,7 +79,7 @@ public class SceneProtocol extends BgoProtocol
                     }
                     case Space ->
                     {
-                        final boolean isInCombat = this.user.getPlayer().getHangar().getActiveShip().getShipStats().isInCombat();
+                        final boolean isInCombat = user().getPlayer().getHangar().getActiveShip().getShipStats().isInCombat();
                         final long delay = isInCombat ? combatLogoutDelay() : 15;
                         scheduleLogout(delay);
                     }
@@ -95,13 +96,13 @@ public class SceneProtocol extends BgoProtocol
         if (logoutFuture != null)
             return;
 
-        user.send(writeDisconnectTimer(delaySeconds));
+        user().send(writeDisconnectTimer(delaySeconds));
         final Runnable r = () ->
         {
-            user.send(writeDisconnect());
+            user().send(writeDisconnect());
             logoutFuture = null;
         };
-        this.logoutFuture = scheduledExecutorService.schedule(r, delaySeconds, TimeUnit.SECONDS);
+        this.logoutFuture = ctx.scheduledExecutorService().schedule(r, delaySeconds, TimeUnit.SECONDS);
     }
     private void cancelLogout()
     {
@@ -123,7 +124,7 @@ public class SceneProtocol extends BgoProtocol
 
     private long combatLogoutDelay()
     {
-        final byte tier = this.user.getPlayer().getHangar().getActiveShip().getShipCard().getTier();
+        final byte tier = user().getPlayer().getHangar().getActiveShip().getShipCard().getTier();
         return 45 + tier * 15;
     }
 
@@ -145,17 +146,17 @@ public class SceneProtocol extends BgoProtocol
     public void sendLoadNextScene()
     {
         final BgoProtocolWriter bw = newMessage();
-        final Location location = user.getPlayer().getLocation();
+        final Location location = user().getPlayer().getLocation();
         bw.writeMsgType(ServerMessage.LoadNextScene.value);
         bw.writeDesc(location);
 
         this.sceneLoadedFlag.set(false);
 
-        final CommunityProtocol communityProtocol = user.getProtocol(ProtocolID.Community);
+        final CommunityProtocol communityProtocol = user().getProtocol(ProtocolID.Community);
         if (communityProtocol.isChatConnected())
-            chatApi.sendUserPosition(user.getPlayer().getUserID(), location.getSectorID());
+            chatApi.sendUserPosition(user().getPlayer().getUserID(), location.getSectorID());
 
-        user.send(bw);
+        user().send(bw);
     }
 
 

@@ -4,6 +4,7 @@ import io.github.luigeneric.MicrometerRegistry;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
 import io.github.luigeneric.binaryreaderwriter.BgoTimeStamp;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.player.container.Hold;
 import io.github.luigeneric.core.player.container.visitors.ShopVisitor;
@@ -33,18 +34,14 @@ public class WofProtocol extends BgoProtocol
     private ShipItem jackpotItem;
     private final WofProtocolWriteOnly writer;
     private BgoTimeStamp lastWofGameSession;
-    private final BgoRandom bgoRandom;
-    private final MicrometerRegistry micrometerRegistry;
-    public WofProtocol(final BgoRandom bgoRandom, final MicrometerRegistry micrometerRegistry)
+    public WofProtocol(final ProtocolContext ctx)
     {
-        super(ProtocolID.Wof);
-        this.bgoRandom = bgoRandom;
+        super(ProtocolID.Wof, ctx);
         this.writer = new WofProtocolWriteOnly();
-        this.micrometerRegistry = micrometerRegistry;
 
         this.costListPerStep = new ArrayList<>();
         this.setupCostList();
-        this.shipItemItemPicker = new ItemPicker<>(bgoRandom);
+        this.shipItemItemPicker = new ItemPicker<>(ctx.rng());
 
         setupWofItems();
     }
@@ -152,14 +149,14 @@ public class WofProtocol extends BgoProtocol
                         costListPerStep
                 );
 
-        user.send(bw);
+        user().send(bw);
     }
 
     private boolean isFreeWofGame()
     {
         LocalDateTime now = LocalDateTime.now(Clock.systemUTC());
         LocalDate date = now.toLocalDate();
-        final var lastFreeWofGameTs = getLastFreeWofPlayed(user);
+        final var lastFreeWofGameTs = getLastFreeWofPlayed(user());
 
         return lastFreeWofGameTs
                 .map(bgoTimeStamp -> bgoTimeStamp.getLocalDate().isBefore(date.atStartOfDay()))
@@ -176,14 +173,14 @@ public class WofProtocol extends BgoProtocol
             {
                 setupJackpot();
                 sendInit();
-                user.send(writer.writeAllVisibleMaps());
+                user().send(writer.writeAllVisibleMaps());
             }
             case RequestDraw ->
             {
                 final int drawCount = br.readInt32();
-                final DebugProtocol debugProtocol = user.getProtocol(ProtocolID.Debug);
+                final DebugProtocol debugProtocol = user().getProtocol(ProtocolID.Debug);
                 final short minLevel = 5;
-                if (user.getPlayer().getSkillBook().get() < minLevel)
+                if (user().getPlayer().getSkillBook().get() < minLevel)
                 {
                     debugProtocol.sendEzMsg("You have to be level " + minLevel);
                     return;
@@ -194,31 +191,31 @@ public class WofProtocol extends BgoProtocol
                 final long durationMillis = lastGame.totalDurationMsBetween(now);
                 if (durationMillis < 2000)
                 {
-                    log.warn("Cheat fromUser[{}], Dradiscontact wofspam duration: {}", user.getUserLog(), durationMillis);
+                    log.warn("Cheat fromUser[{}], Dradiscontact wofspam duration: {}", user().getUserLog(), durationMillis);
                 }
-                ShopVisitor shopVisitor = new ShopVisitor(user, null, bgoRandom);
+                ShopVisitor shopVisitor = new ShopVisitor(user(), null, ctx.rng());
                 this.lastWofGameSession = now;
 
 
                 if (drawCount < 1 || drawCount > 6)
                 {
-                    log.warn(user.getUserLog() + "Draw Request of not allowed drawCount -> Client modification ");
+                    log.warn(user().getUserLog() + "Draw Request of not allowed drawCount -> Client modification ");
                     return;
                 }
 
                 //check for enough cubits in hangar
-                final Hold hold = user.getPlayer().getHold();
+                final Hold hold = user().getPlayer().getHold();
 
                 final boolean isFreeWofGame = isFreeWofGame();
                 final int numReduction = isFreeWofGame ? 2 : 1;
                 if (isFreeWofGame)
                 {
-                    user.getPlayer().setLastFreeWofGame(LocalDateTime.now(Clock.systemUTC()));
+                    user().getPlayer().setLastFreeWofGame(LocalDateTime.now(Clock.systemUTC()));
                 }
                 final Optional<ItemCountable> optCubits = hold.hasItemCountable(ResourceType.Cubits.guid);
                 if (optCubits.isEmpty() && !isFreeWofGame)
                 {
-                    log.warn(user.getUserLog() + "not enough cubits in Hold, cheat detected");
+                    log.warn(user().getUserLog() + "not enough cubits in Hold, cheat detected");
                     return;
                 }
 
@@ -237,7 +234,7 @@ public class WofProtocol extends BgoProtocol
                     final boolean reduceSuccessfully = shopVisitor.reduceItemCountableByCount(ResourceType.Cubits, costs);
                     if (!reduceSuccessfully)
                     {
-                        log.warn("Dradis cheater {}", user.getUserLog());
+                        log.warn("Dradis cheater {}", user().getUserLog());
                         return;
                     }
                 }
@@ -248,11 +245,11 @@ public class WofProtocol extends BgoProtocol
                 {
                     shipItemsToAdd.add(this.shipItemItemPicker.getRandomItem());
                 }
-                user.getPlayer().getCounterFacade().incrementCounter(CounterCardType.wof_played, 0, drawCount);
+                user().getPlayer().getCounterFacade().incrementCounter(CounterCardType.wof_played, 0, drawCount);
                 // fraction
                 /*
                 PrometheusMetrics.INSTANCE.getWofDrawTotal()
-                        .labels(this.user.getPlayer().getFaction().name())
+                        .labels(this.user().getPlayer().getFaction().name())
                         .inc(drawCount);
                  */
 
@@ -272,12 +269,12 @@ public class WofProtocol extends BgoProtocol
                     shipItemsToAddCleaned.add(newItem);
                 }
 
-                user.send(writer.writeWofDrawReply(JackpotType.Item, shipItemsToAddCleaned, jackpotItem,
+                user().send(writer.writeWofDrawReply(JackpotType.Item, shipItemsToAddCleaned, jackpotItem,
                         false));
-                log.info("User {} wofdraw cnt: {}", user.getUserLogSimple(), drawCount);
-                micrometerRegistry.wofPlayed(user.getPlayer().getFaction(), drawCount);
+                log.info("User {} wofdraw cnt: {}", user().getUserLogSimple(), drawCount);
+                ctx.micrometerRegistry().wofPlayed(user().getPlayer().getFaction(), drawCount);
             }
-            default -> log.info("WofProtocol: " + clientRequest + " not implemented!");
+            default -> log.info("WofProtocol: {} not implemented!", clientRequest);
         }
     }
 

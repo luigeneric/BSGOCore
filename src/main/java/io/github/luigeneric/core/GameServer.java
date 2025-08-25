@@ -16,6 +16,7 @@ import io.github.luigeneric.core.protocols.scene.SceneProtocol;
 import io.github.luigeneric.core.sector.management.SectorRegistry;
 import io.github.luigeneric.templates.catalogue.Catalogue;
 import io.github.luigeneric.templates.startupconfig.GameServerParamsConfig;
+import io.github.luigeneric.utils.BgoRandom;
 import io.quarkus.virtual.threads.VirtualThreads;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.spi.CDI;
@@ -25,6 +26,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -34,7 +36,7 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
     private final ExecutorService executorService;
     private final GameServerParamsConfig gameServerParams;
     private final Galaxy galaxy;
-    private final ScheduledService scheduledService;
+    private final ScheduledExecutorService scheduledExecutorService;
     private final DbProvider dbProviderProvider;
     private final SessionRegistry sessionRegistry;
     private final PartyRegistry partyRegistry;
@@ -47,6 +49,7 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
     private final ChatAccessBlocker chatAccessBlocker;
     private final MissionUpdater missionUpdater;
     private final Catalogue catalogue;
+    private final Configuration configuration;
 
 
     public GameServer(@VirtualThreads final ExecutorService executorService,
@@ -60,15 +63,16 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
                       final UsersContainer usersContainer,
                       final SectorRegistry sectorRegistry,
                       final ExperienceToLevelAlgo experienceToLevelAlgo,
-                      final ScheduledService scheduledService,
+                      final ScheduledExecutorService scheduledExecutorService,
                       final MicrometerRegistry micrometerRegistry,
                       final ChatAccessBlocker chatAccessBlocker,
                       final MissionUpdater missionUpdater,
-                      final Catalogue catalogue
+                      final Catalogue catalogue,
+                      final Configuration configuration
     )
     {
         this.executorService = executorService;
-        this.scheduledService = scheduledService;
+        this.scheduledExecutorService = scheduledExecutorService;
         this.gameServerParams = gameServerParams;
         this.galaxy = galaxy;
         this.dbProviderProvider = dbProviderProvider;
@@ -84,18 +88,39 @@ public class GameServer implements IServerListenerSubscriber, UserDisconnectedSu
         this.chatAccessBlocker = chatAccessBlocker;
         this.missionUpdater = missionUpdater;
         this.catalogue = catalogue;
+        this.configuration = configuration;
     }
 
 
     @Override
     public void notifyNewConnection(final AbstractConnection newConnection)
     {
-        final Configuration configuration = CDI.current().select(Configuration.class).get();
-        final ProtocolRegistry protocolRegistry = new ProtocolRegistry(this.gameServerParams, this.galaxy, this.sectorRegistry,
-                this.dbProviderProvider, this.sessionRegistry, this.partyRegistry, this.guildRegistry,
-                this.usersContainer, newConnection, this.experienceToLevelAlgo,
-                this, scheduledService, micrometerRegistry, configuration.characterServices(), chatAccessBlocker, missionUpdater,
-                new RefundProcessor(catalogue));
+        final ProtocolContext ctx = new ProtocolContext(
+                newConnection,
+                catalogue,
+                gameServerParams,
+                scheduledExecutorService,
+                micrometerRegistry,
+                new BgoRandom(),
+                galaxy,
+                null
+        );
+
+        final ProtocolRegistry protocolRegistry = new ProtocolRegistry(
+                ctx,
+                this.sectorRegistry,
+                this.dbProviderProvider,
+                this.sessionRegistry,
+                this.partyRegistry,
+                this.guildRegistry,
+                this.usersContainer,
+                this.experienceToLevelAlgo,
+                this,
+                configuration.characterServices(),
+                chatAccessBlocker,
+                missionUpdater,
+                new RefundProcessor(catalogue)
+        );
         final ProtocolUpdater protocolUpdater = new ProtocolUpdater(newConnection, protocolRegistry);
         this.executorService.execute(protocolUpdater);
     }

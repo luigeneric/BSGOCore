@@ -3,6 +3,8 @@ package io.github.luigeneric.core.protocols.sync;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.AbstractConnection;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.protocols.BgoProtocol;
 import io.github.luigeneric.core.protocols.ProtocolID;
 
@@ -10,9 +12,9 @@ import java.io.IOException;
 
 public class SyncProtocol extends BgoProtocol
 {
-    public SyncProtocol()
+    public SyncProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Sync);
+        super(ProtocolID.Sync, ctx);
     }
 
 
@@ -21,7 +23,7 @@ public class SyncProtocol extends BgoProtocol
     {
         if (msgType == 0)
         {
-            user.send(writeSyncReply());
+            user().send(writeSyncReply());
         }
     }
 

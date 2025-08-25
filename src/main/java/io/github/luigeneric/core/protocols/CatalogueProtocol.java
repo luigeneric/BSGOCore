@@ -3,6 +3,7 @@ package io.github.luigeneric.core.protocols;
 
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolReader;
 import io.github.luigeneric.binaryreaderwriter.BgoProtocolWriter;
+import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.enums.StaticCardGUID;
 import io.github.luigeneric.templates.cards.Card;
 import io.github.luigeneric.templates.cards.CardView;
@@ -19,9 +20,9 @@ import java.util.Optional;
 public class CatalogueProtocol extends BgoProtocol
 {
     private final Catalogue catalogue;
-    public CatalogueProtocol()
+    public CatalogueProtocol(ProtocolContext ctx)
     {
-        super(ProtocolID.Catalogue);
+        super(ProtocolID.Catalogue, ctx);
         this.catalogue = CDI.current().select(Catalogue.class).get();
         final Optional<ShipListCard> optShipLstColo = catalogue.fetchCard(StaticCardGUID.ShipListCardColonial.getValue(), CardView.ShipList);
         final Optional<ShipListCard> optShipLstCylo = catalogue.fetchCard(StaticCardGUID.ShipListCardCylon.getValue(), CardView.ShipList);
@@ -36,7 +37,7 @@ public class CatalogueProtocol extends BgoProtocol
     {
         if (msgType != 1)
         {
-            log.error(user.getUserLog() + "wrong msgtype received in CatalogueProtocol: " + msgType);
+            log.error(user().getUserLog() + "wrong msgtype received in CatalogueProtocol: " + msgType);
             return;
         }
 
@@ -73,8 +74,8 @@ public class CatalogueProtocol extends BgoProtocol
                     userSendFlag = false;
                 }
             }
-            if (userSendFlag && user != null)
-                this.user.send(bw);
+            if (userSendFlag && user() != null)
+                this.user().send(bw);
         }
     }
 
