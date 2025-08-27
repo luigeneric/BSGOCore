@@ -62,6 +62,7 @@ public class ApplicationBootstrap
     // Debugmethod, for removal
     void onStop(@Observes ShutdownEvent ev) {
         log.warn("APP SHUTDOWN at {} on thread {}", System.currentTimeMillis(), Thread.currentThread().getName());
+        /*
         Map<Thread, StackTraceElement[]> map = Thread.getAllStackTraces();
         map.forEach((t, st) -> {
             log.warn("Thread: {} - State: {}", t.getName(), t.getState());
@@ -69,6 +70,7 @@ public class ApplicationBootstrap
                 log.warn("  at {}", e.toString());
             }
         });
+         */
     }
 
     @PreDestroy

@@ -17,6 +17,7 @@ import io.github.luigeneric.templates.catalogue.Catalogue;
 import io.github.luigeneric.templates.utils.MapStarDesc;
 import io.github.luigeneric.utils.TimestampedCounter;
 import io.quarkus.scheduler.Scheduled;
+import io.smallrye.common.annotation.RunOnVirtualThread;
 import jakarta.inject.Singleton;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -374,6 +375,7 @@ public class Galaxy
      * The Update loop of the galaxy
      */
     @Scheduled(every = "1s")
+    @RunOnVirtualThread
     public void run()
     {
         lock();

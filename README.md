@@ -7,8 +7,12 @@
 - **The server is a version of the original BSGO 2.0 Resurrection project with minor changes**
 
 ### Contributing
-Contributions are welcome!  
-Please feel free to open issues for bugs and feature requests, or submit pull requests with improvements.
+**Contributions are welcome!  
+Please feel free to open issues for bugs and feature requests, or submit pull requests with improvements.**
+
+## Repository Notes
+- The commit history has been reset to provide a clean and maintainable starting point.
+- Earlier iterations of this project contained non-essential artifacts, so the history was pruned to avoid confusion.
 
 
 ---
@@ -23,6 +27,8 @@ The server is developed in Java (JDK 21) with Quarkus and built using Maven. SQL
 This implementation is intentionally kept simple and pragmatic: it works and provides the needed functionality, but it is still in an early stage and not yet a polished solution. The database integration, for example, is rudimentary — data is buffered and written back periodically, resulting in behavior that is closer to eventual consistency rather than strict consistency. The current setup was designed to enable faster development and iteration rather than to represent a final or optimal architecture.
 
 ---
+
+## [Youtube Video showcase](https://youtu.be/0n3tcONcx90)
 
 ## **moved**: [Features](docs/FEATURES.md)
 
@@ -40,7 +46,7 @@ This implementation is intentionally kept simple and pragmatic: it works and pro
 - edit .env, set
   - CLIENT_PATH
   - GAMESERVER_IGNORE_HASHES=true
-- *The files are not yet provided* required: ServerConfigurationUtils folder (the server will search for template files and Cards (something like template files but in an ubiquitous language of the game)
+- *The files are not provided yet(will add this later)* required: ServerConfigurationUtils folder (the server will search for template files and Cards (something like template files but in an ubiquitous language of the game)
   - AugmentTemplates
   - ColliderTemplates
   - JsonCards
@@ -60,5 +66,12 @@ mvn clean quarkus:dev
 
 ## MISC
 
+### - [Project History](docs/HISTORY.md)
 ### - [Infrastructure](docs/INFRA.md)
 ### - [Paints](docs/PAINTS.md)
+
+## Credits
+- [Christer Ericson’s Real-time CollisionDetection](https://realtimecollisiondetection.net/)
+  - build most of the collision detection system using the book as source
+- [UnityCsReference](https://github.com/Unity-Technologies/UnityCsReference)
+  - to ensure compatibility with calculations in Unity

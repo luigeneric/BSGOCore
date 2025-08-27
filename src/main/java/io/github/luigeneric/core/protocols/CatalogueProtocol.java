@@ -23,12 +23,15 @@ public class CatalogueProtocol extends BgoProtocol
     public CatalogueProtocol(ProtocolContext ctx)
     {
         super(ProtocolID.Catalogue, ctx);
-        this.catalogue = CDI.current().select(Catalogue.class).get();
+        catalogue = ctx.catalogue();
+
+        // sanity check
+        // shiplist cards must be present in catalogue
         final Optional<ShipListCard> optShipLstColo = catalogue.fetchCard(StaticCardGUID.ShipListCardColonial.getValue(), CardView.ShipList);
         final Optional<ShipListCard> optShipLstCylo = catalogue.fetchCard(StaticCardGUID.ShipListCardCylon.getValue(), CardView.ShipList);
         if (optShipLstColo.isEmpty() || optShipLstCylo.isEmpty())
         {
-            throw new NullPointerException("shiplst cards are null!");
+            throw new NullPointerException("shiplst cards are null, abort CatalogueProtocol init");
         }
     }
 
@@ -37,18 +40,18 @@ public class CatalogueProtocol extends BgoProtocol
     {
         if (msgType != 1)
         {
-            log.error(user().getUserLog() + "wrong msgtype received in CatalogueProtocol: " + msgType);
+            log.error("{}wrong msgtype received in CatalogueProtocol: {}", user().getUserLog(), msgType);
             return;
         }
 
-        final int num = br.readUint16();
-        for(int i = 0; i < num; i++)
+        final int readLen = br.readUint16();
+        for(int i = 0; i < readLen; i++)
         {
-            final long guid = br.readUint32(); //GUID
-            final int rawView = br.readUint16(); //VIEW
+            final long guid = br.readUint32();
+            final int rawView = br.readUint16();
             if (rawView == 0)
             {
-                log.warn("Could not get correct CardView is 0");
+                log.warn("Could not get correct CardView, CardView is 0");
             }
             final CardView view = CardView.valueOf(rawView);
             if (view == null)
@@ -70,7 +73,7 @@ public class CatalogueProtocol extends BgoProtocol
                 }
                 else
                 {
-                    //Log.errorIn("Card should not be send because it's null! " + guid + " " + rawView);
+                    log.error("Card should not be send because it's null! {} {}", guid, rawView);
                     userSendFlag = false;
                 }
             }

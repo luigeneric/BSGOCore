@@ -176,7 +176,7 @@ public class User implements ConnectionClosedSubscriber
     @Override
     public void onConnectionClosed(final AbstractConnection connection, final String reason)
     {
-        log.info("User={} disconnected", getUserLogSimple());
+        log.info("User={} disconnected, reason={}", getUserLogSimple(), reason);
         this.setConnection(null);
 
         /*
