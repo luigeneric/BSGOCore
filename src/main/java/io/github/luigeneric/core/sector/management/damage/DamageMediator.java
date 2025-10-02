@@ -16,8 +16,10 @@ import io.github.luigeneric.enums.RemovingCause;
 import io.github.luigeneric.enums.SpaceEntityType;
 import io.github.luigeneric.linearalgebra.utility.Mathf;
 import io.github.luigeneric.templates.cards.CounterCardType;
+import io.github.luigeneric.templates.utils.ObjectStat;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -77,6 +79,8 @@ public class DamageMediator
         }
 
         toStats.setHp(Mathf.max(newHPDirty, 0f));
+        if (damageRecord.energyDrain() > 0f)
+            toStats.setPp(Mathf.max(toStats.getPp() - damageRecord.energyDrain(), 0));
         if (toStats.getHp() == 0f)
         {
             this.remover.notifyRemovingCauseAdded(damageRecord.to(), RemovingCause.Death, damageRecord.from());
@@ -84,15 +88,7 @@ public class DamageMediator
             wasKillShot = true;
         }
 
-        /*
-        PrometheusMetrics.INSTANCE.getDamageDealtTotal()
-                .labels(damageRecord.from().getSpaceEntityType().name(), damageRecord.from().getFaction().name())
-                .inc(damageDealtCleaned);
-        PrometheusMetrics.INSTANCE.getDamageReceivedTotal()
-                .labels(damageRecord.to().getSpaceEntityType().name(), damageRecord.to().getFaction().name())
-                .inc(damageDealtCleaned);
-         */
-        final DamageRecord newDmgRecord = new DamageRecord(damageRecord, damageDealtCleaned, wasKillShot);
+        final DamageRecord newDmgRecord = DamageRecord.fromCleaned(damageRecord, damageDealtCleaned, wasKillShot);
         this.sectorDamageHistory.damageUpdate(newDmgRecord);
         this.damageDurabilityModifier.damageReceived(newDmgRecord);
         sendDealDamageTo(newDmgRecord);
@@ -134,7 +130,7 @@ public class DamageMediator
                 }
                 catch (final Exception ex)
                 {
-                    ex.printStackTrace();
+                    log.error("Error updating loot claim", ex);
                 }
             }
         }
@@ -178,8 +174,25 @@ public class DamageMediator
     }
     public void dealDamageFromMissile(final Missile missile, final SpaceObject to)
     {
-        final DamageRecord res = this.damageCalculator.calculateDamageFromMissile(missile, to);
-        this.dealDamage(res);
+        // assuming this is of type torpedo
+        if (missile.getSpaceSubscribeInfo().containsStat(ObjectStat.DrainLow))
+        {
+            if (missile.getSpaceSubscribeInfo().containsStat(ObjectStat.AoeDropoffIndex))
+            {
+                log.warn("AoeDropoffIndex is not supported for AoE missiles!");
+            }
+            List<DamageRecord> damageRecords = damageCalculator.calculateDamageFromTorpedo(missile, ctx.spaceObjects(), missile.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.AoeDropoffIndex, 1));
+            for (DamageRecord damageRecord : damageRecords)
+            {
+                this.dealDamage(damageRecord);
+            }
+        }
+        // assume this is a basic missile
+        else
+        {
+            final DamageRecord res = this.damageCalculator.calculateDamageFromMissile(missile, to);
+            this.dealDamage(res);
+        }
     }
     public void dealDamageFromAbility(final SpaceObject from, final SpaceObject to, final ShipAbility ability)
     {

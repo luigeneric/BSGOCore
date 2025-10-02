@@ -22,6 +22,7 @@ public enum StaticCardGUID
     MissileMiniNuke(244685066L),
     MissileNuke(253392099L),
     MissileCard(117216909L),
+    MissileTorpedo(29963472L),
 
     cylonstationary1(1783473196L),
     cylonstationary2(1783473197L),

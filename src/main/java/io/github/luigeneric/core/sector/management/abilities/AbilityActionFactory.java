@@ -71,7 +71,7 @@ public class AbilityActionFactory
             {
                 return new RestoreBuffAction(castingShip, castingSlot, targetSpaceObjects, isAutocastAbility, ctx);
             }
-            case FireMissle ->
+            case FireMissle, FireTorpedo ->
             {
                 return new FireMissileAction(castingShip, castingSlot, targetSpaceObjects, isAutocastAbility,
                         ctx, sectorAlgorithms, damageMediator, joinQueue);

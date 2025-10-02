@@ -26,7 +26,7 @@ public class FireMiningAction extends WeaponAction
         if (!isTargetSizeOkay)
             return false;
 
-        final SpaceObject target = targetSpaceObjects.get(0);
+        final SpaceObject target = targetSpaceObjects.getFirst();
         if (target.isRemoved())
         {
             return false;

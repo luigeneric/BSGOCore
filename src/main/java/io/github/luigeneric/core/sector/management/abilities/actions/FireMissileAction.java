@@ -42,7 +42,7 @@ public class FireMissileAction extends WeaponAction
         if (!isTargetSizeOkay)
             return false;
 
-        final SpaceObject target = targetSpaceObjects.get(0);
+        final SpaceObject target = targetSpaceObjects.getFirst();
         if (target.isRemoved())
         {
             return false;
@@ -103,14 +103,21 @@ public class FireMissileAction extends WeaponAction
         {
             if (Objects.requireNonNull(shipConsumableCard.getEffectType()) == ConsumableEffectType.DamageNuclear)
             {
-                final float dmgHigh = shipConsumableCard.getItemBuffAdd().getStat(ObjectStat.DamageHigh);
-                if (dmgHigh == 4.0)
+                if (shipConsumableCard.getItemBuffAdd().containsStat(ObjectStat.DamageHigh))
                 {
-                    missileGUID = StaticCardGUID.MissileMiniNuke.getValue();
+                    final float dmgHigh = shipConsumableCard.getItemBuffAdd().getStat(ObjectStat.DamageHigh);
+                    if (dmgHigh == 4.0)
+                    {
+                        missileGUID = StaticCardGUID.MissileMiniNuke.getValue();
+                    }
+                    if (dmgHigh == 19.0)
+                    {
+                        missileGUID = StaticCardGUID.MissileNuke.getValue();
+                    }
                 }
-                if (dmgHigh == 19.0)
+                else
                 {
-                    missileGUID = StaticCardGUID.MissileNuke.getValue();
+                    missileGUID = StaticCardGUID.MissileTorpedo.getValue();
                 }
             } else
             {

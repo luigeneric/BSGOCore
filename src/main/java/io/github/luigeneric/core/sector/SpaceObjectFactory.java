@@ -484,7 +484,11 @@ public class SpaceObjectFactory
 
         if (optMovementCard.isEmpty() || optWorldCard.isEmpty() || optOwnerCard.isEmpty())
         {
-            throw new IllegalArgumentException("one of the cards were null for missile");
+            final String missingCards = String.format("MovementCard: %s, WorldCard: %s, OwnerCard: %s",
+                    optMovementCard.isEmpty() ? "MISSING" : "PRESENT",
+                    optWorldCard.isEmpty() ? "MISSING" : "PRESENT",
+                    optOwnerCard.isEmpty() ? "MISSING" : "PRESENT");
+            throw new IllegalArgumentException("SpaceObjectFactory could not find required cards for missileGUID " + missileGUID + ". Status: " + missingCards);
         }
 
         final Transform localTransform = spotDesc.getLocalTransform();
