@@ -1,0 +1,25 @@
+[{
+        "factorSource": "Augment",
+        "factorTypeRecords": [
+			{
+                "type": "Experience",
+                "value": 1.0
+            }, 
+			{
+                "type": "Loot",
+                "value": 1.0
+            },
+			{
+                "type": "AsteroidYield",
+                "value": 1.0
+            },
+			{
+                "type": "MeritIncome",
+                "value": 1.0
+            }
+        ],
+		"activeTimeInHours": 12,
+        "augmentActionType": "None",
+        "associatedItemGUID": 92666191
+    }
+]

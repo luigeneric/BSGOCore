@@ -1,0 +1,172 @@
+[{
+        "experience": 0,
+        "lootEntryInfos": [{
+		"chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 120,
+                    "cardGuid": 264733124, //cubits
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 1200,
+                    "cardGuid": 207047790, //titan
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 1500,
+                    "cardGuid": 215278030, //tylium
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			//ammo
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 200,
+                    "cardGuid": 3, //striker
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 100,
+                    "cardGuid": 5, //escort
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 50,
+                    "cardGuid": 9, //liner
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			//missiles
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 20,
+                    "cardGuid": 101797958, //striker
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 10,
+                    "cardGuid": 228448854, //escort
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 5,
+                    "cardGuid": 228410854, //liner
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			//dc
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 10,
+                    "cardGuid": 2836381, //striker
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 5,
+                    "cardGuid": 103992173, //escort
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 3,
+                    "cardGuid": 201509789, //liner
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			//ec
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 20,
+                    "cardGuid": 25398605, //striker
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 15,
+                    "cardGuid": 136433549, //escort
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			{
+                "chance": 0.2,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 10,
+                    "cardGuid": 232850813, //liner
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            },
+			//other
+			{
+                "chance": 0.05,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 1,
+                    "cardGuid": 254909109, //tk
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0
+            }
+        ],
+        "augmentActionType": "LootItem",
+        "associatedItemGUID": 11
+    }
+]
