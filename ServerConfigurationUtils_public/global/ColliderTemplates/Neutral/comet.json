@@ -1,0 +1,10 @@
+{
+	"center": {
+                "x": 0,
+                "y": -14,
+                "z": -8
+            },
+    "radius": 250,
+    "prefabName": "comet",
+    "type": "Sphere"
+}

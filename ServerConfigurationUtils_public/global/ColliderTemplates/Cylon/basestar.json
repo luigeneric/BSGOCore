@@ -1,0 +1,12 @@
+{
+	"center": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+	"axis": 1,
+	"height": 334.4309,
+    "radius": 163.8814,
+    "prefabName": "basestar",
+    "type": "Capsule"
+}

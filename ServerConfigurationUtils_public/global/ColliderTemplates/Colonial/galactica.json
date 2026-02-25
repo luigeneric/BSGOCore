@@ -1,0 +1,14 @@
+{
+	"center": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+	"extents": {
+                "x": 200,
+                "y": 75,
+                "z": 600
+            },
+    "prefabName": "galactica",
+    "type": "AABB"
+}
