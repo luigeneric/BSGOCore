@@ -1,0 +1,17 @@
+[{
+        "id": 2001,
+		"missionGuid": 575838305,
+        "faction": "Colonial",
+        "missionSectorDesc": {
+            "staticSectorId": 0,
+            "useRandomSector": true,
+            "sectorIdsBlacklist": [0, 6, 110, 111, 39, 20, 27],
+            "sectorIdsWhitelist": []
+        },
+        "missionCountEntries": [{
+                "guid": 205553269,
+                "needCount": 3
+            }
+        ]
+    }
+]

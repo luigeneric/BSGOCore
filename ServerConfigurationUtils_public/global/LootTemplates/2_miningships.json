@@ -1,0 +1,28 @@
+[{
+        "id": 2,
+        "type": "Damage",
+        "rewardCount": 1,
+        "experience": 500,
+        "chance": 1.0,
+        "lootEntryInfos": [{
+                "chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 100,
+                    "cardGuid": 264733124, //cubits
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            }, {
+                "chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 1000,
+                    "cardGuid": 215278030, //tylium
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.2
+            }
+        ]
+    }
+]

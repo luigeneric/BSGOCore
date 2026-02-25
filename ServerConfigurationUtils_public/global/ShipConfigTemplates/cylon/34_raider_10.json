@@ -1,0 +1,20 @@
+[{
+        "id": 34,
+        "shipGUID": 74,
+		"level": 10,
+        "slotConfigs": [{
+                "slotID": 0,
+                "itemGUID": 2645025994
+            },
+			{
+                "slotID": 1,
+                "itemGUID": 2645025994
+            },
+			{
+                "slotID": 2,
+                "itemGUID": 271446462,
+				"consumableGUID": 17980086
+            }
+        ]
+    }
+]

@@ -1,0 +1,4768 @@
+{
+    "sectorID": 6,
+    "spawnAreaTemplates": [{
+            "id": 0,
+            "a": {
+                "x": -50.0,
+                "y": 0.0,
+                "z": -50.0
+            },
+            "b": {
+                "x": -25.0,
+                "y": 0.0,
+                "z": -25.0
+            },
+            "direction": {
+                "pitch": 0.0,
+                "yaw": 90.0,
+                "roll": 0.0
+            },
+            "faction": "Cylon",
+            "isForPlayer": true
+        }, {
+            "id": 1,
+            "a": {
+                "x": 50.0,
+                "y": 0.0,
+                "z": 50.0
+            },
+            "b": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 25.0
+            },
+            "direction": {
+                "pitch": 0.0,
+                "yaw": -90.0,
+                "roll": 0.0
+            },
+            "faction": "Colonial",
+            "isForPlayer": true
+        }
+    ],
+    "spaceObjectTemplates": [{
+            "position": {
+                "x": 1500,
+                "y": 0,
+                "z": 1000
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "autoAggroDistance": 3500.0,
+            "maximumAggroDistance": 3500.0,
+            "faction": "Cylon",
+            "objectGUID": 28,
+            "spaceEntityType": "Cruiser",
+            "creatingCause": "AlreadyExists",
+            "respawnTime": 0,
+            "isInstantInSector": true
+        },
+		{
+            "position": {
+                "x": 1500,
+                "y": 0,
+                "z": -1000
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "autoAggroDistance": 3500.0,
+            "maximumAggroDistance": 3500.0,
+            "faction": "Cylon",
+            "objectGUID": 28,
+            "spaceEntityType": "Cruiser",
+            "creatingCause": "AlreadyExists",
+            "respawnTime": 0,
+            "isInstantInSector": true
+        }
+		, {
+            "position": {
+                "x": 688.1441,
+                "y": 17.60901,
+                "z": 552.6728
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -291.4461,
+                "y": 184.7291,
+                "z": 1452.237
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3.567352,
+                "y": 19.54445,
+                "z": -5059.605
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4370.203,
+                "y": -2.824957,
+                "z": 2342.007
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 266.4125,
+                "y": -33.73839,
+                "z": 1507.041
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -543.5837,
+                "y": 506.9583,
+                "z": -3846.115
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -12.85325,
+                "y": 2.267323,
+                "z": -5010.609
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4324.943,
+                "y": 20.46536,
+                "z": 2277.452
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5034.062,
+                "y": 15.12664,
+                "z": -98.5205
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4629.208,
+                "y": 52.04644,
+                "z": -895.1651
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5005.967,
+                "y": 43.49347,
+                "z": -100.4536
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2917.314,
+                "y": 15.71214,
+                "z": 4900.9
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4293.583,
+                "y": -20.01189,
+                "z": 2268.683
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1592.502,
+                "y": -28.70584,
+                "z": 3629.954
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -6.966109,
+                "y": 48.92894,
+                "z": -4996.276
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 211.9456,
+                "y": -92.67342,
+                "z": 1521.413
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1970.996,
+                "y": 279.4954,
+                "z": 1915.349
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2010.707,
+                "y": 320.2664,
+                "z": 2052.246
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2930.844,
+                "y": 78.24924,
+                "z": 4859.55
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4277.812,
+                "y": -26.35846,
+                "z": 2310.514
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3262.909,
+                "y": -448.4321,
+                "z": -2106.695
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3.058273,
+                "y": 30.57632,
+                "z": 1521.074
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2937.026,
+                "y": -21.87652,
+                "z": 4906.554
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2893.228,
+                "y": 7.113932,
+                "z": 4882.061
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1272.628,
+                "y": -5.124454,
+                "z": -1063.115
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2929.179,
+                "y": 18.47278,
+                "z": 4909.938
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3315.831,
+                "y": -239.6064,
+                "z": 198.3816
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1980.073,
+                "y": 316.2,
+                "z": 1948.722
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3962.047,
+                "y": 73.03814,
+                "z": -1542.48
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3362.785,
+                "y": -186.8032,
+                "z": 217.1874
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3336.534,
+                "y": -123.5805,
+                "z": 221.7553
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 327.2628,
+                "y": -72.67082,
+                "z": 1741.296
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -273.172,
+                "y": 153.4654,
+                "z": 1439.793
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2898.906,
+                "y": 26.82496,
+                "z": 4904.08
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 29.95468,
+                "y": -30.84749,
+                "z": -4956.874
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3998.304,
+                "y": 76.37102,
+                "z": -3893.025
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -875.0286,
+                "y": 330.1328,
+                "z": 1226.723
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4258.662,
+                "y": 32.81445,
+                "z": 2182.712
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2409.84,
+                "y": 3.445804,
+                "z": -1631.163
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3362.458,
+                "y": -430.3996,
+                "z": -2186.808
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2903.527,
+                "y": -5.822255,
+                "z": 4905.257
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3320.178,
+                "y": -336.6118,
+                "z": -2050.74
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4034.66,
+                "y": 135.7532,
+                "z": -1524.436
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3952.322,
+                "y": 1.542304,
+                "z": -3940.508
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4517.685,
+                "y": -34.90064,
+                "z": -964.8317
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4064.071,
+                "y": -23.41895,
+                "z": -4004.182
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3302.197,
+                "y": -490.1356,
+                "z": -2044.585
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 354.1235,
+                "y": -100.1121,
+                "z": 1630.543
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1969.861,
+                "y": 279.4798,
+                "z": 1998.365
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -514.997,
+                "y": 417.1901,
+                "z": -3942.209
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -142.552,
+                "y": 38.70404,
+                "z": 1367.968
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4252.168,
+                "y": 29.15778,
+                "z": 2247.887
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3205.521,
+                "y": -430.9118,
+                "z": 1118.807
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4027.229,
+                "y": 58.15863,
+                "z": -1533.595
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 370.497,
+                "y": -125.3596,
+                "z": 1714.198
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5016.376,
+                "y": -30.16367,
+                "z": -141.2914
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3949.493,
+                "y": 133.2114,
+                "z": -1576.911
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2926.83,
+                "y": 45.66864,
+                "z": 4871.892
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1600.888,
+                "y": 16.87246,
+                "z": 3581.915
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2916.49,
+                "y": 51.66003,
+                "z": 4846.741
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968052,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 642.3166,
+                "y": -18.48794,
+                "z": 535.6183
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3359.383,
+                "y": -223.632,
+                "z": 218.5625
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1592.159,
+                "y": 17.74659,
+                "z": 3636.091
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 234.8307,
+                "y": 362.5661,
+                "z": -3609.853
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3921.355,
+                "y": -7.587721,
+                "z": -4006.792
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -328.212,
+                "y": 440.753,
+                "z": -3760.742
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1277.421,
+                "y": -57.13356,
+                "z": -1085.325
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 237.2247,
+                "y": 390.192,
+                "z": -3556.818
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -336.8541,
+                "y": 183.054,
+                "z": 1393.886
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3339.311,
+                "y": -223.0824,
+                "z": 207.4476
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2903.77,
+                "y": 18.77932,
+                "z": 4910.048
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -28.59136,
+                "y": -36.60749,
+                "z": -4997.238
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1269.699,
+                "y": -15.74548,
+                "z": -1004.686
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3300.501,
+                "y": -538.6877,
+                "z": 1000.039
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3145.615,
+                "y": -434.3126,
+                "z": 985.985
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4103.987,
+                "y": 4.574071,
+                "z": -3945.236
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -158.9681,
+                "y": 381.2873,
+                "z": -3837.75
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -20.51003,
+                "y": -18.47124,
+                "z": -5045.436
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -138.1476,
+                "y": 71.69634,
+                "z": 1436.508
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4051.074,
+                "y": 111.3905,
+                "z": -1593.658
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4974.991,
+                "y": 6.314502,
+                "z": -99.88691
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1338.688,
+                "y": 37.45962,
+                "z": -1073.986
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2425.169,
+                "y": 39.89397,
+                "z": -1664.5
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1322.002,
+                "y": -10.39724,
+                "z": -1036.159
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -628.8943,
+                "y": 428.1296,
+                "z": -3948.88
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 445.2139,
+                "y": -180.8051,
+                "z": 1702.422
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -52.0825,
+                "y": -2.487422,
+                "z": 1377.838
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2923.383,
+                "y": -2.083558,
+                "z": 4845.642
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968052,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4566.01,
+                "y": 60.17782,
+                "z": -1000.854
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 624.4829,
+                "y": -54.55349,
+                "z": 604.1355
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 750.6697,
+                "y": 700.1452,
+                "z": -3120.669
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3307.021,
+                "y": -273.0867,
+                "z": 201.3744
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2449.524,
+                "y": -66.84509,
+                "z": -1701.342
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3913.608,
+                "y": 117.0785,
+                "z": -1527.751
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1292.09,
+                "y": 5.256608,
+                "z": -1093.019
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4377.829,
+                "y": -74.28707,
+                "z": 2363.535
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3170.167,
+                "y": -492.3788,
+                "z": 1111.991
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5049.591,
+                "y": -29.3364,
+                "z": -113.7252
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3943.556,
+                "y": 217.3951,
+                "z": -1586.206
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 126.1018,
+                "y": 288.1415,
+                "z": -3709.421
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2908.409,
+                "y": 39.34766,
+                "z": 4846.614
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968051,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4659.955,
+                "y": -17.06692,
+                "z": -955.1329
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5041.755,
+                "y": 60.73738,
+                "z": -87.76889
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2037.402,
+                "y": 340.3682,
+                "z": 1902.954
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 602.9386,
+                "y": 678.0217,
+                "z": -3176.072
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1378.216,
+                "y": 47.32959,
+                "z": -1012.979
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 260.4155,
+                "y": 392.7385,
+                "z": -3477.046
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3349.536,
+                "y": -448.7507,
+                "z": 1028.818
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2888.666,
+                "y": 17.38903,
+                "z": 4891.801
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968052,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 568.1306,
+                "y": 83.71017,
+                "z": 618.1813
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 421.7619,
+                "y": -237.1285,
+                "z": 1634.234
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5049.51,
+                "y": -12.5724,
+                "z": -60.62973
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3360.693,
+                "y": -492.9505,
+                "z": 1080.215
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3949.364,
+                "y": 39.85263,
+                "z": -3858.889
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 243.1152,
+                "y": 342.454,
+                "z": -3487.264
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3342.887,
+                "y": -187.2781,
+                "z": 228.0428
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4303.212,
+                "y": -56.84373,
+                "z": 2301.821
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 553.5419,
+                "y": -14.72747,
+                "z": 557.7854
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 647.7239,
+                "y": 655.2278,
+                "z": -3197.817
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 654.3016,
+                "y": 27.10987,
+                "z": 646.8008
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -331.848,
+                "y": 388.4329,
+                "z": -3805.531
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 190.1268,
+                "y": 351.085,
+                "z": -3554.696
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2919.421,
+                "y": 27.15534,
+                "z": 4869.784
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3286.688,
+                "y": -399.6692,
+                "z": -2197.506
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -626.2765,
+                "y": 510.97,
+                "z": -3982.095
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1255.599,
+                "y": 7.308352,
+                "z": -1048.709
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 551.0081,
+                "y": 18.41699,
+                "z": 639.7635
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1522.345,
+                "y": -18.40652,
+                "z": 3637.473
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5002.853,
+                "y": 12.87249,
+                "z": -81.82556
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1997.715,
+                "y": 287.5983,
+                "z": 2063.422
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 318.4959,
+                "y": -113.1624,
+                "z": 1626.477
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 129.2093,
+                "y": -122.4921,
+                "z": 1615.148
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2917.932,
+                "y": 12.64275,
+                "z": 4854.551
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1925.329,
+                "y": 290.8918,
+                "z": 1962.733
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1455.189,
+                "y": -41.4528,
+                "z": 3714.948
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4725.541,
+                "y": -60.17957,
+                "z": -1035.139
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2916.126,
+                "y": -12.89034,
+                "z": 4908.261
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3.880936,
+                "y": -51.49601,
+                "z": -5034.762
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4005.334,
+                "y": -36.01279,
+                "z": -4038.239
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1639.314,
+                "y": -7.241543,
+                "z": 3597.686
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3991.897,
+                "y": 193.2454,
+                "z": -1651.101
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 13.00505,
+                "y": -4.638891,
+                "z": -5023.155
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 701.632,
+                "y": 72.13378,
+                "z": 584.488
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3970.759,
+                "y": 172.9544,
+                "z": -1504.934
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 111.0415,
+                "y": 287.7492,
+                "z": -3652.845
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4569.162,
+                "y": -54.11154,
+                "z": -1067.2
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3181.595,
+                "y": -480.3577,
+                "z": 1071.945
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -43.17043,
+                "y": 28.37198,
+                "z": -5023.962
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5006.843,
+                "y": 7.207013,
+                "z": -57.95321
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2474.848,
+                "y": 38.53817,
+                "z": -1753.097
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4719.5,
+                "y": -4.273823,
+                "z": -984.0083
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 99.47119,
+                "y": -56.39231,
+                "z": 1614.173
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -596.4229,
+                "y": 472.2586,
+                "z": -3972.424
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2011.594,
+                "y": 282.6749,
+                "z": 1998.737
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -810.3021,
+                "y": 350.6143,
+                "z": 1090.603
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2880.343,
+                "y": 63.73849,
+                "z": 4874.505
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1609.761,
+                "y": -3.333555,
+                "z": 35980.51
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3256.761,
+                "y": -479.0363,
+                "z": 1086.284
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -140.4455,
+                "y": 345.9897,
+                "z": -3685.067
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2924.262,
+                "y": -9.836047,
+                "z": 4901.636
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 1988.542,
+                "y": 259.8914,
+                "z": 2010.882
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5042.588,
+                "y": 18.51831,
+                "z": -134.0893
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 553.8815,
+                "y": 524.1998,
+                "z": -3345.188
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 189.2868,
+                "y": 384.6719,
+                "z": -3444.276
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2893.184,
+                "y": 43.39028,
+                "z": 4919.376
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968052,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3341.297,
+                "y": -405.2649,
+                "z": -2172.699
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4284.649,
+                "y": 9.241588,
+                "z": 2224.709
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1672.499,
+                "y": 9.093399,
+                "z": 3545.717
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 600.0604,
+                "y": 24.78797,
+                "z": 675.2612
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2068.107,
+                "y": 241.5235,
+                "z": 1953.645
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 824.783,
+                "y": -337.647,
+                "z": 1893.32
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3971.954,
+                "y": 93.1624,
+                "z": -1669.131
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 748.8353,
+                "y": 723.0065,
+                "z": -3130.179
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3966.69,
+                "y": -39.24622,
+                "z": -3991.69
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1530.516,
+                "y": -17.0532,
+                "z": 3684.229
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -12.67202,
+                "y": 43.96537,
+                "z": -5064.32
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3359.347,
+                "y": -148.1429,
+                "z": 249.6571
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2477.991,
+                "y": -11.89048,
+                "z": -1703.568
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 628.1511,
+                "y": 29.83455,
+                "z": 581.0577
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4254.365,
+                "y": 31.99759,
+                "z": 2212.341
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -387.0057,
+                "y": 269.2675,
+                "z": 1337.874
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3330.998,
+                "y": -537.3882,
+                "z": 1122.028
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1716.594,
+                "y": 19.57424,
+                "z": 3515.403
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3337.154,
+                "y": -251.1207,
+                "z": 209.1494
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3943.752,
+                "y": 153.7916,
+                "z": -1613.086
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 511.0853,
+                "y": -313.0889,
+                "z": 1650.795
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3308.376,
+                "y": -412.1852,
+                "z": -2111.491
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1336.675,
+                "y": -47.39848,
+                "z": -1043.003
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1362.707,
+                "y": 3.076656,
+                "z": -1001.167
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2380.807,
+                "y": -20.69417,
+                "z": -1764.253
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2909.851,
+                "y": 45.99392,
+                "z": 4872.433
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3345.01,
+                "y": -439.8268,
+                "z": -2036.827
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3348.58,
+                "y": -162.989,
+                "z": 228.8563
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 608.616,
+                "y": -270.6403,
+                "z": 1841.889
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 122.8049,
+                "y": -93.51521,
+                "z": 1625.001
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4992.675,
+                "y": 7.249863,
+                "z": -156.119
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 649.5748,
+                "y": 644.1696,
+                "z": -3278.754
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2071.13,
+                "y": 260.0288,
+                "z": 2046.389
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -213.6523,
+                "y": 48.9149,
+                "z": 1466.57
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3354.327,
+                "y": -426.2554,
+                "z": -2161.949
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3986.471,
+                "y": 10.80416,
+                "z": -4013.644
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3993.396,
+                "y": 138.5478,
+                "z": -1576.205
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3154.719,
+                "y": -518.0243,
+                "z": 1009.011
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -605.5986,
+                "y": 225.206,
+                "z": 1105.838
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3336.644,
+                "y": -407.4766,
+                "z": -2099.343
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1295.727,
+                "y": -18.70365,
+                "z": -974.1669
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3325.395,
+                "y": -204.6221,
+                "z": 222.8258
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4201.576,
+                "y": 32.52731,
+                "z": 2166.79
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -717.2917,
+                "y": 490.1899,
+                "z": -3982.536
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3264.385,
+                "y": -467.2161,
+                "z": -2164.514
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3302.897,
+                "y": -556.895,
+                "z": 968.0294
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2915.247,
+                "y": 19.5789,
+                "z": 4883.55
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4816.877,
+                "y": -50.96159,
+                "z": -910.1149
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2902.546,
+                "y": 34.54031,
+                "z": 4885.914
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968051,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 5082.985,
+                "y": -2.998983,
+                "z": -125.1083
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -683.9634,
+                "y": 356.68,
+                "z": 1159.577
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -405.2929,
+                "y": 282.8735,
+                "z": 1255.276
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1428.294,
+                "y": -80.5966,
+                "z": 3737.46
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4664.733,
+                "y": -76.62839,
+                "z": -1029.126
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3261.359,
+                "y": -510.768,
+                "z": 1172.208
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4736.062,
+                "y": 90.59737,
+                "z": -999.403
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2462.293,
+                "y": -10.05225,
+                "z": -1799.137
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4012.642,
+                "y": 1.002151,
+                "z": -3926.804
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2919.481,
+                "y": -0.2133327,
+                "z": 4873.739
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -395.816,
+                "y": 401.1155,
+                "z": -3932.635
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -378.0666,
+                "y": 406.4025,
+                "z": -3888.919
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 3365.757,
+                "y": -157.7759,
+                "z": 195.9121
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 526.2746,
+                "y": -299.2142,
+                "z": 1817.245
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4650.634,
+                "y": -136.5028,
+                "z": -966.4219
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2011.42,
+                "y": 197.115,
+                "z": 1991.937
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4088.045,
+                "y": 38.04432,
+                "z": -3877.966
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 368.5925,
+                "y": 469.7942,
+                "z": -3427.373
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2898.417,
+                "y": 62.32317,
+                "z": 4871.124
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 607.8799,
+                "y": -6.147949,
+                "z": 637.1046
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1502.455,
+                "y": -61.2326,
+                "z": 3718.696
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2935.85,
+                "y": 41.85627,
+                "z": 4860.191
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968051,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2915.889,
+                "y": -23.44004,
+                "z": 4872.506
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -73.8298,
+                "y": 57.09663,
+                "z": -5005.497
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 351.3994,
+                "y": 490.0957,
+                "z": -3419.515
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3391.4,
+                "y": -409.6925,
+                "z": -2117.299
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1224.699,
+                "y": -0.6005411,
+                "z": -1007.105
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2893.972,
+                "y": 0.9389133,
+                "z": 4915.671
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -3253.477,
+                "y": -484.4496,
+                "z": 1045.827
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -1299.18,
+                "y": -59.17243,
+                "z": -1027.527
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969586,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2868.085,
+                "y": 40.95315,
+                "z": 4889.757
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2413.41,
+                "y": 22.89266,
+                "z": -1734.514
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 379.8003,
+                "y": 485.4875,
+                "z": -3438.494
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4.500178,
+                "y": 12.19144,
+                "z": -4977.258
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2358.073,
+                "y": -8.640795,
+                "z": -1699.113
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4726.071,
+                "y": 16.34069,
+                "z": -1048.309
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 266.1153,
+                "y": -111.0324,
+                "z": 1720.734
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969842,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2962.079,
+                "y": 12.44882,
+                "z": 4882.985
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57968050,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -483.3622,
+                "y": 449.4088,
+                "z": -3884.751
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -46.5873,
+                "y": 360.4097,
+                "z": -3782.083
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969587,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 4326.675,
+                "y": 31.97697,
+                "z": 2244.684
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969844,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": -4596.422,
+                "y": -73.67624,
+                "z": -860.0918
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969588,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }, {
+            "position": {
+                "x": 2913.777,
+                "y": 12.63168,
+                "z": 4887.185
+            },
+            "rotation": {
+                "pitch": 0.0,
+                "yaw": 0.0,
+                "roll": 0.0
+            },
+            "radius": 10,
+            "rotationSpeed": 0.0,
+            "objectGUID": 57969843,
+            "spaceEntityType": "Asteroid",
+            "creatingCause": "0",
+            "respawnTime": 60,
+            "isInstantInSector": true
+        }
+    ],
+    "asteroidDesc": {
+        "respawnTime": 300,
+        "respawnResourceTime": 900000,
+        "hpIntervall": [200, 400],
+        "maxResourceDesc": {
+            "minRedPercentage": 1,
+            "maxTyliumPercentage": 0.4,
+            "maxTitaniumPercentage": 0.3,
+            "maxWaterPercentage": 0.3
+        },
+        "resourceEntries": [{
+                "resourceType": "None",
+                "chance": 1000,
+                "hpToResourceFactor": 0.5
+            }, {
+                "resourceType": "Tylium",
+                "chance": 1,
+                "hpToResourceFactor": 0.5
+            }, {
+                "resourceType": "Titanium",
+                "chance": 0,
+                "hpToResourceFactor": 0.5
+            }, {
+                "resourceType": "Water",
+                "chance": 0,
+                "hpToResourceFactor": 0.5
+            }
+        ]
+    },
+    "planetoidDesc": {
+        "respawnTime": 300,
+        "respawnResourceTime": 900,
+        "resourceEntries": [{
+                "resourceType": "None",
+                "chance": 10,
+                "hpToResourceFactor": 0.0
+            }, {
+                "resourceType": "Tylium",
+                "chance": 10,
+                "hpToResourceFactor": 0.0
+            }, {
+                "resourceType": "Titanium",
+                "chance": 10,
+                "hpToResourceFactor": 0.0
+            }, {
+                "resourceType": "Water",
+                "chance": 10,
+                "hpToResourceFactor": 0.0
+            }
+        ],
+        "minResources": 60000,
+        "maxResources": 150000
+    },
+    "miningShipConfig": {
+        "extractPerSecond": 10,
+        "extractDelay": 60
+    }
+}

@@ -1,0 +1,9 @@
+[{
+        "id": 1,
+        "type": "Damage",
+        "rewardCount": 1,
+        "experience": 10,
+        "chance": 1.0,
+        "lootEntryInfos": []
+    }
+]

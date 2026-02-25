@@ -1,0 +1,40 @@
+[{
+        "id": 3,
+        "minDamage": 1.0,
+        "radius": 9999999,
+        "type": "RadiusDamage",
+        "rewardCount": 1,
+        "experience": 1500,
+        "chance": 1.0,
+        "lootEntryInfos": [{
+                "chance": 1,
+                "levelIntervall": [0, 255],
+                "shipItem": {
+                    "count": 7500,
+                    "cardGuid": 130762195, //water
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0.1
+            }, {
+                "chance": 0.03,
+                "levelIntervall": [50, 255],
+                "shipItem": {
+                    "count": 1,
+                    "cardGuid": 10, //blue box
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0
+            },
+			{
+                "chance": 0.06,
+                "levelIntervall": [0, 49],
+                "shipItem": {
+                    "count": 1,
+                    "cardGuid": 10, //blue box
+                    "itemType": "Countable"
+                },
+                "variationPercentage": 0
+            }
+        ]
+    }
+]
