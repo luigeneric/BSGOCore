@@ -56,7 +56,6 @@ public class BlockingQueueSender implements IPacketSender
             }
             catch (IOException ioException)
             {
-                //log.warn("ioException in BlockingMode ", ioException);
                 this.sendFailed = true;
             }
             catch (InterruptedException e)

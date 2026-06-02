@@ -18,14 +18,12 @@ import java.util.Objects;
 public class PulseManeuver extends Maneuver
 {
     private final Vector3 direction;
-    private final Euler3 euler3Direction;
 
     public PulseManeuver(final Vector3 direction)
     {
         super(ManeuverType.Pulse);
         Objects.requireNonNull(direction, "DirectionVector cannot be null");
         this.direction = direction;
-        this.euler3Direction = UnmodifiableDecorator.wrap(Euler3.direction(direction));
     }
 
     @Override
@@ -33,11 +31,11 @@ public class PulseManeuver extends Maneuver
     {
         if (tick.equals(this.startTick))
         {
-            final MovementFrame result = super.moveToDirection(prevFrame, euler3Direction, dt);
+            final MovementFrame result = super.moveToDirection(prevFrame, Euler3.direction(direction), dt);
             return new MovementFrame(result.getPosition(), result.getEuler3(), direction, StaticVectors.ZERO, result.getEuler3Speed(), result.getMode(), result.isValid());
         }
 
-        return super.moveToDirection(prevFrame, euler3Direction, dt);
+        return super.moveToDirection(prevFrame, Euler3.direction(direction), dt);
     }
 
     @Override

@@ -52,7 +52,7 @@ public class MapStarDesc implements IProtocolWrite
         bw.writeBoolean(canColonialOutpost);
         bw.writeBoolean(canCylonOutpost);
         bw.writeBoolean(canColonialJumpBeacon);
-        bw.writeBoolean(canColonialJumpBeacon);
+        bw.writeBoolean(canCylonJumpBeacon);
     }
 
     @Override

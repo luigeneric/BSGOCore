@@ -16,6 +16,11 @@ public class RegulationCard extends Card
     private final Map<Long, Set<Integer>> abilityTargetRelations;
     private final Map<Long, Set<Integer>> abilityTargetTypes;
     private final TargetBracketMode targetBracketMode;
+    /**
+     * To partially disable the sector map in the client view.
+     * There are multiple sections in the client that check for this flag but there is one that they(the OG dev team) forgot.
+     * So as long as you know that one, this flag is useless / turns it into unfair advantage to those who know it.
+     */
     private final boolean sectorMapEnabled;
     @SerializedName("effectTypeBlacklist")
     private final ConsumableEffectType[] effectTypeBlacklist;

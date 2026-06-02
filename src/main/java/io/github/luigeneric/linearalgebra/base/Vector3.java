@@ -724,7 +724,7 @@ public class Vector3 implements ICopy<Vector3>
 
     /**
      * The IsZeroVector() function tests if its argument is a vector with a magnitude
-     * sufficiently close to zero (according to some tolerance value.
+     * sufficiently close to zero (according to some tolerance value).
      * Widening the tolerance intervals and treating near-parallel edges as parallel may
      * result in near-intersections being interpreted as intersections. Overall, this is much
      * more attractive than the alternative: two intersecting objects falsely reported as

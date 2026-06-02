@@ -32,11 +32,10 @@ public class MiningHandler implements ProtocolMessageHandler
         final Optional<Price> price = sector.getMiningSectorOperations().removeMiningRequest(user.getPlayer().getUserID(), planetoidID);
         if (price.isEmpty())
         {
-            //cheat?, player used this but it should never happened
             log.warn("Player {} cheating(?), using mining requests even tho he never scanned or scan is too far in history!", user.getUserLog());
             return;
         }
-        log.info("planetoid request mining on: " + planetoidID + " price(call onMiningShipRequest): " + price.get());
+        log.info("planetoid request mining on: {} price(call onMiningShipRequest): {}", planetoidID, price.get());
         sector.getMiningSectorOperations().onMiningShipRequest(this.user, planetoidID, price.get());
     }
 

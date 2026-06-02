@@ -128,12 +128,12 @@ public class DynamicMovementController extends MovementController
         }
         else if (offsetValue == -1)
         {
-            return this.lastFrame;
+            this.nextFrame = this.maneuver.nextFrame(tickValue, this.frame, 0.1f);
+            return this.nextFrame;
         }
         else if (offsetValue == 1)
         {
-            this.nextFrame = this.maneuver.nextFrame(tickValue, this.frame, 0.1f);
-            return this.nextFrame;
+            return this.lastFrame;
         }
         else
         {

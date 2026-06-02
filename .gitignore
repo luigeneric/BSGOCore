@@ -97,3 +97,4 @@ sqlite/counters_queries/bgo_server.db
 !/certs/generate-certs.sh
 /observability/grafana-data/
 /observability/loki-data/
+/csharpcode/

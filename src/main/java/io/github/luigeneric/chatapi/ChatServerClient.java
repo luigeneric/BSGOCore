@@ -27,8 +27,6 @@ public class ChatServerClient implements ChatApi
     private final GameServerParamsConfig gameServerParamsConfig;
     private NetClient netClient;
     private NetSocket netSocket;
-    private String host;
-    private int port;
     private boolean isConnected;
     private long reconnectAttempts;
     private long reconnectIntervalMillisecond;
@@ -45,9 +43,6 @@ public class ChatServerClient implements ChatApi
     @Override
     public void start()
     {
-        this.host = gameServerParamsConfig.chatServerAddress();
-        this.port = gameServerParamsConfig.chatServerPort();
-
         netClient = vertx.createNetClient(new NetClientOptions()
                 .setReconnectAttempts(5)
                 .setReconnectInterval(RECONNECT_INTERVAL));
@@ -57,11 +52,11 @@ public class ChatServerClient implements ChatApi
 
     private void connect()
     {
-        netClient.connect(port, host, result ->
+        netClient.connect(gameServerParamsConfig.chatServerPort(), gameServerParamsConfig.chatServerAddress(), result ->
         {
             if (result.succeeded())
             {
-                log.info("Connected to chat server {}:{}", host, port);
+                log.info("Connected to chat server {}:{}", gameServerParamsConfig.chatServerAddress(), gameServerParamsConfig.chatServerPort());
                 netSocket = result.result();
                 isConnected = true;
                 reconnectAttempts = 0;

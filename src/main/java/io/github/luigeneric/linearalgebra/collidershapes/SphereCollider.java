@@ -31,7 +31,6 @@ public class SphereCollider extends Collider
     @Override
     public void updatePositions()
     {
-        //rotation update is not needed since its a sphere and rotation is not important
         this.updatedCenter.set(Vector3.add(this.sphere.center(), this.transform.getPosition()));
     }
 
