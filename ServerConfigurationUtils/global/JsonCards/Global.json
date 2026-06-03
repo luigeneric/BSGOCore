@@ -1,0 +1,18 @@
+[
+  {
+    "_comment": "GLOBAL CARD - Server-wide settings singleton. Must have GUID 49842157 (StaticCardGUID.java). Loaded by CardBuilder.java -> GlobalCard.java. Fields: TitaniumRepairCard/CubitsRepairCard (repair cost multipliers), CapitalShipPrice (merits to buy capital ship), UndockTimeout (seconds before auto-undock), friendBonusRewardGuid (reward card for friend referrals), specialFriendBonus (map of level->bonus).",
+    "cardGUID": 49842157,
+    "cardView": 5,
+    "cardView2": "Global",
+    "TitaniumRepairCard": 1.0,
+    "CubitsRepairCard": 1.0,
+    "CapitalShipPrice": 0,
+    "UndockTimeout": 0.0,
+    "friendBonusRewardGuid": 1,
+    "specialFriendBonus": {
+      "5": 1670163607,
+      "10": 4134519855,
+      "25": 3081303511
+    }
+  }
+]

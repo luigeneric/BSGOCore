@@ -1,0 +1,11 @@
+{
+  "_comment": "COLLIDER TEMPLATE for 'ship_colonial_glaive'. Read by ColliderTemplateReader.java (single object per file). Type 'Sphere': center + radius define a bounding sphere. Used for hit detection / collision on this NPC or space object.",
+  "prefabName": "ship_colonial_glaive",
+  "type": "Sphere",
+  "center": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "radius": 20.0
+}

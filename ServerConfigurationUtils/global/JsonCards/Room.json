@@ -1,0 +1,87 @@
+[
+  {
+    "_comment": "ROOM CARDS - CiC (Command Information Center) interior rooms. Loaded by CardBuilder.java -> RoomCard.java. Fields: doors (array of {Door: attachment_point_name, roomGUID: target_room_card_GUID}), NPCs (array of NPC definitions in the room), music (background music asset name). GUIDs: CiCColonial=3608851, CiCCylon=259498852, UndockRoom=115200940 (StaticCardGUID.java). The door named 'door_undock' leads to space (undocking).",
+    "cardGUID": 3608851,
+    "cardView": 14,
+    "cardView2": "Room",
+    "doors": [
+      {
+        "Door": "door_undock",
+        "roomGUID": 115200940
+      }
+    ],
+    "NPCs": [
+      {
+        "NPC": "Adama",
+        "NPCGUID": 2317752729
+      },
+      {
+        "NPC": "Tyrol",
+        "NPCGUID": 2203336305
+      },
+      {
+        "NPC": "Apollo",
+        "NPCGUID": 918576946
+      }
+    ],
+    "music": "music_cic_colonial"
+  },
+  {
+    "cardGUID": 259498852,
+    "cardView": 14,
+    "cardView2": "Room",
+    "doors": [
+      {
+        "Door": "door_undock",
+        "roomGUID": 115200940
+      }
+    ],
+    "NPCs": [
+      {
+        "NPC": "Leoben",
+        "NPCGUID": 3038927023
+      },
+      {
+        "NPC": "Sharon",
+        "NPCGUID": 3159857562
+      }
+    ],
+    "music": "music_cic_cylon"
+  },
+  {
+    "cardGUID": 151517344,
+    "cardView": 14,
+    "cardView2": "Room",
+    "doors": [
+      {
+        "Door": "door_undock",
+        "roomGUID": 115200940
+      }
+    ],
+    "NPCs": [
+      {
+        "NPC": "Officer",
+        "NPCGUID": 1745627589
+      }
+    ],
+    "music": "music_outpost_colonial"
+  },
+  {
+    "cardGUID": 151517343,
+    "cardView": 14,
+    "cardView2": "Room",
+    "doors": [
+      {
+        "Door": "door_undock",
+        "roomGUID": 115200940
+      }
+    ],
+    "NPCs": [
+      {
+        "NPC": "Officer",
+        "NPCGUID": 1730717595
+      }
+    ],
+    "music": "music_outpost_cylon"
+  }
+]

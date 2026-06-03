@@ -1,0 +1,343 @@
+[
+  {
+    "_comment": "SHIP CONSUMABLE CARDS - Resources that can be loaded into ship slots. Loaded by CardBuilder.java -> ShipConsumableCard.java. Fields: ConsumableType (int, 0=generic), effectType (None/Damage/Heal/Buff). Each resource type (Cubits, Titanium, Tylium, etc.) gets a ShipConsumable card with the same GUID as the resource. Source: ResourceType.java for GUIDs.",
+    "cardGUID": 264733124,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 207047790,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 215278030,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 130762195,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 130920111,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 254909109,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 187088612,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 63148366,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 172582782,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 28157328,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 130797813,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 166681557,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 92666191,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 10,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 11,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 12,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  },
+  {
+    "cardGUID": 13,
+    "cardView": 3,
+    "cardView2": "ShipConsumable",
+    "ConsumableType": 0,
+    "Tier": 0,
+    "ItemBuffMultiply": {
+      "stats": {}
+    },
+    "ItemBuffAdd": {
+      "stats": {}
+    },
+    "Action": "None",
+    "IsAugment": false,
+    "AutoConsume": false,
+    "Trashable": false,
+    "buyCount": 1,
+    "consumableAttributes": [],
+    "effectType": "None"
+  }
+]

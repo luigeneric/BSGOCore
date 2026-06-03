@@ -1,0 +1,135 @@
+[
+  {
+    "_comment": "MISSION CARDS - Individual mission definitions. Loaded by CardBuilder.java -> MissionCard.java. Fields: Level (mission difficulty), LevelRequirement (min player level), LevelUpperLimit (max player level), rewardCardGuid (Reward card to give on completion), receiverGuiCardGuid (UI card for mission giver), Action (mission type: 'destroy', etc.). Paired with entries in MissionTemplateConfiguration/missions.json.",
+    "cardGUID": 617742804,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 0,
+    "LevelRequirement": 0,
+    "LevelUpperLimit": 10,
+    "rewardCardGuid": 2708411651,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 3199114640,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 5,
+    "LevelRequirement": 5,
+    "LevelUpperLimit": 15,
+    "rewardCardGuid": 2291119086,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 1494200911,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 10,
+    "LevelRequirement": 10,
+    "LevelUpperLimit": 20,
+    "rewardCardGuid": 3813429120,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 941509768,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 15,
+    "LevelRequirement": 15,
+    "LevelUpperLimit": 25,
+    "rewardCardGuid": 1108190325,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 1157159484,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 20,
+    "LevelRequirement": 20,
+    "LevelUpperLimit": 30,
+    "rewardCardGuid": 1097614317,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 2271253533,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 25,
+    "LevelRequirement": 25,
+    "LevelUpperLimit": 35,
+    "rewardCardGuid": 4122018401,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 1923417255,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 0,
+    "LevelRequirement": 0,
+    "LevelUpperLimit": 10,
+    "rewardCardGuid": 2196665610,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 1882877247,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 5,
+    "LevelRequirement": 5,
+    "LevelUpperLimit": 15,
+    "rewardCardGuid": 129795420,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 410004112,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 10,
+    "LevelRequirement": 10,
+    "LevelUpperLimit": 20,
+    "rewardCardGuid": 1946651150,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 1246182612,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 15,
+    "LevelRequirement": 15,
+    "LevelUpperLimit": 25,
+    "rewardCardGuid": 3496283438,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 261776096,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 20,
+    "LevelRequirement": 20,
+    "LevelUpperLimit": 30,
+    "rewardCardGuid": 1700062663,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  },
+  {
+    "cardGUID": 2242867211,
+    "cardView": 16,
+    "cardView2": "Mission",
+    "Level": 25,
+    "LevelRequirement": 25,
+    "LevelUpperLimit": 35,
+    "rewardCardGuid": 1996428061,
+    "receiverGuiCardGuid": 0,
+    "Action": "destroy"
+  }
+]

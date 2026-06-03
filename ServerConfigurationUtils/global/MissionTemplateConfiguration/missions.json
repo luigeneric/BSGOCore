@@ -1,0 +1,207 @@
+[
+  {
+    "_comment": "MISSION TEMPLATES - Maps mission cards to spawning rules. Read by MissionTemplateReader.java. Fields: id (sequential), missionGuid (matching MissionCard GUID in JsonCards), faction (Colonial/Cylon), missionSectorDesc ({staticSectorId, useRandomSector, sectorIdsBlacklist/Whitelist}), missionCountEntries ({guid: target NPC GUID or 0=any, needCount: kills required}).",
+    "id": 1,
+    "missionGuid": 617742804,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "missionGuid": 3199114640,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 10
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "missionGuid": 1494200911,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 15
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "missionGuid": 941509768,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 20
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "missionGuid": 1157159484,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 25
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "missionGuid": 2271253533,
+    "faction": "Colonial",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 30
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "missionGuid": 1923417255,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 5
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "missionGuid": 1882877247,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 10
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "missionGuid": 410004112,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 15
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "missionGuid": 1246182612,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 20
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "missionGuid": 261776096,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 25
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "missionGuid": 2242867211,
+    "faction": "Cylon",
+    "missionSectorDesc": {
+      "staticSectorId": 0,
+      "useRandomSector": true,
+      "sectorIdsBlacklist": [],
+      "sectorIdsWhitelist": []
+    },
+    "missionCountEntries": [
+      {
+        "guid": 0,
+        "needCount": 30
+      }
+    ]
+  }
+]

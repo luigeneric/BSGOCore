@@ -1,0 +1,141 @@
+[
+  {
+    "_comment": "LOOT TEMPLATES - Drop tables for NPC kills and PvP. Read by LootTemplateReader.java. WARNING: LootTemplateDeserializer.java ONLY supports type 'Damage' and 'RadiusDamage'. Types 'Radius' and 'RadiusAll' throw IllegalStateException! Fields: id (unique), type (Damage or RadiusDamage), rewardCount, globalLevelIntervall [min_level, max_level], experience (XP reward), chance (0.0-1.0 drop probability), lootEntryInfos (specific item drops). RadiusDamage adds: radius (AoE range), minDamage (threshold).",
+    "id": 100,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 100,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 101,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 200,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 102,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 300,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 103,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 400,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 20,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 200,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 21,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 400,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 22,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 600,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 23,
+    "type": "Damage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 800,
+    "chance": 1.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 1,
+    "type": "RadiusDamage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 50,
+    "chance": 1.0,
+    "radius": 500.0,
+    "minDamage": 0.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 2,
+    "type": "RadiusDamage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 100,
+    "chance": 1.0,
+    "radius": 1000.0,
+    "minDamage": 0.0,
+    "lootEntryInfos": []
+  },
+  {
+    "id": 3,
+    "type": "RadiusDamage",
+    "rewardCount": 1,
+    "globalLevelIntervall": [
+      0,
+      50
+    ],
+    "experience": 500,
+    "chance": 1.0,
+    "radius": 2000.0,
+    "minDamage": 0.0,
+    "lootEntryInfos": []
+  }
+]

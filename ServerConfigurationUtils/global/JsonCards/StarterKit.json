@@ -1,0 +1,17 @@
+[
+  {
+    "_comment": "STARTER KIT CARDS - Initial equipment given to new players on account creation. Loaded by CardBuilder.java -> StarterKitCard.java. Fields: shipCardGuid (the starter ship to assign), items (array of item GUIDs to give). One per faction. The shipCardGuid must match a valid Ship card.",
+    "cardGUID": 3055237918,
+    "cardView": 34,
+    "cardView2": "StarterKit",
+    "shipCardGuid": 2366349390,
+    "items": []
+  },
+  {
+    "cardGUID": 1282623482,
+    "cardView": 34,
+    "cardView2": "StarterKit",
+    "shipCardGuid": 1427261742,
+    "items": []
+  }
+]

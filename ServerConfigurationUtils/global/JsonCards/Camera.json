@@ -1,0 +1,603 @@
+[
+  {
+    "_comment": "CAMERA CARD - Default camera settings for 3D space view. Loaded by CardBuilder.java -> CameraCard.java. Fields: DefaultZoom (initial zoom level), MinZoom/MaxZoom (scroll wheel limits), SoftTrembleSpeed/HardTrembleSpeed (screen shake intensity for damage effects).",
+    "cardGUID": 2366349390,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1747191803,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2555963396,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3087155673,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 4081442944,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3947146131,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2678869358,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 912076213,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3444490997,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2983844693,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1030062672,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3981258770,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1889592076,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 266454862,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1656826403,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1569873637,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 70830432,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 892274858,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 682178829,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 238788301,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 750800562,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1655262337,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1116650940,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2740618167,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2789537430,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2595425584,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 39483692,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 499974568,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3444119639,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 546083508,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1427261742,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1133412322,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3885858630,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1924938095,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2965787448,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3697015608,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 832353519,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 4037556961,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2772849831,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 337055010,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 341519230,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3194002021,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2914180731,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1211074337,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2706714207,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3005824347,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3268942601,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1645016813,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 793807161,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3535699065,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 15689405,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1818146412,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3073143922,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 250814916,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2609431093,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 1236001731,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 3630511820,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 4275632563,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 235182222,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  },
+  {
+    "cardGUID": 2930161759,
+    "cardView": 31,
+    "cardView2": "Camera",
+    "DefaultZoom": 1.0,
+    "MinZoom": 10.0,
+    "MaxZoom": 20.0,
+    "SoftTrembleSpeed": 1.0,
+    "HardTrembleSpeed": 1.0
+  }
+]

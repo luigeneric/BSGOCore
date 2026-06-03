@@ -1,0 +1,15 @@
+[
+  {
+    "_comment": "EVENT SHOP CARD - Event shop UI configuration. Loaded by CardBuilder.java -> EventShopCard.java. Fields: shopNameCylon/shopNameColonial (display names per faction), shopDescriptionCylon/shopDescriptionColonial, shopErrorMissingRessources/shopErrorCannotBuy (error messages), eventRessources (array of purchasable items).",
+    "cardGUID": 11133,
+    "cardView": 43,
+    "cardView2": "EventShop",
+    "shopNameCylon": "Event Shop",
+    "shopNameColonial": "Event Shop",
+    "shopDescriptionCylon": "Special event items",
+    "shopDescriptionColonial": "Special event items",
+    "shopErrorMissingRessources": "Not enough resources",
+    "shopErrorCannotBuy": "Cannot purchase this item",
+    "eventRessources": []
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "_comment": "AUGMENT TEMPLATES - Buff/booster item definitions. Read by AugmentTemplateReader.java. Fields: augmentActionType (None/SkillTime/Lock/SwitchFaction/Teleport/LootItem from AugmentActionType.java), associatedItemGUID (the item card that activates this augment), factorSource (Augment/Faction/Marketing/Holiday from FactorSource.java), factorTypeRecords ({type: buff_type_int, value: multiplier}), activeTimeInHours (duration of the buff).",
+    "augmentActionType": "None",
+    "associatedItemGUID": 3934386191,
+    "factorSource": "Augment",
+    "factorTypeRecords": [
+      {
+        "type": 1,
+        "value": 1.0
+      }
+    ],
+    "activeTimeInHours": 1
+  },
+  {
+    "augmentActionType": "None",
+    "associatedItemGUID": 1537904482,
+    "factorSource": "Augment",
+    "factorTypeRecords": [
+      {
+        "type": 1,
+        "value": 1.0
+      }
+    ],
+    "activeTimeInHours": 4
+  },
+  {
+    "augmentActionType": "None",
+    "associatedItemGUID": 3576911428,
+    "factorSource": "Augment",
+    "factorTypeRecords": [
+      {
+        "type": 1,
+        "value": 1.0
+      }
+    ],
+    "activeTimeInHours": 24
+  }
+]

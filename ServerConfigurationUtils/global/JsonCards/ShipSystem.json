@@ -1,0 +1,61 @@
+[
+  {
+    "_comment": "SHIP SYSTEM CARDS - Equippable ship components (weapons, hulls, engines, computers, paints). Loaded by CardBuilder.java -> ShipSystemCard.java. Fields: Level/MaxLevel (upgrade range), nextShipSystemCardGuid (next upgrade tier, 0=none), SlotType (weapon/hull/engine/computer from ShipSlotType.java), Tier, ShipObjectKeyRestrictions (limit to specific ship models, empty=fits all), ShipRoleRestrictions (limit to ship roles), SkillHashes/shipAbilityCards (attached skills), StaticBuffs/MultiplyBuffs (ObjectStats: flat and % stat bonuses), Durability (HP of the component itself), Class (Standart or Elite from ShipSystemClass.java), Views (StatView.java enum array for UI display), Unique/ReplaceableOnly/Trashable/Indestructible. CRITICAL: GUIDs 226 (colonial paint) and 227 (cylon paint) are hardcoded in ShopProtocol.setupEventShop() lines 192-193. Without them, login crashes!",
+    "cardGUID": 226,
+    "cardView": 2,
+    "cardView2": "ShipSystem",
+    "Level": 0,
+    "MaxLevel": 0,
+    "nextShipSystemCardGuid": 0,
+    "SlotType": "hull",
+    "Tier": 1,
+    "ShipObjectKeyRestrictions": [],
+    "ShipRoleRestrictions": [],
+    "SkillHashes": [],
+    "shipAbilityCards": [],
+    "StaticBuffs": {
+      "stats": {}
+    },
+    "MultiplyBuffs": {
+      "stats": {}
+    },
+    "Durability": 99999.0,
+    "Class": "Standart",
+    "Views": [],
+    "Unique": false,
+    "ReplaceableOnly": false,
+    "UserUpgradeable": false,
+    "Trashable": false,
+    "Indestructible": true,
+    "MaxCountPerShip": 1
+  },
+  {
+    "cardGUID": 227,
+    "cardView": 2,
+    "cardView2": "ShipSystem",
+    "Level": 0,
+    "MaxLevel": 0,
+    "nextShipSystemCardGuid": 0,
+    "SlotType": "hull",
+    "Tier": 1,
+    "ShipObjectKeyRestrictions": [],
+    "ShipRoleRestrictions": [],
+    "SkillHashes": [],
+    "shipAbilityCards": [],
+    "StaticBuffs": {
+      "stats": {}
+    },
+    "MultiplyBuffs": {
+      "stats": {}
+    },
+    "Durability": 99999.0,
+    "Class": "Standart",
+    "Views": [],
+    "Unique": false,
+    "ReplaceableOnly": false,
+    "UserUpgradeable": false,
+    "Trashable": false,
+    "Indestructible": true,
+    "MaxCountPerShip": 1
+  }
+]

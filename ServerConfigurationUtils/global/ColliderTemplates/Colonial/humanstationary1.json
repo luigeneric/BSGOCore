@@ -1,0 +1,15 @@
+{
+  "_comment": "COLLIDER TEMPLATE for 'humanstationary1'. Read by ColliderTemplateReader.java (single object per file). Type 'AABB': center + extents define an axis-aligned bounding box (AABB). Used for hit detection / collision on this NPC or space object.",
+  "prefabName": "humanstationary1",
+  "type": "AABB",
+  "center": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "extents": {
+    "x": 30.0,
+    "y": 15.0,
+    "z": 30.0
+  }
+}

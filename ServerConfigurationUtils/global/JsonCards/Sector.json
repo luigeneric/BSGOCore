@@ -1,0 +1,6045 @@
+[
+  {
+    "_comment": "SECTOR CARDS - Visual/environmental settings for each space sector. Loaded by CardBuilder.java -> SectorCard.java. Fields: width/height/length (sector bounds in units), regulationCardGuid (links to Regulation card), ambientColor/fogColor/dustColor (RGBA), fogDensity, dustDensity, nebulaDesc (prefab + color), starsDesc, lightDescs (rotation quaternion + color + intensity), sunDescs (sun visual properties + position), requiredAssets (client asset bundles to preload). Each sector must have a paired Regulation card.",
+    "cardGUID": 3766200112,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 4160650435,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1817261864,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2414753437,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3459040731,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2133258262,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 863445235,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 997148094,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3880658423,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1041228460,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 507709606,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1350749304,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 4049137611,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1134521206,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 4032862125,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2477720501,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 235705580,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 595299588,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1624497886,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 944702313,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2800775778,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3964443765,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2425772769,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3431733415,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1203612570,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 763292529,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 899856235,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2478732379,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1626061419,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 42427317,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3298331284,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1248091357,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 539794868,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 4039414786,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3407325250,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3863631645,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3655688251,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1159428233,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1060138164,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2645541049,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2398308624,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2744700115,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 695109088,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3290203343,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3689892311,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3592477371,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 201653664,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1413409846,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1893012090,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3971970930,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2616741983,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2049626618,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 6626694,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1481418156,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1647573225,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 981252924,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3609247107,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1026143142,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1416284172,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2074120779,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3844743566,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 4157972422,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3379542042,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1275841622,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3663498330,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2176496655,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2974201267,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2887001335,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1425120474,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3620857018,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2808603094,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1594065777,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2662994958,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1361100748,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 813966220,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2541763015,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3894552660,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2197720104,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2537210274,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2691214441,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 4214726328,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3096873469,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3653606989,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 634239664,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 3730429448,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2724090094,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1013740405,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3492993479,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 431353395,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 4188940137,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2353005894,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1259785766,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1951532723,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2222159075,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1643670788,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2417872106,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2976122770,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1822932251,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 387930143,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 3756141702,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 4187806029,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 1942714217,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 2074159195,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 2065205448,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  },
+  {
+    "cardGUID": 1313933124,
+    "cardView": 11,
+    "cardView2": "Sector",
+    "width": 20000.0,
+    "height": 8000.0,
+    "length": 20000.0,
+    "regulationCardGuid": 179244773,
+    "ambientColor": {
+      "r": 0.1,
+      "g": 0.1,
+      "b": 0.15,
+      "a": 1.0
+    },
+    "fogColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.05,
+      "a": 1.0
+    },
+    "fogDensity": 50,
+    "dustColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.6,
+      "a": 1.0
+    },
+    "dustDensity": 30,
+    "nebulaDesc": {
+      "prefabName": "nebula_default",
+      "color": {
+        "r": 0.3,
+        "g": 0.2,
+        "b": 0.5,
+        "a": 1.0
+      }
+    },
+    "starsDesc": {
+      "prefabName": "stars_default",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "starsMultDesc": null,
+    "StarsVarianceDesc": null,
+    "movingNebulaDescs": [],
+    "lightDescs": [
+      {
+        "rotation": {
+          "x": 0.5,
+          "y": 0.3,
+          "z": 0.0,
+          "w": 0.8
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "intensity": 1.0
+      }
+    ],
+    "sunDescs": [
+      {
+        "raysColor": {
+          "r": 1.0,
+          "g": 0.9,
+          "b": 0.7,
+          "a": 1.0
+        },
+        "streakColor": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.6,
+          "a": 0.5
+        },
+        "glowColor": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 0.8
+        },
+        "discColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "occlusionFade": true,
+        "position": {
+          "x": 5000.0,
+          "y": 2000.0,
+          "z": 5000.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "globalFogDesc": null,
+    "cameraFxDesc": null,
+    "requiredAssets": []
+  }
+]

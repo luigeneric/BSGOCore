@@ -1,0 +1,92 @@
+[
+  {
+    "_comment": "STICKER LIST - Ship decal/sticker options per faction. Must have GUID 166885587 (StaticCardGUID.java). Loaded by CardBuilder.java -> StickerListCard.java. Fields: StickersColonial/StickersCylon (arrays of {ID, Texture}). IDs are sequential, Texture is the asset name for the sticker decal.",
+    "cardGUID": 166885587,
+    "cardView": 26,
+    "cardView2": "StickerList",
+    "StickersColonial": [
+      {
+        "ID": 1,
+        "Texture": "sticker_colonial_01"
+      },
+      {
+        "ID": 2,
+        "Texture": "sticker_colonial_02"
+      },
+      {
+        "ID": 3,
+        "Texture": "sticker_colonial_03"
+      },
+      {
+        "ID": 4,
+        "Texture": "sticker_colonial_04"
+      },
+      {
+        "ID": 5,
+        "Texture": "sticker_colonial_05"
+      },
+      {
+        "ID": 6,
+        "Texture": "sticker_colonial_06"
+      },
+      {
+        "ID": 7,
+        "Texture": "sticker_colonial_07"
+      },
+      {
+        "ID": 8,
+        "Texture": "sticker_colonial_08"
+      },
+      {
+        "ID": 9,
+        "Texture": "sticker_colonial_09"
+      },
+      {
+        "ID": 10,
+        "Texture": "sticker_colonial_10"
+      }
+    ],
+    "StickersCylon": [
+      {
+        "ID": 1,
+        "Texture": "sticker_cylon_01"
+      },
+      {
+        "ID": 2,
+        "Texture": "sticker_cylon_02"
+      },
+      {
+        "ID": 3,
+        "Texture": "sticker_cylon_03"
+      },
+      {
+        "ID": 4,
+        "Texture": "sticker_cylon_04"
+      },
+      {
+        "ID": 5,
+        "Texture": "sticker_cylon_05"
+      },
+      {
+        "ID": 6,
+        "Texture": "sticker_cylon_06"
+      },
+      {
+        "ID": 7,
+        "Texture": "sticker_cylon_07"
+      },
+      {
+        "ID": 8,
+        "Texture": "sticker_cylon_08"
+      },
+      {
+        "ID": 9,
+        "Texture": "sticker_cylon_09"
+      },
+      {
+        "ID": 10,
+        "Texture": "sticker_cylon_10"
+      }
+    ]
+  }
+]

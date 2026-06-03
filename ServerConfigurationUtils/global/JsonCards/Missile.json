@@ -1,0 +1,31 @@
+[
+  {
+    "_comment": "MISSILE CARDS - Missile/torpedo type definitions. Loaded by CardBuilder.java -> MissileCard.java. Fields: explosionView (NuclearMini/Nuclear/Standard/Torpedo - client VFX), missileType (Nuke/Normal/Torpedo - server behavior). GUIDs from StaticCardGUID.java: MiniNuke=244685066, Nuke=253392099, Missile=117216909, Torpedo=29963472.",
+    "cardGUID": 244685066,
+    "cardView": 24,
+    "cardView2": "Missile",
+    "explosionView": "NuclearMini",
+    "missileType": "Nuke"
+  },
+  {
+    "cardGUID": 253392099,
+    "cardView": 24,
+    "cardView2": "Missile",
+    "explosionView": "Nuclear",
+    "missileType": "Nuke"
+  },
+  {
+    "cardGUID": 117216909,
+    "cardView": 24,
+    "cardView2": "Missile",
+    "explosionView": "Standard",
+    "missileType": "Normal"
+  },
+  {
+    "cardGUID": 29963472,
+    "cardView": 24,
+    "cardView2": "Missile",
+    "explosionView": "Torpedo",
+    "missileType": "Torpedo"
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "_comment": "AVATAR CATALOGUE - Character customization options for the CiC (room) avatar. Must have GUID 109873795 (StaticCardGUID.java). Loaded by CardBuilder.java -> AvatarCatalogueCard.java. Structure: avatarIndexes array, each with race/sex, items (hair/head/suit/beard/helmet/glasses mesh names), textures (face/hand texture files), materials (hair/beard material variants). Three races: human male, human female, cylon centurion.",
+    "cardGUID": 109873795,
+    "cardView": 21,
+    "cardView2": "AvatarCatalogue",
+    "avatarIndexes": [
+      {
+        "race": "human",
+        "sex": "male",
+        "items": {
+          "hair": [
+            "male_hair_01",
+            "male_hair_02",
+            "male_hair_03",
+            "male_hair_04",
+            "male_hair_05"
+          ],
+          "head": [
+            "male_head_01",
+            "male_head_02",
+            "male_head_03",
+            "male_head_04",
+            "male_head_05",
+            "male_head_06",
+            "male_head_07",
+            "male_head_08"
+          ],
+          "suit": [
+            "male_suit_01",
+            "male_suit_02",
+            "male_suit_03"
+          ],
+          "beard": [
+            "volume_beard_empty",
+            "volume_beard_01",
+            "volume_beard_02",
+            "volume_beard_03"
+          ],
+          "helmet": [
+            "helmet_empty",
+            "helmet_01",
+            "helmet_02"
+          ],
+          "glasses": [
+            "glasses_empty",
+            "glasses_01",
+            "glasses_02"
+          ]
+        },
+        "textures": {
+          "faces_tex": [
+            "male_face_1.tga",
+            "male_face_2.tga",
+            "male_face_3.tga",
+            "male_face_4.tga"
+          ],
+          "hands_tex": [
+            "male_hands1.png",
+            "male_hands2.png",
+            "male_hands3.png",
+            "male_hands4.png"
+          ]
+        },
+        "materials": {
+          "hair_": {
+            "male_hair_01": [
+              "male_hair_01_1.mat",
+              "male_hair_01_2.mat",
+              "male_hair_01_3.mat",
+              "male_hair_01_4.mat",
+              "male_hair_01_5.mat"
+            ]
+          },
+          "beard_": {
+            "volume_beard_01": [
+              "volume_beard_01_1.mat",
+              "volume_beard_01_2.mat",
+              "volume_beard_01_3.mat"
+            ]
+          }
+        }
+      },
+      {
+        "race": "human",
+        "sex": "female",
+        "items": {
+          "hair": [
+            "female_hair_01",
+            "female_hair_02",
+            "female_hair_03",
+            "female_hair_04",
+            "female_hair_05"
+          ],
+          "head": [
+            "female_head_01",
+            "female_head_02",
+            "female_head_03",
+            "female_head_04",
+            "female_head_05",
+            "female_head_06"
+          ],
+          "suit": [
+            "female_suit_01",
+            "female_suit_02",
+            "female_suit_03"
+          ],
+          "beard": [
+            "volume_beard_empty"
+          ],
+          "helmet": [
+            "helmet_empty",
+            "helmet_01",
+            "helmet_02"
+          ],
+          "glasses": [
+            "glasses_empty",
+            "glasses_01",
+            "glasses_02"
+          ]
+        },
+        "textures": {
+          "faces_tex": [
+            "female_face_1.tga",
+            "female_face_2.tga",
+            "female_face_3.tga",
+            "female_face_4.tga"
+          ],
+          "hands_tex": [
+            "female_hands1.png",
+            "female_hands2.png",
+            "female_hands3.png",
+            "female_hands4.png"
+          ]
+        },
+        "materials": {
+          "hair_": {
+            "female_hair_01": [
+              "female_hair_01_1.mat",
+              "female_hair_01_2.mat",
+              "female_hair_01_3.mat",
+              "female_hair_01_4.mat",
+              "female_hair_01_5.mat"
+            ]
+          }
+        }
+      },
+      {
+        "race": "cylon",
+        "sex": "centurion",
+        "items": {
+          "head": [
+            "centurion_head_v1",
+            "centurion_head_v2"
+          ],
+          "arms": [
+            "centurion_arms_v1",
+            "centurion_arms_v2"
+          ],
+          "body": [
+            "centurion_body_v1",
+            "centurion_body_v2"
+          ],
+          "legs": [
+            "centurion_legs_v1",
+            "centurion_legs_v2"
+          ]
+        },
+        "textures": {},
+        "materials": {
+          "head_": {
+            "centurion_head_v1": [
+              "grey",
+              "white",
+              "black",
+              "brown",
+              "green"
+            ]
+          },
+          "arms_": {
+            "centurion_arms_v1": [
+              "grey",
+              "white",
+              "black",
+              "brown",
+              "green"
+            ]
+          },
+          "body_": {
+            "centurion_body_v1": [
+              "grey",
+              "white",
+              "black",
+              "brown",
+              "green"
+            ]
+          },
+          "legs_": {
+            "centurion_legs_v1": [
+              "grey",
+              "white",
+              "black",
+              "brown",
+              "green"
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,972 @@
+[
+  {
+    "_comment": "GALAXY MAP CARD - The entire sector map layout. Must have GUID 150576033 (StaticCardGUID.java). Loaded by CardBuilder.java -> GalaxyMapCard.java. Fields: stars (map of sector_id -> {Id, Position {x,y}, StarFaction, ColonialThreatLevel/CylonThreatLevel (0=safe, 10=deadly), SectorGUID, CanColonialOutpost/CanCylonOutpost, CanJumpColonial/CanJumpCylon}), tiers (available tier levels), baseScalingMultiplier, sectorScalingMultiplier. Source: Assembly-CSharp.decompiled.cs for sector names and positions.",
+    "cardGUID": 150576033,
+    "cardView": 30,
+    "cardView2": "GalaxyMap",
+    "stars": {
+      "0": {
+        "Id": 0,
+        "Position": {
+          "x": -243.1125,
+          "y": -108.0564
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 0,
+        "CylonThreatLevel": 0,
+        "SectorGUID": 3766200112,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "1": {
+        "Id": 1,
+        "Position": {
+          "x": -193.0,
+          "y": -130.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 1,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 1817261864,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "2": {
+        "Id": 2,
+        "Position": {
+          "x": -195.0,
+          "y": -138.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 2,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 3459040731,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "3": {
+        "Id": 3,
+        "Position": {
+          "x": -130.0,
+          "y": -138.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 3,
+        "CylonThreatLevel": 3,
+        "SectorGUID": 863445235,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "4": {
+        "Id": 4,
+        "Position": {
+          "x": -50.0,
+          "y": -115.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 4,
+        "CylonThreatLevel": 4,
+        "SectorGUID": 3880658423,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "5": {
+        "Id": 5,
+        "Position": {
+          "x": -30.0,
+          "y": -118.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 5,
+        "CylonThreatLevel": 5,
+        "SectorGUID": 507709606,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "6": {
+        "Id": 6,
+        "Position": {
+          "x": -10.0,
+          "y": -118.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 0,
+        "CylonThreatLevel": 0,
+        "SectorGUID": 4049137611,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "7": {
+        "Id": 7,
+        "Position": {
+          "x": -165.0,
+          "y": -95.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 1,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 4032862125,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "8": {
+        "Id": 8,
+        "Position": {
+          "x": -175.0,
+          "y": -95.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 1,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 235705580,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "9": {
+        "Id": 9,
+        "Position": {
+          "x": -105.0,
+          "y": -135.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 3,
+        "CylonThreatLevel": 3,
+        "SectorGUID": 1624497886,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "10": {
+        "Id": 10,
+        "Position": {
+          "x": -130.0,
+          "y": -110.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 4,
+        "CylonThreatLevel": 4,
+        "SectorGUID": 2800775778,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "11": {
+        "Id": 11,
+        "Position": {
+          "x": -85.0,
+          "y": -105.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 5,
+        "CylonThreatLevel": 5,
+        "SectorGUID": 2425772769,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "12": {
+        "Id": 12,
+        "Position": {
+          "x": -45.0,
+          "y": -85.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 6,
+        "CylonThreatLevel": 6,
+        "SectorGUID": 1203612570,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "13": {
+        "Id": 13,
+        "Position": {
+          "x": 25.0,
+          "y": -80.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 899856235,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "14": {
+        "Id": 14,
+        "Position": {
+          "x": -75.0,
+          "y": -75.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 6,
+        "CylonThreatLevel": 6,
+        "SectorGUID": 1626061419,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "16": {
+        "Id": 16,
+        "Position": {
+          "x": -115.0,
+          "y": -70.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 5,
+        "CylonThreatLevel": 5,
+        "SectorGUID": 3298331284,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "17": {
+        "Id": 17,
+        "Position": {
+          "x": -130.0,
+          "y": -68.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 4,
+        "CylonThreatLevel": 4,
+        "SectorGUID": 539794868,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "18": {
+        "Id": 18,
+        "Position": {
+          "x": -25.0,
+          "y": -60.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 7,
+        "SectorGUID": 3407325250,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "19": {
+        "Id": 19,
+        "Position": {
+          "x": 20.0,
+          "y": -55.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 3655688251,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "20": {
+        "Id": 20,
+        "Position": {
+          "x": 0.0,
+          "y": -50.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 7,
+        "SectorGUID": 1060138164,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "21": {
+        "Id": 21,
+        "Position": {
+          "x": 30.0,
+          "y": -50.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 2398308624,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "22": {
+        "Id": 22,
+        "Position": {
+          "x": -155.0,
+          "y": -60.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 3,
+        "CylonThreatLevel": 3,
+        "SectorGUID": 695109088,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "23": {
+        "Id": 23,
+        "Position": {
+          "x": -140.0,
+          "y": -55.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 4,
+        "CylonThreatLevel": 4,
+        "SectorGUID": 3689892311,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "24": {
+        "Id": 24,
+        "Position": {
+          "x": -80.0,
+          "y": -55.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 6,
+        "CylonThreatLevel": 6,
+        "SectorGUID": 201653664,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "25": {
+        "Id": 25,
+        "Position": {
+          "x": -15.0,
+          "y": -40.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 7,
+        "SectorGUID": 1893012090,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "26": {
+        "Id": 26,
+        "Position": {
+          "x": 10.0,
+          "y": -40.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 2616741983,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "27": {
+        "Id": 27,
+        "Position": {
+          "x": 60.0,
+          "y": -50.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 9,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 6626694,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "28": {
+        "Id": 28,
+        "Position": {
+          "x": -170.0,
+          "y": -50.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 2,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 1647573225,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "29": {
+        "Id": 29,
+        "Position": {
+          "x": -200.0,
+          "y": -35.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 1,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 3609247107,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "30": {
+        "Id": 30,
+        "Position": {
+          "x": -155.0,
+          "y": -45.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 3,
+        "CylonThreatLevel": 3,
+        "SectorGUID": 1416284172,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "31": {
+        "Id": 31,
+        "Position": {
+          "x": -40.0,
+          "y": -35.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 7,
+        "SectorGUID": 3844743566,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "32": {
+        "Id": 32,
+        "Position": {
+          "x": 15.0,
+          "y": -25.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 3379542042,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "33": {
+        "Id": 33,
+        "Position": {
+          "x": 55.0,
+          "y": -25.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 9,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 3663498330,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "34": {
+        "Id": 34,
+        "Position": {
+          "x": 35.0,
+          "y": -45.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 2974201267,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "35": {
+        "Id": 35,
+        "Position": {
+          "x": -185.0,
+          "y": -15.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 1,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 1425120474,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "36": {
+        "Id": 36,
+        "Position": {
+          "x": -175.0,
+          "y": -30.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 2,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 2808603094,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "37": {
+        "Id": 37,
+        "Position": {
+          "x": -115.0,
+          "y": -40.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 5,
+        "CylonThreatLevel": 5,
+        "SectorGUID": 2662994958,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "38": {
+        "Id": 38,
+        "Position": {
+          "x": -70.0,
+          "y": -10.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 6,
+        "CylonThreatLevel": 6,
+        "SectorGUID": 813966220,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "39": {
+        "Id": 39,
+        "Position": {
+          "x": -20.0,
+          "y": -5.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 7,
+        "CylonThreatLevel": 7,
+        "SectorGUID": 3894552660,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "40": {
+        "Id": 40,
+        "Position": {
+          "x": 25.0,
+          "y": 0.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 8,
+        "CylonThreatLevel": 8,
+        "SectorGUID": 2537210274,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "41": {
+        "Id": 41,
+        "Position": {
+          "x": 35.0,
+          "y": 0.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 9,
+        "CylonThreatLevel": 9,
+        "SectorGUID": 4214726328,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "42": {
+        "Id": 42,
+        "Position": {
+          "x": -185.0,
+          "y": 5.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 2,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 3653606989,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "43": {
+        "Id": 43,
+        "Position": {
+          "x": -145.0,
+          "y": -40.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 4,
+        "CylonThreatLevel": 4,
+        "SectorGUID": 3730429448,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "44": {
+        "Id": 44,
+        "Position": {
+          "x": -165.0,
+          "y": -20.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 3,
+        "CylonThreatLevel": 3,
+        "SectorGUID": 1013740405,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "45": {
+        "Id": 45,
+        "Position": {
+          "x": -125.0,
+          "y": 10.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 5,
+        "CylonThreatLevel": 5,
+        "SectorGUID": 431353395,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "46": {
+        "Id": 46,
+        "Position": {
+          "x": -95.0,
+          "y": 15.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 6,
+        "CylonThreatLevel": 6,
+        "SectorGUID": 2353005894,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "47": {
+        "Id": 47,
+        "Position": {
+          "x": 50.0,
+          "y": 15.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 9,
+        "CylonThreatLevel": 2,
+        "SectorGUID": 1951532723,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "48": {
+        "Id": 48,
+        "Position": {
+          "x": 35.0,
+          "y": 15.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 9,
+        "CylonThreatLevel": 9,
+        "SectorGUID": 1643670788,
+        "CanColonialOutpost": true,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "49": {
+        "Id": 49,
+        "Position": {
+          "x": -210.0,
+          "y": -35.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Colonial",
+        "ColonialThreatLevel": 0,
+        "CylonThreatLevel": 0,
+        "SectorGUID": 2976122770,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": false,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "50": {
+        "Id": 50,
+        "Position": {
+          "x": 70.0,
+          "y": -30.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 10,
+        "CylonThreatLevel": 0,
+        "SectorGUID": 387930143,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "51": {
+        "Id": 51,
+        "Position": {
+          "x": -165.0,
+          "y": 20.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 10,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 4187806029,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "52": {
+        "Id": 52,
+        "Position": {
+          "x": 45.0,
+          "y": 15.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Cylon",
+        "ColonialThreatLevel": 10,
+        "CylonThreatLevel": 1,
+        "SectorGUID": 2074159195,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": true,
+        "CanColonialJumpBeacon": false,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      },
+      "113": {
+        "Id": 113,
+        "Position": {
+          "x": -60.0,
+          "y": -30.0
+        },
+        "GUIIndex": 0,
+        "StarFaction": "Neutral",
+        "ColonialThreatLevel": 10,
+        "CylonThreatLevel": 10,
+        "SectorGUID": 1313933124,
+        "CanColonialOutpost": false,
+        "CanCylonOutpost": false,
+        "CanColonialJumpBeacon": true,
+        "CanCylonJumpBeacon": true,
+        "CanJumpColonial": true,
+        "CanJumpCylon": true
+      }
+    },
+    "tiers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "baseScalingMultiplier": 1,
+    "sectorScalingMultiplier": {}
+  }
+]

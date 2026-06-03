@@ -1,0 +1,81 @@
+[
+  {
+    "_comment": "SHIP LIST CARDS - Master lists of all available ships per faction. Loaded by CardBuilder.java -> ShipListCard.java. CRITICAL: CatalogueProtocol.java:30-35 requires both Colonial (GUID 73551268) and Cylon (GUID 188756164) ShipList cards to exist, or the server crashes on any client connection. Fields: shipCardGuids (Standard variant GUIDs), upgradeShipCardGuids (Advanced variant GUIDs). Source: StaticCardGUID.java for the fixed GUIDs.",
+    "cardGUID": 73551268,
+    "cardView": 25,
+    "cardView2": "ShipList",
+    "shipCardGuids": [
+      2366349390,
+      2555963396,
+      3947146131,
+      912076213,
+      2983844693,
+      3981258770,
+      266454862,
+      1569873637,
+      892274858,
+      238788301,
+      1655262337,
+      2740618167,
+      2595425584,
+      499974568,
+      546083508
+    ],
+    "upgradeShipCardGuids": [
+      1747191803,
+      3087155673,
+      2678869358,
+      3444490997,
+      1030062672,
+      1889592076,
+      1656826403,
+      70830432,
+      682178829,
+      750800562,
+      1116650940,
+      2789537430,
+      39483692,
+      3444119639,
+      0
+    ]
+  },
+  {
+    "cardGUID": 188756164,
+    "cardView": 25,
+    "cardView2": "ShipList",
+    "shipCardGuids": [
+      1427261742,
+      3885858630,
+      2965787448,
+      832353519,
+      2772849831,
+      341519230,
+      2914180731,
+      2706714207,
+      3268942601,
+      793807161,
+      15689405,
+      3073143922,
+      2609431093,
+      3630511820,
+      235182222
+    ],
+    "upgradeShipCardGuids": [
+      1133412322,
+      1924938095,
+      3697015608,
+      4037556961,
+      337055010,
+      3194002021,
+      1211074337,
+      3005824347,
+      1645016813,
+      3535699065,
+      1818146412,
+      250814916,
+      1236001731,
+      4275632563,
+      0
+    ]
+  }
+]

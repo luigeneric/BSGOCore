@@ -1,0 +1,635 @@
+[
+  {
+    "_comment": "OWNER CARDS - Ownership/docking properties for ships and outposts. Loaded by CardBuilder.java -> OwnerCard.java. CRITICAL: HangarShip.java:66 requires an Owner card for every ship GUID. Fields: IsDockable (can players dock here? true for outposts, false for ships), DockRange (proximity in units to trigger dock), Level (upgrade level). Outpost GUIDs: OutpostColonial=1450701610, OutpostCylon=1450701611 (StaticCardGUID.java).",
+    "cardGUID": 2366349390,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1747191803,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2555963396,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3087155673,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 4081442944,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3947146131,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2678869358,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 912076213,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3444490997,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2983844693,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1030062672,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3981258770,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1889592076,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 266454862,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1656826403,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1569873637,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 70830432,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 892274858,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 682178829,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 238788301,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 750800562,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1655262337,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1116650940,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2740618167,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2789537430,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2595425584,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 39483692,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 499974568,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3444119639,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 546083508,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1427261742,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1133412322,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3885858630,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1924938095,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2965787448,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3697015608,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 832353519,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 4037556961,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2772849831,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 337055010,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 341519230,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3194002021,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2914180731,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1211074337,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2706714207,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3005824347,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3268942601,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1645016813,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 793807161,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3535699065,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 15689405,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1818146412,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3073143922,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 250814916,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2609431093,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1236001731,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3630511820,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 4275632563,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 235182222,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1450701610,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": true,
+    "DockRange": 800.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1450701611,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": true,
+    "DockRange": 800.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1783473190,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1783473196,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 1783473191,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 2
+  },
+  {
+    "cardGUID": 1783473197,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 2
+  },
+  {
+    "cardGUID": 1783473192,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 3
+  },
+  {
+    "cardGUID": 1783473198,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 3
+  },
+  {
+    "cardGUID": 1783473193,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 4
+  },
+  {
+    "cardGUID": 1783473199,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 4
+  },
+  {
+    "cardGUID": 1783473194,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 5
+  },
+  {
+    "cardGUID": 1783473200,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 5
+  },
+  {
+    "cardGUID": 1783473195,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 6
+  },
+  {
+    "cardGUID": 1783473201,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 6
+  },
+  {
+    "cardGUID": 432435645,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 432435644,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 3608800,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": true,
+    "DockRange": 1500.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 259498800,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": true,
+    "DockRange": 1500.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 2479794148,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  },
+  {
+    "cardGUID": 69731701,
+    "cardView": 29,
+    "cardView2": "Owner",
+    "IsDockable": false,
+    "DockRange": 0.0,
+    "Level": 1
+  }
+]

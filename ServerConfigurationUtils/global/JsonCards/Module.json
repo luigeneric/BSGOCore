@@ -1,0 +1,38 @@
+[
+  {
+    "_comment": "MODULE CARDS - Ship module 3D model prefab references. Loaded by CardBuilder.java -> ModuleCard.java. Fields: ColonialPrefab/CylonPrefab (Unity prefab asset names per faction). Modules: engine, cockpit, fuel, weapons, radar. The client loads these prefabs to render ship modules in the paperdoll/hangar view.",
+    "cardGUID": 3395198292,
+    "cardView": 22,
+    "cardView2": "Module",
+    "ColonialPrefab": "engine_colonial",
+    "CylonPrefab": "engine_cylon"
+  },
+  {
+    "cardGUID": 2324583544,
+    "cardView": 22,
+    "cardView2": "Module",
+    "ColonialPrefab": "cockpit_colonial",
+    "CylonPrefab": "cockpit_cylon"
+  },
+  {
+    "cardGUID": 4267771015,
+    "cardView": 22,
+    "cardView2": "Module",
+    "ColonialPrefab": "fuel_colonial",
+    "CylonPrefab": "fuel_cylon"
+  },
+  {
+    "cardGUID": 1154220834,
+    "cardView": 22,
+    "cardView2": "Module",
+    "ColonialPrefab": "weapons_colonial",
+    "CylonPrefab": "weapons_cylon"
+  },
+  {
+    "cardGUID": 2304351927,
+    "cardView": 22,
+    "cardView2": "Module",
+    "ColonialPrefab": "radar_colonial",
+    "CylonPrefab": "radar_cylon"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "_comment": "ZONE TEMPLATE - Defines objectives and scriptable events for a sector zone. Read by ZoneTemplateReader.java (single object per file). Fields: zoneGuid (unique ID), sectorGuid (parent sector, 0=global), schedule (time-based activation, null=always active), zoneObjectivePoints (capture point locations), objectives (win conditions), scriptableObjects (scripted events/triggers).",
+  "zoneGuid": 2662122276,
+  "sectorGuid": 0,
+  "schedule": null,
+  "zoneObjectivePoints": [],
+  "objectives": [],
+  "scriptableObjects": []
+}

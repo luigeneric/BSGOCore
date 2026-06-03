@@ -1,0 +1,27 @@
+[
+  {
+    "_comment": "STARTER CARDS - Faction selection screen ship previews. Loaded by CardBuilder.java -> StarterCard.java. Fields: faction, shipTexture (preview image asset), connectedShipCardGuid (the actual Ship card given to new players), firePower/toughNess/speed/electronicWarfare (1-5 preview stat bars shown in faction select UI). One per faction (Colonial + Cylon).",
+    "cardGUID": 92841761,
+    "cardView": 13,
+    "cardView2": "Starter",
+    "faction": "Colonial",
+    "shipTexture": "ship_colonial_starter",
+    "connectedShipCardGuid": 2366349390,
+    "firePower": 3,
+    "toughNess": 3,
+    "speed": 5,
+    "electronicWarfare": 2
+  },
+  {
+    "cardGUID": 2377167892,
+    "cardView": 13,
+    "cardView2": "Starter",
+    "faction": "Cylon",
+    "shipTexture": "ship_cylon_starter",
+    "connectedShipCardGuid": 1427261742,
+    "firePower": 3,
+    "toughNess": 3,
+    "speed": 5,
+    "electronicWarfare": 2
+  }
+]

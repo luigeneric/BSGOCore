@@ -1,0 +1,1877 @@
+[
+  {
+    "_comment": "PRICE CARDS (ShopItemCard) - Purchase/sell pricing for ships and items. Loaded by CardBuilder.java -> ShopItemCard.java. CRITICAL: HangarShip.java:63 requires a Price card for every ship GUID or the player crashes on faction select. Fields: Category (ShopCategory enum: Ship, System, Resource, etc.), ItemType (ShopItemType enum: Ship, Weapon, Hull, etc.), Tier, Faction, SortingNames, SortingWeight, BuyPrice/UpgradePrice/SellPrice (Price objects with 'items' map of resourceGUID->cost), CanBeSold (boolean). All field names use @SerializedName PascalCase.",
+    "cardGUID": 2366349390,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1747191803,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2555963396,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3087155673,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 4081442944,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3947146131,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2678869358,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 912076213,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3444490997,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2983844693,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1030062672,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3981258770,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1889592076,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 266454862,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1656826403,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1569873637,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 70830432,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 892274858,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 682178829,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 238788301,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 750800562,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1655262337,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1116650940,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2740618167,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2789537430,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2595425584,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 39483692,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 499974568,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 4,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 4000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3444119639,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 4,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 4000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 546083508,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Colonial",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1427261742,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1133412322,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3885858630,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1924938095,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2965787448,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3697015608,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 832353519,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 4037556961,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2772849831,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 337055010,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 1,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 341519230,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3194002021,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2914180731,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1211074337,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2706714207,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3005824347,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3268942601,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1645016813,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 793807161,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3535699065,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 15689405,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1818146412,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3073143922,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 250814916,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 2609431093,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 1236001731,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 3,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 3000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1500.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 3630511820,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 4,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 4000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 4275632563,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 4,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 4000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 235182222,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Ship",
+    "ItemType": "Ship",
+    "Tier": 2,
+    "Faction": "Cylon",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {
+        "264733124": 2000.0
+      }
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {
+        "264733124": 1000.0
+      }
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 264733124,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 207047790,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 215278030,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 130762195,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 130920111,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 254909109,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 187088612,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 63148366,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 172582782,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 28157328,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 130797813,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 166681557,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 92666191,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 10,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 11,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 12,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 13,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "Resource",
+    "ItemType": "Resource",
+    "Tier": 0,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 226,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "System",
+    "ItemType": "ShipPaint",
+    "Tier": 1,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  },
+  {
+    "cardGUID": 227,
+    "cardView": 23,
+    "cardView2": "Price",
+    "Category": "System",
+    "ItemType": "ShipPaint",
+    "Tier": 1,
+    "Faction": "Neutral",
+    "SortingNames": [],
+    "SortingWeight": 0,
+    "BuyPrice": {
+      "items": {}
+    },
+    "UpgradePrice": {
+      "items": {}
+    },
+    "SellPrice": {
+      "items": {}
+    },
+    "CanBeSold": false
+  }
+]

@@ -1,0 +1,271 @@
+{
+  "_comment": "SECTOR TEMPLATE for 'Cerbero' (sector ID 18). Read by SectorTemplateReader.java (single object per file). Fields: sectorID (must match GalaxyMap star ID), zoneGUID (linked zone, 0=none), spawnAreaTemplates (where players appear: {id, a/b corners, direction, faction}), spaceObjectTemplates (stations/objects in sector), asteroidDesc (mineable asteroid fields), botSpawnTemplates (NPC spawn rules), colonialProgressTemplate/cylonProgressTemplate (outpost capture progress - null causes Galaxy#run NullPointerException, non-fatal).",
+  "sectorID": 18,
+  "zoneGUID": 0,
+  "spawnAreaTemplates": [
+    {
+      "id": 0,
+      "a": {
+        "x": -5000.0,
+        "y": -2000.0,
+        "z": -5000.0
+      },
+      "b": {
+        "x": 5000.0,
+        "y": 2000.0,
+        "z": 5000.0
+      },
+      "direction": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "faction": "Colonial"
+    },
+    {
+      "id": 1,
+      "a": {
+        "x": -5000.0,
+        "y": -2000.0,
+        "z": -5000.0
+      },
+      "b": {
+        "x": 5000.0,
+        "y": 2000.0,
+        "z": 5000.0
+      },
+      "direction": {
+        "pitch": 0.0,
+        "yaw": 180.0,
+        "roll": 0.0
+      },
+      "faction": "Cylon"
+    }
+  ],
+  "spaceObjectTemplates": [
+    {
+      "objectGUID": 1450701610,
+      "spaceEntityType": "Outpost",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 0,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": -8000.0,
+        "y": 0.0,
+        "z": -8000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 2000.0,
+      "maximumAggroDistance": 8000.0,
+      "faction": "Colonial"
+    },
+    {
+      "objectGUID": 1450701611,
+      "spaceEntityType": "Outpost",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 0,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 8000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 2000.0,
+      "maximumAggroDistance": 8000.0,
+      "faction": "Cylon"
+    },
+    {
+      "objectGUID": 1783473191,
+      "spaceEntityType": "WeaponPlatform",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 600,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": -6000.0,
+        "y": 500.0,
+        "z": -4000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 5000.0,
+      "maximumAggroDistance": 15000.0,
+      "faction": "Colonial"
+    },
+    {
+      "objectGUID": 1783473192,
+      "spaceEntityType": "WeaponPlatform",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 600,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": -4000.0,
+        "y": -500.0,
+        "z": -6000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 5000.0,
+      "maximumAggroDistance": 15000.0,
+      "faction": "Colonial"
+    },
+    {
+      "objectGUID": 1783473197,
+      "spaceEntityType": "WeaponPlatform",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 600,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": 6000.0,
+        "y": 500.0,
+        "z": 4000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 5000.0,
+      "maximumAggroDistance": 15000.0,
+      "faction": "Cylon"
+    },
+    {
+      "objectGUID": 1783473198,
+      "spaceEntityType": "WeaponPlatform",
+      "creatingCause": "AlreadyExists",
+      "respawnTime": 600,
+      "isInstantInSector": true,
+      "lootTemplateIds": [],
+      "position": {
+        "x": 4000.0,
+        "y": -500.0,
+        "z": 6000.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "autoAggroDistance": 5000.0,
+      "maximumAggroDistance": 15000.0,
+      "faction": "Cylon"
+    }
+  ],
+  "asteroidDesc": {
+    "respawnTime": 60,
+    "respawnResourceTime": 30,
+    "hpIntervall": [
+      100,
+      300
+    ],
+    "maxResourceDesc": {
+      "minRedPercentage": 0.1,
+      "maxTyliumPercentage": 0.6,
+      "maxTitaniumPercentage": 0.3,
+      "maxWaterPercentage": 0.1
+    },
+    "resourceEntries": [
+      {
+        "resourceType": "Tylium",
+        "chance": 60,
+        "hpToResourceFactor": 1.0,
+        "variation": 0.2
+      },
+      {
+        "resourceType": "Titanium",
+        "chance": 30,
+        "hpToResourceFactor": 0.8,
+        "variation": 0.2
+      },
+      {
+        "resourceType": "Water",
+        "chance": 10,
+        "hpToResourceFactor": 0.5,
+        "variation": 0.1
+      }
+    ]
+  },
+  "planetoidDesc": {
+    "respawnTime": 120,
+    "respawnResourceTime": 60,
+    "resourceEntries": [
+      {
+        "resourceType": "Tylium",
+        "chance": 50,
+        "hpToResourceFactor": 2.0,
+        "variation": 0.3
+      },
+      {
+        "resourceType": "Titanium",
+        "chance": 40,
+        "hpToResourceFactor": 1.5,
+        "variation": 0.3
+      },
+      {
+        "resourceType": "Water",
+        "chance": 10,
+        "hpToResourceFactor": 1.0,
+        "variation": 0.2
+      }
+    ],
+    "minResources": 1,
+    "maxResources": 3
+  },
+  "miningShipConfig": {
+    "extractPerSecond": 10,
+    "extractDelay": 5,
+    "priceInCubits": 100,
+    "npcGuidLootIds": [
+      {
+        "npcGUID": 1783473190,
+        "lootID": 0,
+        "faction": "Colonial",
+        "count": 1
+      },
+      {
+        "npcGUID": 1783473196,
+        "lootID": 0,
+        "faction": "Cylon",
+        "count": 1
+      }
+    ],
+    "secondsUntilNpcSpawns": 120,
+    "npcInitialSpawnDelaySeconds": 60,
+    "npcLifeTimeSeconds": 300
+  },
+  "botSpawnTemplates": [],
+  "colonialProgressTemplate": {
+    "ptsDrainPerSecond": 1,
+    "ptsAsteroidKilledWithRessources": 10,
+    "ptsNpcKilled": 5,
+    "ptsPlayerKilled": 50,
+    "ptsMiningShipIncome": 2
+  },
+  "cylonProgressTemplate": {
+    "ptsDrainPerSecond": 1,
+    "ptsAsteroidKilledWithRessources": 10,
+    "ptsNpcKilled": 5,
+    "ptsPlayerKilled": 50,
+    "ptsMiningShipIncome": 2
+  },
+  "cometSectorDesc": null
+}

@@ -87,8 +87,6 @@ sqlite
 sqlite/bgo_server.db
 sqlite/counters_queries/bgo_server.db
 
-/ServerConfigurationUtils/*
-/ServerConfigurationUtils/**
 
 # ignore everything in certs
 /certs/*

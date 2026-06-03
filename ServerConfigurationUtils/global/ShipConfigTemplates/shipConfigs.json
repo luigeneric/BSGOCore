@@ -1,0 +1,4671 @@
+[
+  {
+    "_comment": "SHIP CONFIG TEMPLATES - Default loadout for each ship (empty slots). Read by ShipConfigTemplateReader.java. Fields: id (unique config ID), level (ship level for this config), shipGUID (which Ship card this config is for), slotConfigs (array of {slotID, itemGUID (0=empty), consumableGUID (0=none)}). The number of slotConfigs must match the total Slots count on the Ship card.",
+    "id": 287160208,
+    "level": 0,
+    "shipGUID": 2366349390,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1256021699,
+    "level": 0,
+    "shipGUID": 1747191803,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1170452674,
+    "level": 0,
+    "shipGUID": 2555963396,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2146278029,
+    "level": 0,
+    "shipGUID": 3087155673,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1460751069,
+    "level": 0,
+    "shipGUID": 4081442944,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1995421209,
+    "level": 0,
+    "shipGUID": 3947146131,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2067755296,
+    "level": 0,
+    "shipGUID": 2678869358,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1412079062,
+    "level": 0,
+    "shipGUID": 912076213,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1710961483,
+    "level": 0,
+    "shipGUID": 3444490997,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2034874898,
+    "level": 0,
+    "shipGUID": 2983844693,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 859267362,
+    "level": 0,
+    "shipGUID": 1030062672,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 653292748,
+    "level": 0,
+    "shipGUID": 3981258770,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 687139167,
+    "level": 0,
+    "shipGUID": 1889592076,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2053784653,
+    "level": 0,
+    "shipGUID": 266454862,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 854002640,
+    "level": 0,
+    "shipGUID": 1656826403,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1597767368,
+    "level": 0,
+    "shipGUID": 1569873637,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1998164179,
+    "level": 0,
+    "shipGUID": 70830432,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1650935685,
+    "level": 0,
+    "shipGUID": 892274858,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1936996433,
+    "level": 0,
+    "shipGUID": 682178829,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1952424371,
+    "level": 0,
+    "shipGUID": 238788301,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 658405356,
+    "level": 0,
+    "shipGUID": 750800562,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 18,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1246647239,
+    "level": 0,
+    "shipGUID": 1655262337,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1650682526,
+    "level": 0,
+    "shipGUID": 1116650940,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1802488736,
+    "level": 0,
+    "shipGUID": 2740618167,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1135540615,
+    "level": 0,
+    "shipGUID": 2789537430,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1686242906,
+    "level": 0,
+    "shipGUID": 2595425584,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 670505561,
+    "level": 0,
+    "shipGUID": 39483692,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1629270082,
+    "level": 0,
+    "shipGUID": 499974568,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 513766089,
+    "level": 0,
+    "shipGUID": 3444119639,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 18,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 31259540,
+    "level": 0,
+    "shipGUID": 546083508,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 563552558,
+    "level": 0,
+    "shipGUID": 1427261742,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1170240844,
+    "level": 0,
+    "shipGUID": 1133412322,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1230436833,
+    "level": 0,
+    "shipGUID": 3885858630,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2129249696,
+    "level": 0,
+    "shipGUID": 1924938095,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1920257905,
+    "level": 0,
+    "shipGUID": 2965787448,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1052191081,
+    "level": 0,
+    "shipGUID": 3697015608,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1232707884,
+    "level": 0,
+    "shipGUID": 832353519,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 549017920,
+    "level": 0,
+    "shipGUID": 4037556961,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 272651091,
+    "level": 0,
+    "shipGUID": 2772849831,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 118265032,
+    "level": 0,
+    "shipGUID": 337055010,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 460466300,
+    "level": 0,
+    "shipGUID": 341519230,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1422978508,
+    "level": 0,
+    "shipGUID": 3194002021,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 786646307,
+    "level": 0,
+    "shipGUID": 2914180731,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 62000386,
+    "level": 0,
+    "shipGUID": 1211074337,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1381520547,
+    "level": 0,
+    "shipGUID": 2706714207,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 974970458,
+    "level": 0,
+    "shipGUID": 3005824347,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1726548091,
+    "level": 0,
+    "shipGUID": 3268942601,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1474918316,
+    "level": 0,
+    "shipGUID": 1645016813,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2098279614,
+    "level": 0,
+    "shipGUID": 793807161,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1593837781,
+    "level": 0,
+    "shipGUID": 3535699065,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 60789220,
+    "level": 0,
+    "shipGUID": 15689405,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 18,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1562223486,
+    "level": 0,
+    "shipGUID": 1818146412,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1025017011,
+    "level": 0,
+    "shipGUID": 3073143922,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 36857779,
+    "level": 0,
+    "shipGUID": 250814916,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1621902484,
+    "level": 0,
+    "shipGUID": 2609431093,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1132084867,
+    "level": 0,
+    "shipGUID": 1236001731,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 1550199735,
+    "level": 0,
+    "shipGUID": 3630511820,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 646291112,
+    "level": 0,
+    "shipGUID": 4275632563,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  },
+  {
+    "id": 2002322614,
+    "level": 0,
+    "shipGUID": 235182222,
+    "slotConfigs": [
+      {
+        "slotID": 0,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 1,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 2,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 3,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 4,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 5,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 6,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 7,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 8,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 9,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 10,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 11,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 12,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 13,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 14,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 15,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 16,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 17,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      },
+      {
+        "slotID": 18,
+        "itemGUID": 0,
+        "consumableGUID": 0
+      }
+    ]
+  }
+]

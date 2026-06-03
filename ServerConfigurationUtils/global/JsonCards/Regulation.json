@@ -1,0 +1,533 @@
+[
+  {
+    "_comment": "REGULATION CARDS - Gameplay rules for each sector (combat rules, targeting). Loaded by CardBuilder.java -> RegulationCard.java. Fields: abilityTargetRelations (who can target whom), abilityTargetTypes, targetBracketMode (Default/None/FriendlyOnly), sectorMapEnabled (show minimap?), effectTypeBlacklist (disabled ability effects). Each Regulation card is referenced by a Sector card via regulationCardGuid.",
+    "cardGUID": 4160650435,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2414753437,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2133258262,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 997148094,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1041228460,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1350749304,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1134521206,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2477720501,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 595299588,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 944702313,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3964443765,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3431733415,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 763292529,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2478732379,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 42427317,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1248091357,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 4039414786,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3863631645,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1159428233,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2645541049,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2744700115,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3290203343,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3592477371,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1413409846,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3971970930,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2049626618,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1481418156,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 981252924,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1026143142,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2074120779,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 4157972422,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1275841622,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2176496655,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2887001335,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3620857018,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1594065777,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1361100748,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2541763015,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2197720104,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2691214441,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3096873469,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 634239664,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2724090094,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3492993479,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 4188940137,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1259785766,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2222159075,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2417872106,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1822932251,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 3756141702,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 1942714217,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 2065205448,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  },
+  {
+    "cardGUID": 179244773,
+    "cardView": 36,
+    "cardView2": "Regulation",
+    "abilityTargetRelations": {},
+    "abilityTargetTypes": {},
+    "targetBracketMode": "Default",
+    "sectorMapEnabled": true,
+    "effectTypeBlacklist": []
+  }
+]
