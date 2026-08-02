@@ -357,7 +357,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     return;
                 }
                 final MapStarDesc sourceStar = optSourceStar.get();
-                final float ftlJumpRange = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.FtlRange);
+                final float ftlJumpRange = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.FtlRange);
                 final float jumpDistance = Vector2.distance(sourceStar.getPosition(), starDestination.getPosition());
                 final boolean canJumpDistance = jumpDistance <= ftlJumpRange;
                 final boolean canJumpFaction = starDestination.canJumpFaction(playerShip.getFaction());
@@ -376,7 +376,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                     log.warn("Cheating user tried to jump while modified " + user().getUserLog());
                 }
 
-                final float charge = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.FtlCharge);
+                final float charge = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.FtlCharge);
                 final boolean isInCombat = playerShip.getSpaceSubscribeInfo().isInCombat();
 
                 this.jumpProcedure(secPlayerShip.sector().getJumpRegistry(), sectorID, charge, isInCombat);
@@ -673,7 +673,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final MovementController movementController = playerShip.getMovementController();
                 final MovementOptions movementOptions = movementController.getMovementOptions();
                 float speed = 0;
-                float acceleration = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.Acceleration);
+                float acceleration = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.Acceleration);
                 switch (newGear)
                 {
                     case Regular ->
@@ -683,8 +683,8 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
 
                     case Boost ->
                     {
-                        speed = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.BoostSpeed);
-                        final float accBonus = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.AccelerationMultiplierOnBoost);
+                        speed = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.BoostSpeed);
+                        final float accBonus = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.AccelerationMultiplierOnBoost, 1f);
                         acceleration *= accBonus;
                         if (movementController.getCurrentManeuver() != null && movementController.getCurrentManeuver() instanceof TurnByPitchYawStrikes oldTurnByPitchYawStrikes)
                         {
@@ -739,7 +739,7 @@ public class GameProtocol extends BgoProtocol implements StatsProtocolSubscriber
                 final MovementController movementController = playerShip.getMovementController();
                 final Maneuver maneuver = movementController.getCurrentManeuver();
                 final MovementOptions movementOptions = movementController.getMovementOptions();
-                final float maxSpeed = playerShip.getSpaceSubscribeInfo().getStat(ObjectStat.Speed);
+                final float maxSpeed = playerShip.getSpaceSubscribeInfo().getStatOrDefault(ObjectStat.Speed);
 
 
                 final float clientSpeedCleaned = Mathf.clampSafe(clientSpeed, 0, maxSpeed);

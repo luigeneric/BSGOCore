@@ -146,11 +146,11 @@ public abstract class MovementController implements IMovementUpdateSubscriber
             }
             case Boost ->
             {
-                movementOptions.setSpeed(stats.getStat(ObjectStat.BoostSpeed));
+                movementOptions.setSpeed(stats.getStatOrDefault(ObjectStat.BoostSpeed));
             }
             case None ->
             {
-                movementOptions.setSpeed(stats.getStat(ObjectStat.Speed));
+                movementOptions.setSpeed(stats.getStatOrDefault(ObjectStat.Speed));
             }
         }
 

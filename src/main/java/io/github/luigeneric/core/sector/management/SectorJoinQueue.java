@@ -207,7 +207,13 @@ public class SectorJoinQueue implements SectorJob
         if (!alreadyHasSpawnTransform)
         {
             final int MAX_SPAWN_ATTEMPTS = 10;
-            final Collider tmpCollider = spaceObject.getCollider().copy();
+            // A ship whose prefab has no ColliderTemplate gets a null collider from
+            // SpaceObjectFactory.wrapCollider, which used to NPE here. The exception is
+            // swallowed by the sector tick and the user has already been polled off the join
+            // queue, so nothing retries: the sector ticks happily with no ship in it and the
+            // client waits forever on `while (playerShip == null)`. Spawn without the collision
+            // check instead, and say so loudly.
+            final Collider tmpCollider = spaceObject.hasCollider() ? spaceObject.getCollider().copy() : null;
 
             for (int i = 0; i < MAX_SPAWN_ATTEMPTS; i++)
             {
@@ -220,6 +226,13 @@ public class SectorJoinQueue implements SectorJob
                         optSpawn.get().getRandomPosition(),
                         optSpawn.get().getRotation()
                 );
+
+                if (tmpCollider == null)
+                {
+                    log.error("No ColliderTemplate for player {} prefab '{}' - spawning without collision check",
+                            spaceObject.getPlayerId(), spaceObject.getPrefabName());
+                    break;
+                }
 
                 //check for collisions before accepting transform
                 tmpCollider.getTransform().setTransform(spawnTransform);
