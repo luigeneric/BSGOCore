@@ -57,8 +57,11 @@ public class LoginProtocolWriteOnly extends WriteOnlyProtocol
     {
         BgoProtocolWriter bw = newMessage();
         bw.writeMsgType(ServerMessage.Init.value);
-        //bw.writeUInt32(4578);
-        bw.writeUInt32(3);
+        // Must match the client's hardcoded LoginLevel.SERVER_REVISION exactly - the client does
+        // `return 4578 == Game.ServerRevision`, and on mismatch it closes the socket AND calls
+        // Application.Quit(), so it hard-exits at the handshake with no useful error.
+        // Upstream ships 3, which targets a different client build.
+        bw.writeUInt32(4578);
         return bw;
     }
 
