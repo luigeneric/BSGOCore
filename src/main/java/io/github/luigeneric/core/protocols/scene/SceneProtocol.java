@@ -7,6 +7,7 @@ import io.github.luigeneric.chatapi.ChatApi;
 import io.github.luigeneric.core.ProtocolContext;
 import io.github.luigeneric.core.User;
 import io.github.luigeneric.core.player.Player;
+import io.github.luigeneric.enums.GameLocation;
 import io.github.luigeneric.core.player.location.Location;
 import io.github.luigeneric.core.protocols.BgoProtocol;
 import io.github.luigeneric.core.protocols.ProtocolID;
@@ -145,8 +146,22 @@ public class SceneProtocol extends BgoProtocol
 
     public void sendLoadNextScene()
     {
-        final BgoProtocolWriter bw = newMessage();
         final Location location = user().getPlayer().getLocation();
+
+        // DisconnectLocation.process() writes ZERO bytes, so a LoadNextScene emitted while the
+        // player is in that state has an empty body: the client reads past the end of the
+        // message, throws EndOfStreamException, swallows it, and never loads a scene - an
+        // infinite "Loading... please wait" with a completely clean server log.
+        // This is reachable on any re-login inside the 15-minute InactiveKicker window, because
+        // the cached User is still in the Disconnect state installed on socket close. Substitute
+        // the last real location instead. Covers every caller of this method, not just login.
+        if (location.getGameLocation() == GameLocation.Disconnect)
+        {
+            location.setLocation(location.getNonDisconnectLocation(),
+                    location.getSectorID(), location.getSectorGUID());
+        }
+
+        final BgoProtocolWriter bw = newMessage();
         bw.writeMsgType(ServerMessage.LoadNextScene.value);
         bw.writeDesc(location);
 
