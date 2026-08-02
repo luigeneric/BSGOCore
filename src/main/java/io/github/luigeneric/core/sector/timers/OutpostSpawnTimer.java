@@ -14,10 +14,17 @@ import io.github.luigeneric.enums.SpaceEntityType;
 import io.github.luigeneric.templates.cards.GalaxyMapCard;
 import io.github.luigeneric.templates.sectortemplates.SectorDesc;
 
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
+
+@Slf4j
 public class OutpostSpawnTimer extends DelayedTimer
 {
+    /** Factions whose spawn failure has already been reported here; see spawnOp. */
+    private final Set<Faction> loggedSpawnFailure = EnumSet.noneOf(Faction.class);
     private final OutPostStates outPostStates;
     private final ISpaceObjectRemover remover;
     private final SpaceObjectFactory factory;
@@ -101,10 +108,25 @@ public class OutpostSpawnTimer extends DelayedTimer
         {
             final SpaceObject op = factory.createOutpost(faction);
             joinQueue.addSpaceObject(op);
+            log.info("Spawned {} outpost in sector {}", faction, sectorDesc.getSectorID());
         }
         catch (IllegalStateException illegalStateException)
         {
-            //illegalStateException.printStackTrace();
+            /* This catch was empty. createOutpost throws IllegalStateException for exactly one
+             * reason - the sector has no Outpost template of this faction - and delayedUpdate
+             * retries every 5s forever, so an outpost that can never spawn produced no error, no
+             * log line and no symptom other than its absence. Both base sectors were in that state
+             * from the start.
+             *
+             * Logged ONCE per faction, not per tick: the retry is by design (the timer is also how
+             * a captured sector's outpost appears), so the interesting event is the first failure,
+             * and at a 5s cadence anything else would bury the log. */
+            if (loggedSpawnFailure.add(faction))
+            {
+                log.warn("Cannot spawn {} outpost in sector {}: {} - the sector template has no " +
+                                "Outpost entry for that faction, so this will never succeed",
+                        faction, sectorDesc.getSectorID(), illegalStateException.getMessage());
+            }
         }
     }
 }
