@@ -60,7 +60,12 @@ public class ShipBindings implements IProtocolWrite
         {
             final ShipSystemCard systemCard = slot.getShipSystem().getShipSystemCard();
             if (systemCard == null) continue;
-            if (systemCard.getShipSlotType() == ShipSlotType.weapon)
+            // launcher, not just weapon: the FireMissle branch below sits INSIDE this guard, so a
+            // launcher-typed slot could never emit a missile-pod binding - the pod simply never
+            // appeared on the model. The client's own data and every shipped ShipConfigTemplate
+            // treat slot 2 as a launcher, so the guard was the bug, not the slot type.
+            final ShipSlotType slotType = systemCard.getShipSlotType();
+            if (slotType == ShipSlotType.weapon || slotType == ShipSlotType.launcher)
             {
                 final ShipAbility ability = slot.getShipAbility();
                 if (ability != null)
