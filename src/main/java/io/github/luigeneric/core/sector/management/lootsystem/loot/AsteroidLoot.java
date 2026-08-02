@@ -12,10 +12,28 @@ import java.util.List;
 public class AsteroidLoot implements Loot
 {
     private final ItemCountable ressource;
+    private final long exp;
 
     public AsteroidLoot(final ItemCountable ressource)
     {
+        this(ressource, 50);
+    }
+
+    public AsteroidLoot(final ItemCountable ressource, final long exp)
+    {
         this.ressource = ressource;
+        this.exp = exp;
+    }
+
+    /**
+     * XP for cracking a rock, scaled by how much rock there was.
+     * A flat 50 made the safe home sectors (200-400 HP) pay ~3.7x the XP/hour of contested
+     * Tannhauser (600-1600 HP), because the only thing that changes with HP is time-to-kill.
+     * @param maxHp the asteroid's MaxHullPoints
+     */
+    public static long expForHp(final float maxHp)
+    {
+        return Math.max(5L, (long) (maxHp / 20f));
     }
 
 
@@ -28,7 +46,7 @@ public class AsteroidLoot implements Loot
     @Override
     public long getExp()
     {
-        return 50;
+        return this.exp;
     }
 
     @Override

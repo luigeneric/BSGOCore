@@ -69,8 +69,13 @@ public class AsteroidResourceSpawn extends ResourceSpawn implements ICopy<Astero
             return;
         }
 
-        if (asteroidDesc.maxResourceDesc().minRedPercentage() == 1)
+        if (asteroidDesc.maxResourceDesc().minRedPercentage() >= 1)
         {
+            // Reschedule before bailing out. This used to `return` WITHOUT rescheduling - unlike
+            // the ResourceType.None branch above - so a single sector configured with
+            // minRedPercentage 1 permanently killed its own resource-respawn chain: every asteroid
+            // in it stayed empty forever and mining paid nothing, with no error anywhere.
+            this.spawnSubscriber.onSpawn(this.getNext(), currentSpawnTime);
             return;
         }
 
@@ -91,7 +96,7 @@ public class AsteroidResourceSpawn extends ResourceSpawn implements ICopy<Astero
         final float newResourceCount = bgoRandom.variateByPercentage((long) (maxHp * hpFactor), rndItem.variation());
         final ItemCountable newCountable = ItemCountable.fromGUID(rndItem.resourceType().guid, newResourceCount);
 
-        this.lootAssociations.addLoot(asteroid, new AsteroidLoot(newCountable));
+        this.lootAssociations.addLoot(asteroid, new AsteroidLoot(newCountable, AsteroidLoot.expForHp(maxHp)));
     }
 
     /**
